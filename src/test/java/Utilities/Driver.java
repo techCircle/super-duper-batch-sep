@@ -9,13 +9,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Driver {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 
 		if (driver == null) {
 
-			switch ("Chrome") {
+			switch (ConfigurationProperties.getProperty("browser")) {
 
 			case "firefox":
 
@@ -41,9 +41,31 @@ public class Driver {
 
 			}
 
+			driver.get("https://www.techcircleschool.com");
+
 		}
 
 		return driver;
 	}
+	
+	
+	//close/quit browser
+	public static void tearDown() {
+		
+		if(driver != null) {
+			driver.close();
+			
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
