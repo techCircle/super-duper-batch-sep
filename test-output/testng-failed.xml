@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="SmokeTest(failed)">
+    <classes>
+      <class name="SeleniumDay9.GroupingTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="c"/>
+          <include name="b"/>
+        </methods>
+      </class> <!-- SeleniumDay9.GroupingTest -->
+    </classes>
+  </test> <!-- SmokeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

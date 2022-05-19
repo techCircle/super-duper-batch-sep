@@ -1,9 +1,9 @@
 package HomeWorkReview;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,7 +25,8 @@ public class checkoutboxTesting3 {
 	static WebDriverWait wait;
 	
 	
-	@BeforeClass
+	@BeforeMethod
+	//@BeforeClass
 	public static void setUp() {
 		
 		WebDriverManager.chromedriver().setup();

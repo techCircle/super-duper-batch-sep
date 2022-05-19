@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="SeleniumDay6.tolaAlerts"/>
+      <class name="SeleniumDay8.TestingDriverClass"/>
+      <class name="Utilities.Driver"/>
+      <class name="SeleniumDay5.autoSuggestionBox"/>
+      <class name="SeleniumDay4.waitTests"/>
+      <class name="SeleniumDay7.alipWindowHandlesTesting"/>
+      <class name="SeleniumDay3.junitTesting"/>
+      <class name="SeleniumDay5.staticDropDown"/>
+      <class name="SeleniumDay8.TestPropertiesClass"/>
+      <class name="SeleniumDay9.testPriorityInTestNG"/>
+      <class name="SeleniumDay7.windowHandlesTesting"/>
+      <class name="SaturdayPractice.practicetwo"/>
+      <class name="SeleniumDay9.NewTest"/>
+      <class name="SeleniumDay7.hoverOverTestting"/>
+      <class name="SeleniumDay6.alertBoxTesting"/>
+      <class name="SeleniumDay5.dynamicDropdown"/>
+      <class name="SeleniumDay7.iframesTest"/>
+      <class name="SeleniumDay9.OpenBrowser"/>
+      <class name="SeleniumDay5.AssertLearning"/>
+      <class name="SeleniumDay7.dragAndDropTesting"/>
+      <class name="SeleniumDay3.testGoogleSite"/>
+      <class name="HomeWorkReview.loginTest"/>
+      <class name="HomeWorkReview.checkboxesTesting"/>
+      <class name="SeleniumDay6.listOfElement_FindElements"/>
+      <class name="SeleniumDay4.checkboxesTesting"/>
+      <class name="SeleniumDay6.AlertQuestionUsingExplicitWait"/>
+      <class name="HomeWorkReview.checkoutboxTesting3"/>
+      <class name="HomeWorkReview.checkboxesTesting2"/>
+      <class name="SeleniumDay4.checkboxTask1"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

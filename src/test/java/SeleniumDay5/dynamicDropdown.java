@@ -1,10 +1,9 @@
 package SeleniumDay5;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +16,7 @@ public class dynamicDropdown {
 	
 	WebDriver driver;
 	
-	@Before
+	@BeforeMethod
 	public void setUp() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
@@ -28,9 +27,9 @@ public class dynamicDropdown {
 		// implicit wait
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-	
-	@Ignore
-	@Test
+//	
+//	@Test(enabled = false)
+//	@Test
 	public void roundtripSelection() {
 		
 		//clicking on round trip radio button

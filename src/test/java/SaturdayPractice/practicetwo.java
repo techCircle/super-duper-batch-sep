@@ -1,10 +1,10 @@
 package SaturdayPractice;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,7 +15,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class practicetwo {
 	WebDriver driver;
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
@@ -70,7 +70,7 @@ public class practicetwo {
 	
 		
 		
-		Assert.assertTrue(name2.contains(expectedName));
+		AssertJUnit.assertTrue(name2.contains(expectedName));
 		
 		
 		

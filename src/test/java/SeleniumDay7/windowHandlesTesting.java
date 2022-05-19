@@ -1,12 +1,11 @@
 package SeleniumDay7;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +18,7 @@ public class windowHandlesTesting {
 	WebDriver driver;
 	Actions act;
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
@@ -31,8 +30,8 @@ public class windowHandlesTesting {
 
 	}
 
-	@Ignore
-	@Test
+//	@Test(enabled = false)
+//	@Test
 	public void windowNewTab() throws InterruptedException {
 		// clicks on NewTab blue button
 		driver.findElement(By.xpath("//*[@id='tabButton']")).click();
@@ -53,9 +52,9 @@ public class windowHandlesTesting {
 		System.out.println("NewTab -- https://demoqa.com/sample = " + driver.getCurrentUrl());
 
 	}
-
-	@Ignore
-	@Test
+//
+//	@Test(enabled = false)
+//	@Test
 	public void childPage2() throws InterruptedException {
 
 	}

@@ -1,10 +1,11 @@
 package SeleniumDay5;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +16,7 @@ public class AssertLearning {
 
 	WebDriver driver;
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
@@ -36,7 +37,7 @@ public class AssertLearning {
 		
 		String expectedWelcomeText = "Welcome to the-internet";
 
-		Assert.assertEquals(expectedWelcomeText, actualWelcomeText);
+		AssertJUnit.assertEquals(expectedWelcomeText, actualWelcomeText);
 
 	}
 
@@ -54,7 +55,7 @@ public class AssertLearning {
 
 		// Assert.assertFalse(driver.findElement(By.xpath("//*[@id=\"content\"]/div/button")).isDisplayed());
 
-		Assert.assertFalse(isEvenNumber(3));
+		AssertJUnit.assertFalse(isEvenNumber(3));
 
 	}
 

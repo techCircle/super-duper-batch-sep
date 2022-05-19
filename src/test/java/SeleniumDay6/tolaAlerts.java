@@ -1,10 +1,10 @@
 package SeleniumDay6;
 
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class tolaAlerts {
 	WebDriver driver;
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();

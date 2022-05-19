@@ -1,9 +1,10 @@
 package SeleniumDay5;
 
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +17,7 @@ public class staticDropDown {
 	WebDriver driver;
 	Select select;
 	
-	@Before
+	@BeforeMethod
 	public void setUp() throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();

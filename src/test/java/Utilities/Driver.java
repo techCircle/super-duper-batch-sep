@@ -1,5 +1,6 @@
 package Utilities;
 
+import org.testng.annotations.AfterMethod;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -50,6 +51,7 @@ public class Driver {
 	
 	
 	//close/quit browser
+	@AfterMethod
 	public static void tearDown() {
 		
 		if(driver != null) {

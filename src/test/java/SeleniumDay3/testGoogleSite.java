@@ -1,7 +1,7 @@
 package SeleniumDay3;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ public class testGoogleSite {
 
 	WebDriver driver;
 
-	@Before
+	@BeforeMethod
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();

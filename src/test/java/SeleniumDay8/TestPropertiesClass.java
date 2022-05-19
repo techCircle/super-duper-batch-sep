@@ -1,15 +1,14 @@
 package SeleniumDay8;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import Utilities.ConfigurationProperties;
 import Utilities.Driver;
 
 public class TestPropertiesClass {
 
-	@Before
+	@BeforeMethod
 	public void setUp() {
 
 		Driver.getDriver();
@@ -21,7 +20,7 @@ public class TestPropertiesClass {
 		System.out.println(ConfigurationProperties.getProperty("text"));
 	}
 
-	@After
+	@AfterMethod
 	public void tearDown() {
 		Driver.tearDown();
 	}

@@ -1,9 +1,9 @@
 package SeleniumDay7;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,8 +18,8 @@ public class iframesTest {
 	WebDriver driver;
 	Actions act;
 	
-	@Before
-    public void setUp() {
+	@BeforeMethod
+	public void setUp() {
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();

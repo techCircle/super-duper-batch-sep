@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="11" total="12" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="73" started-at="2022-05-18T21:44:45 EDT" finished-at="2022-05-18T21:44:45 EDT">
+    <groups>
+      <group name="smokeTest">
+        <method signature="GroupingTest.b()[pri:0, instance:SeleniumDay9.GroupingTest@757942a1]" name="b" class="SeleniumDay9.GroupingTest"/>
+      </group> <!-- smokeTest -->
+    </groups>
+    <test name="SmokeTest" duration-ms="73" started-at="2022-05-18T21:44:45 EDT" finished-at="2022-05-18T21:44:45 EDT">
+      <class name="SeleniumDay9.GroupingTest">
+        <test-method status="PASS" signature="b()[pri:0, instance:SeleniumDay9.GroupingTest@757942a1]" name="b" duration-ms="17" started-at="2022-05-18T21:44:45 EDT" finished-at="2022-05-18T21:44:45 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- b -->
+      </class> <!-- SeleniumDay9.GroupingTest -->
+    </test> <!-- SmokeTest -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,12 +1,10 @@
 package SeleniumDay3;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -28,7 +26,7 @@ public class junitTesting {
 		System.out.println("After Class");
 	}
 	
-	@After
+	@AfterMethod
 	public void tearDown() {
 		//driver.close();
 		driver.quit();
@@ -37,7 +35,7 @@ public class junitTesting {
 	}
 	
 	
-	@Before
+	@BeforeMethod
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
 
@@ -78,21 +76,21 @@ public class junitTesting {
 
 	}
 	
-	@Ignore
-	@Test(expected=ArithmeticException.class)
-	public void test4() {
-		System.out.println("Test4");
-		int i = 45/0;
-		System.out.println(i);
+//	@Test(enabled = false)
+//	@Test(expected=ArithmeticException.class)
+//	public void test4() {
+//		System.out.println("Test4");
+//		int i = 45/0;
+//		System.out.println(i);
+//
+//	}
 
-	}
-
-	@Ignore
-	@Test(timeout=500)
-	public void test5() {
-		System.out.println("Test5");
-	
-	}
+//	@Test(enabled = false)
+//	@Test(timeout=500)
+//	public void test5() {
+//		System.out.println("Test5");
+//	
+//	}
 	
 
 }

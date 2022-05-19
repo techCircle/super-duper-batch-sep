@@ -1,8 +1,8 @@
 package HomeWorkReview;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class checkboxesTesting2 {
 	boolean Isboxselect[] = new boolean[10];
 	
 	
-	@Before
+	@BeforeMethod
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
@@ -116,7 +116,7 @@ public class checkboxesTesting2 {
 		
 	}
 	
-	@After
+	@AfterMethod
 	public void teardown() {
 		driver.quit();
 		
