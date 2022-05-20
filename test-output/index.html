@@ -51,17 +51,17 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>SmokeTest.xml</span>
+                    <span>TestNG_parameter.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Suite">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SeleniumDay9.GroupingTest" hash-for-method="b">b</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SeleniumDay_10.TestNG_Parameter" hash-for-method="Sum(6, 8)">Sum(6, 8)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="SeleniumDay_10.TestNG_Parameter" hash-for-method="Sum(9, 9)">Sum(9, 9)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -122,14 +127,23 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">SeleniumDay9.GroupingTest</span>
+              <span class="class-name">SeleniumDay_10.TestNG_Parameter</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="b">
-                  </a> <!-- b -->
-                  <span class="method-name">b</span>
+                  <a name="Sum(6, 8)">
+                  </a> <!-- Sum(6, 8) -->
+                  <span class="method-name">Sum</span>
+                  <span class="parameters">(6, 8)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Sum(9, 9)">
+                  </a> <!-- Sum(9, 9) -->
+                  <span class="method-name">Sum</span>
+                  <span class="parameters">(9, 9)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,27 +151,29 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/techcircle_2/Documents/Batch10-Github/EclipseWorkspace/com.seleniumbatch10/SmokeTest.xml</span>
+            <span class="header-content">/Users/techcircle_2/Documents/Batch10-Github/EclipseWorkspace/com.seleniumbatch10/TestNG_parameter.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;SmokeTest&quot;&gt;
-    &lt;groups&gt;
-      &lt;run&gt;
-        &lt;include name=&quot;smokeTest&quot;/&gt;
-        &lt;exclude name=&quot;Regression&quot;/&gt;
-      &lt;/run&gt;
-    &lt;/groups&gt;
+  &lt;parameter name=&quot;Value1&quot; value=&quot;6&quot;/&gt;
+  &lt;parameter name=&quot;Value2&quot; value=&quot;8&quot;/&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;TeslaModelX&quot;&gt;
+    &lt;parameter name=&quot;Value1&quot; value=&quot;6&quot;/&gt;
+    &lt;parameter name=&quot;Value2&quot; value=&quot;8&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;SeleniumDay9.testPriorityInTestNG&quot;/&gt;
-      &lt;class name=&quot;SeleniumDay9.OpenBrowser&quot;/&gt;
-      &lt;class name=&quot;SeleniumDay9.NewTest&quot;/&gt;
-      &lt;class name=&quot;SeleniumDay9.GroupingTest&quot;/&gt;
+      &lt;class name=&quot;SeleniumDay_10.TestNG_Parameter&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- SmokeTest --&gt;
+  &lt;/test&gt; &lt;!-- TeslaModelX --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;TeslaModelY&quot;&gt;
+    &lt;parameter name=&quot;Value1&quot; value=&quot;9&quot;/&gt;
+    &lt;parameter name=&quot;Value2&quot; value=&quot;9&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;SeleniumDay_10.TestNG_Parameter&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- TeslaModelY --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -169,7 +185,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">SmokeTest (4 classes)</span>
+                <span class="test-name">TeslaModelX (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">TeslaModelY (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -179,14 +198,6 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">smokeTest</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">b</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -203,16 +214,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'b')
-data.setCell(0, 2, 'SeleniumDay9.GroupingTest')
-data.setCell(0, 3, 17);
+data.setCell(0, 1, 'Sum')
+data.setCell(0, 2, 'SeleniumDay_10.TestNG_Parameter')
+data.setCell(0, 3, 11);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'Sum')
+data.setCell(1, 2, 'SeleniumDay_10.TestNG_Parameter')
+data.setCell(1, 3, 2);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 17 ms</span>
+              <span class="suite-total-time">Total running time: 13 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -227,51 +242,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">11 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">SeleniumDay9.NewTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">f</span>
-                <br/>
-                <span class="ignored-method-name">c</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">SeleniumDay9.testPriorityInTestNG</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">C</span>
-                <br/>
-                <span class="ignored-method-name">B</span>
-                <br/>
-                <span class="ignored-method-name">A</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">SeleniumDay9.GroupingTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">a</span>
-                <br/>
-                <span class="ignored-method-name">e</span>
-                <br/>
-                <span class="ignored-method-name">f</span>
-                <br/>
-                <span class="ignored-method-name">c</span>
-                <br/>
-                <span class="ignored-method-name">d</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">SeleniumDay9.OpenBrowser</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">Test</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -280,10 +253,14 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">SeleniumDay9.GroupingTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">SeleniumDay_10.TestNG_Parameter</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">b</span>
+                <span class="method-name">Sum(6, 8)</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">Sum(9, 9)</span>
+                <span class="method-start">68 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

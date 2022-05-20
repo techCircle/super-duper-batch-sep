@@ -1,20 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="11" total="12" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="73" started-at="2022-05-18T21:44:45 EDT" finished-at="2022-05-18T21:44:45 EDT">
+  <suite name="Suite" duration-ms="115" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
     <groups>
-      <group name="smokeTest">
-        <method signature="GroupingTest.b()[pri:0, instance:SeleniumDay9.GroupingTest@757942a1]" name="b" class="SeleniumDay9.GroupingTest"/>
-      </group> <!-- smokeTest -->
     </groups>
-    <test name="SmokeTest" duration-ms="73" started-at="2022-05-18T21:44:45 EDT" finished-at="2022-05-18T21:44:45 EDT">
-      <class name="SeleniumDay9.GroupingTest">
-        <test-method status="PASS" signature="b()[pri:0, instance:SeleniumDay9.GroupingTest@757942a1]" name="b" duration-ms="17" started-at="2022-05-18T21:44:45 EDT" finished-at="2022-05-18T21:44:45 EDT">
+    <test name="TeslaModelX" duration-ms="59" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
+      <class name="SeleniumDay_10.TestNG_Parameter">
+        <test-method status="PASS" signature="Sum(int,int)[pri:0, instance:SeleniumDay_10.TestNG_Parameter@6043cd28]" name="Sum" duration-ms="11" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- b -->
-      </class> <!-- SeleniumDay9.GroupingTest -->
-    </test> <!-- SmokeTest -->
+        </test-method> <!-- Sum -->
+      </class> <!-- SeleniumDay_10.TestNG_Parameter -->
+    </test> <!-- TeslaModelX -->
+    <test name="TeslaModelY" duration-ms="6" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
+      <class name="SeleniumDay_10.TestNG_Parameter">
+        <test-method status="PASS" signature="Sum(int,int)[pri:0, instance:SeleniumDay_10.TestNG_Parameter@17d0685f]" name="Sum" duration-ms="2" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Sum -->
+      </class> <!-- SeleniumDay_10.TestNG_Parameter -->
+    </test> <!-- TeslaModelY -->
   </suite> <!-- Suite -->
 </testng-results>
