@@ -42,7 +42,9 @@ public class Driver {
 
 			}
 
-			driver.get("https://www.techcircleschool.com");
+		//	driver.get("https://www.techcircleschool.com");
+			
+			driver.get("http://practice.automationtesting.in/");
 
 		}
 

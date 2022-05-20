@@ -1,49 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="115" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
+  <suite name="Default suite" duration-ms="66" started-at="2022-05-19T21:47:23 EDT" finished-at="2022-05-19T21:47:23 EDT">
     <groups>
     </groups>
-    <test name="TeslaModelX" duration-ms="59" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
-      <class name="SeleniumDay_10.TestNG_Parameter">
-        <test-method status="PASS" signature="Sum(int,int)[pri:0, instance:SeleniumDay_10.TestNG_Parameter@6043cd28]" name="Sum" duration-ms="11" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="66" started-at="2022-05-19T21:47:23 EDT" finished-at="2022-05-19T21:47:23 EDT">
+      <class name="SeleniumDay_10.MultiBrowserTesting">
+        <test-method status="FAIL" signature="BeforeClass(java.lang.String)[pri:0, instance:SeleniumDay_10.MultiBrowserTesting@42eca56e]" name="BeforeClass" is-config="true" duration-ms="-1653011243156" started-at="2022-05-19T21:47:23 EDT" finished-at="1969-12-31T19:00:00 EST">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by BeforeClass on method BeforeClass but has not been marked @Optional or defined
+in /private/var/folders/lg/wnhh_mhx4xg0mpl2728t5jg00000gn/T/testng-eclipse--2112394677/testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by BeforeClass on method BeforeClass but has not been marked @Optional or defined
+in /private/var/folders/lg/wnhh_mhx4xg0mpl2728t5jg00000gn/T/testng-eclipse--2112394677/testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:267)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+at org.testng.internal.Parameters.createParameters(Parameters.java:660)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:300)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:178)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Sum -->
-      </class> <!-- SeleniumDay_10.TestNG_Parameter -->
-    </test> <!-- TeslaModelX -->
-    <test name="TeslaModelY" duration-ms="6" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
-      <class name="SeleniumDay_10.TestNG_Parameter">
-        <test-method status="PASS" signature="Sum(int,int)[pri:0, instance:SeleniumDay_10.TestNG_Parameter@17d0685f]" name="Sum" duration-ms="2" started-at="2022-05-19T20:13:31 EDT" finished-at="2022-05-19T20:13:31 EDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- BeforeClass -->
+        <test-method status="SKIP" signature="login()[pri:0, instance:SeleniumDay_10.MultiBrowserTesting@42eca56e]" name="login" duration-ms="0" started-at="2022-05-19T21:47:23 EDT" finished-at="2022-05-19T21:47:23 EDT">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Parameter 'browser' is required by BeforeClass on method BeforeClass but has not been marked @Optional or defined
+in /private/var/folders/lg/wnhh_mhx4xg0mpl2728t5jg00000gn/T/testng-eclipse--2112394677/testng-customsuite.xml]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Parameter 'browser' is required by BeforeClass on method BeforeClass but has not been marked @Optional or defined
+in /private/var/folders/lg/wnhh_mhx4xg0mpl2728t5jg00000gn/T/testng-eclipse--2112394677/testng-customsuite.xml
+at org.testng.internal.Parameters.createParams(Parameters.java:267)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:355)
+at org.testng.internal.Parameters.createParameters(Parameters.java:660)
+at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:166)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:300)
+at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:178)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.util.ArrayList.forEach(ArrayList.java:1259)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Sum -->
-      </class> <!-- SeleniumDay_10.TestNG_Parameter -->
-    </test> <!-- TeslaModelY -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- login -->
+      </class> <!-- SeleniumDay_10.MultiBrowserTesting -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
