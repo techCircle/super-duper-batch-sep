@@ -34,12 +34,12 @@ public class NewTest {
 	///
 	@DataProvider(name = "data-provider")
 	public Object[][] dpMethod() {
-		return new Object[][] { { "ValidUsername","ValidPassword" }, { "ValidUsername" }, { "InvalidPassword" } };
+		return new Object[][] { { "ValidUsername","ValidPassword" }, { "ValidUsername","inValidPassword" }, { "ValidUsername","InvalidPassword" } };
 	}
 
 	@Test(dataProvider = "data-provider")
-	public void myTest(String val) {
-		System.out.println("Passed Parameter Is : " + val);
+	public void myTest(String val, String val2) {
+		System.out.println("Passed Parameter Is : " + val + "------ " +val2);
 	}
 
 }

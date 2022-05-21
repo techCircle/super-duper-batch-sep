@@ -1,61 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="4" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="6788" started-at="2022-05-21T13:04:54 EDT" finished-at="2022-05-21T13:05:01 EDT">
+  <suite name="Suite" duration-ms="32833" started-at="2022-05-21T13:46:45 EDT" finished-at="2022-05-21T13:47:18 EDT">
     <groups>
-      <group name="batch10">
-        <method signature="groupingReview.Test3()[pri:2, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test3" class="SaturdayPractice.groupingReview"/>
-        <method signature="groupingReview.Test2()[pri:3, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test2" class="SaturdayPractice.groupingReview"/>
-        <method signature="groupingReview.Test()[pri:4, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test" class="SaturdayPractice.groupingReview"/>
-      </group> <!-- batch10 -->
-      <group name="login">
-        <method signature="groupingReview.Test3()[pri:2, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test3" class="SaturdayPractice.groupingReview"/>
-        <method signature="groupingReview.Test2()[pri:3, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test2" class="SaturdayPractice.groupingReview"/>
-      </group> <!-- login -->
-      <group name="smokeTest">
-        <method signature="groupingReview.Test3()[pri:2, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test3" class="SaturdayPractice.groupingReview"/>
-      </group> <!-- smokeTest -->
     </groups>
-    <test name="groupingTest" duration-ms="6788" started-at="2022-05-21T13:04:54 EDT" finished-at="2022-05-21T13:05:01 EDT">
-      <class name="SaturdayPractice.groupingReview">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:SaturdayPractice.groupingReview@12cdcf4]" name="beforeMethod" is-config="true" duration-ms="2804" started-at="2022-05-21T13:04:54 EDT" finished-at="2022-05-21T13:04:57 EDT">
+    <test name="FireFoxTest" duration-ms="22824" started-at="2022-05-21T13:46:45 EDT" finished-at="2022-05-21T13:47:08 EDT">
+      <class name="SeleniumDay_10.MultiBrowserTesting">
+        <test-method status="PASS" signature="BeforeClass(java.lang.String)[pri:0, instance:SeleniumDay_10.MultiBrowserTesting@7cbd213e]" name="BeforeClass" is-config="true" duration-ms="22728" started-at="2022-05-21T13:46:45 EDT" finished-at="2022-05-21T13:47:08 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Test3()[pri:2, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test3" duration-ms="17" started-at="2022-05-21T13:04:57 EDT" finished-at="2022-05-21T13:04:57 EDT">
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="login()[pri:0, instance:SeleniumDay_10.MultiBrowserTesting@7cbd213e]" name="login" duration-ms="13" started-at="2022-05-21T13:47:08 EDT" finished-at="2022-05-21T13:47:08 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test3 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SaturdayPractice.groupingReview@12cdcf4]" name="afterMethod" is-config="true" duration-ms="132" started-at="2022-05-21T13:04:57 EDT" finished-at="2022-05-21T13:04:57 EDT">
+        </test-method> <!-- login -->
+      </class> <!-- SeleniumDay_10.MultiBrowserTesting -->
+    </test> <!-- FireFoxTest -->
+    <test name="ChromeTest" duration-ms="9881" started-at="2022-05-21T13:47:08 EDT" finished-at="2022-05-21T13:47:18 EDT">
+      <class name="SeleniumDay_10.MultiBrowserTesting">
+        <test-method status="PASS" signature="BeforeClass(java.lang.String)[pri:0, instance:SeleniumDay_10.MultiBrowserTesting@43a0cee9]" name="BeforeClass" is-config="true" duration-ms="9812" started-at="2022-05-21T13:47:08 EDT" finished-at="2022-05-21T13:47:18 EDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:SaturdayPractice.groupingReview@12cdcf4]" name="beforeMethod" is-config="true" duration-ms="1760" started-at="2022-05-21T13:04:57 EDT" finished-at="2022-05-21T13:04:59 EDT">
+        </test-method> <!-- BeforeClass -->
+        <test-method status="PASS" signature="login()[pri:0, instance:SeleniumDay_10.MultiBrowserTesting@43a0cee9]" name="login" duration-ms="10" started-at="2022-05-21T13:47:18 EDT" finished-at="2022-05-21T13:47:18 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Test2()[pri:3, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test2" duration-ms="2" started-at="2022-05-21T13:04:59 EDT" finished-at="2022-05-21T13:04:59 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SaturdayPractice.groupingReview@12cdcf4]" name="afterMethod" is-config="true" duration-ms="134" started-at="2022-05-21T13:04:59 EDT" finished-at="2022-05-21T13:04:59 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:SaturdayPractice.groupingReview@12cdcf4]" name="beforeMethod" is-config="true" duration-ms="1694" started-at="2022-05-21T13:04:59 EDT" finished-at="2022-05-21T13:05:01 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Test()[pri:4, instance:SaturdayPractice.groupingReview@12cdcf4]" name="Test" duration-ms="15" started-at="2022-05-21T13:05:01 EDT" finished-at="2022-05-21T13:05:01 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:SaturdayPractice.groupingReview@12cdcf4]" name="afterMethod" is-config="true" duration-ms="123" started-at="2022-05-21T13:05:01 EDT" finished-at="2022-05-21T13:05:01 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- SaturdayPractice.groupingReview -->
-    </test> <!-- groupingTest -->
+        </test-method> <!-- login -->
+      </class> <!-- SeleniumDay_10.MultiBrowserTesting -->
+    </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>
