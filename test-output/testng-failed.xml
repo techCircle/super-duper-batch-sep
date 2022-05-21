@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumDay_10.MultiBrowserTesting">
+      <class name="SaturdayPractice.OpenBrowser">
         <methods>
-          <include name="BeforeClass"/>
-          <include name="login"/>
+          <include name="beforeMethod"/>
+          <include name="TestingBaseClass"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- SeleniumDay_10.MultiBrowserTesting -->
+      </class> <!-- SaturdayPractice.OpenBrowser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

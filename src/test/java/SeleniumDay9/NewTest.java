@@ -23,6 +23,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
 
 public class NewTest {
+	
 	@Test
 	public void f() {
 		System.out.println("f");

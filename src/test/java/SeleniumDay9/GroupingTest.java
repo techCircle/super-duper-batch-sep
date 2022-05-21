@@ -8,9 +8,9 @@ import Utilities.Driver;
 public class GroupingTest {
 	
 	
-	@Test(groups= {"smokeTest","Regression"})
+	@Test(groups= {"smokeTest","Regression", "login"})
 	public void a() {
-		System.out.println("a");
+		System.out.println("login");
 	}
 	
 	@Test(groups= "smokeTest")
