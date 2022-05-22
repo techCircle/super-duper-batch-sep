@@ -1,18 +1,16 @@
-package Nui51TestCases;
+package testCase51;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.Assert;
-import org.testng.AssertJUnit;
 import java.math.BigDecimal;
 
 import java.text.ParseException;
 import java.util.List;
 import java.util.Locale;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -21,10 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
-
 import Utilities.Currency;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -98,7 +93,7 @@ public class Homepage {
 			
 				String text = driver.findElement(By.xpath("//*[@class='product_title entry-title']")).getText();
 				System.out.println(text);
-				AssertJUnit.assertTrue(expectedTexts[i].equals(text)) ;
+				Assert.assertTrue(expectedTexts[i].equals(text)) ;
 									
 				driver.navigate().back();
 				
@@ -112,17 +107,17 @@ public class Homepage {
 			
 			driver.findElement(By.xpath("//*[@id=\"text-22-sub_row_1-0-2-0-0\"]/div/ul/li/a[1]/img")).click();
 			driver.findElement(By.xpath("//*[@id=\"product-160\"]/div[3]/ul/li[1]/a")).click();
-			AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"tab-description\"]/h2")).isDisplayed());
+			Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"tab-description\"]/h2")).isDisplayed());
 			driver.navigate().back();
 			
 			driver.findElement(By.xpath("//*[@id=\"text-22-sub_row_1-0-2-1-0\"]/div/ul/li/a[1]/img")).click();
 			driver.findElement(By.xpath("//*[@id=\"product-163\"]/div[3]/ul/li[1]/a")).click();
-			AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"product-163\"]/div[3]/ul/li[1]/a")).isDisplayed());
+			Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"product-163\"]/div[3]/ul/li[1]/a")).isDisplayed());
 			driver.navigate().back();
 			
 			driver.findElement(By.xpath("//*[@id=\"text-22-sub_row_1-0-2-2-0\"]/div/ul/li/a[1]/img")).click();
 			driver.findElement(By.xpath("//*[@id=\"product-165\"]/div[3]/ul/li[1]/a")).click();
-			AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"tab-description\"]/h2")).isDisplayed());
+			Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"tab-description\"]/h2")).isDisplayed());
 			driver.navigate().back();
 		}
 		
@@ -131,17 +126,17 @@ public class Homepage {
 			this.imagesInArrivalsShouldNavigate();
 			driver.findElement(By.xpath("//*[@id=\"text-22-sub_row_1-0-2-0-0\"]/div/ul/li/a[1]/img")).click();
 			driver.findElement(By.xpath("//*[@id=\"product-160\"]/div[3]/ul/li[2]/a")).click();
-			AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"comments\"]/h2")).isDisplayed());
+			Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"comments\"]/h2")).isDisplayed());
 			driver.navigate().back();
 			
 			driver.findElement(By.xpath("//*[@id=\"text-22-sub_row_1-0-2-1-0\"]/div/ul/li/a[1]/img")).click();
 			driver.findElement(By.xpath("//*[@id=\"product-163\"]/div[3]/ul/li[2]/a")).click();
-			AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"comments\"]/h2")).isDisplayed());
+			Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"comments\"]/h2")).isDisplayed());
 			driver.navigate().back();
 			
 			driver.findElement(By.xpath("//*[@id=\"text-22-sub_row_1-0-2-2-0\"]/div/ul/li/a[1]/img")).click();
 			driver.findElement(By.xpath("//*[@id=\"product-165\"]/div[3]/ul/li[2]/a")).click();
-			AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"comments\"]/h2")).isDisplayed());
+			Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"comments\"]/h2")).isDisplayed());
 			driver.navigate().back();
 			
 			
@@ -167,7 +162,7 @@ public class Homepage {
 			String cart = driver.findElement(By.xpath("//*[@id=\"wpmenucartli\"]/a/span[2]")).getText();
 			System.out.println(cart);
 			//String expectedCart = price;
-			AssertJUnit.assertTrue(cart.equals(expectedPrice));
+			Assert.assertTrue(cart.equals(expectedPrice));
 	
 		}
 		
@@ -197,7 +192,7 @@ public class Homepage {
 
 			String alert = String.format("Value must be less than or equal to %d.", Integer.valueOf(getMax));
 			
-			AssertJUnit.assertTrue(validationMessage.equals(alert));
+			Assert.assertTrue(validationMessage.equals(alert));
 			
 		}
 		
@@ -210,7 +205,7 @@ public class Homepage {
 			System.out.println(driver.getCurrentUrl());
 			String expectedURL = "http://practice.automationtesting.in/basket/";
 			
-			AssertJUnit.assertTrue(driver.getCurrentUrl().equals(expectedURL));
+			Assert.assertTrue(driver.getCurrentUrl().equals(expectedURL));
 			
 		}
 		
@@ -228,7 +223,7 @@ public class Homepage {
 			
 			String msg = driver.findElement(By.xpath("//*[@class='woocommerce']/ul/li")).getText();
 			System.out.println(msg);
-			AssertJUnit.assertEquals(msg, "Coupon usage limit has been reached.");
+			Assert.assertEquals(msg, "Coupon usage limit has been reached.");
 			
 		}
 		
@@ -255,7 +250,7 @@ public class Homepage {
 			String text = driver.findElement(By.xpath("//*[@class='cart-empty']")).getText();
 			System.out.println(text);
 			String expectedText = "Your basket is currently empty.";
-			AssertJUnit.assertTrue(text.equals(expectedText));
+			Assert.assertTrue(text.equals(expectedText));
 			
 		}
 		
@@ -274,11 +269,9 @@ public class Homepage {
 			
 			//Verify if price has been updated
 			String pricePerItem = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/form/table/tbody/tr[1]/td[4]/span")).getText();
-			
 			Thread.sleep(2000);
 			
 			String totalPrice = driver.findElement(By.xpath("//td[@class='product-subtotal']/span")).getText();
-			
 //			System.out.println(pricePerItem + "  " + totalPrice);
 			
 			BigDecimal parsedPrice = Currency.parse(pricePerItem, Locale.US);			
@@ -288,7 +281,7 @@ public class Homepage {
 //			System.out.println(parsedTotal);
 //			System.out.println("Price per item is : "+ pricePerItem  +" "+ "Total price is : " + totalPrice);
 			
-			AssertJUnit.assertTrue(Double.valueOf(numItem) * Double.valueOf(parsedPrice.toString()) == Double.valueOf(parsedTotal.toString()));
+			Assert.assertTrue(Double.valueOf(numItem) * Double.valueOf(parsedPrice.toString()) == Double.valueOf(parsedTotal.toString()));
 					
 		}
 		
@@ -301,7 +294,7 @@ public class Homepage {
 			String total = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/th")).getText();
 			System.out.println(total);
 			String expected = "Total";
-			AssertJUnit.assertTrue(total.equals(expected));
+			Assert.assertTrue(total.equals(expected));
 		}
 		
 		@Test 
@@ -317,13 +310,11 @@ public class Homepage {
 			
 			this.arrivalsAddToBasketItems();
 			
-			
 			//check if user can see total and subTotal price
 			String total = driver.findElement(By.xpath("//tr[@class='order-total']")).getText().substring(7);
-			
 			String subTotal = driver.findElement(By.xpath("//tr[@class='cart-subtotal']")).getText().substring(10);
 			
-			AssertJUnit.assertTrue(Double.valueOf(total) > Double.valueOf(subTotal));
+			Assert.assertTrue(Double.valueOf(total) > Double.valueOf(subTotal));
 			
 		}
 		
@@ -348,13 +339,13 @@ public class Homepage {
 			
 			//Check if user can view Billing Details,Order Details,Additional details and Payment gateway detail
 			String billingDetails = driver.findElement(By.xpath("//div[@class='woocommerce-billing-fields']/h3")).getText();
-			AssertJUnit.assertEquals(billingDetails, "Billing Details");
+			Assert.assertEquals(billingDetails, "Billing Details");
 			
 			String orderDetails = driver.findElement(By.id("order_review_heading")).getText();
-			AssertJUnit.assertEquals(orderDetails, "Your order");
+			Assert.assertEquals(orderDetails, "Your order");
 			
 			String additionalDetails = driver.findElement(By.xpath("//div[@class='woocommerce-shipping-fields']/h3")).getText();
-			AssertJUnit.assertEquals(additionalDetails, "Additional Information");
+			Assert.assertEquals(additionalDetails, "Additional Information");
 			
 			//check if payment gateway is displayed
 			driver.findElement(By.xpath("//ul[@class='wc_payment_methods payment_methods methods']")).isDisplayed();
@@ -389,7 +380,7 @@ public class Homepage {
 		    //click to add coupon
 		    driver.findElement(By.xpath("//a[@class='showcoupon']")).click();
 		    wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("coupon_code"))));
-		    AssertJUnit.assertTrue(driver.findElement(By.id("coupon_code")).isDisplayed());
+		    Assert.assertTrue(driver.findElement(By.id("coupon_code")).isDisplayed());
 		    
 		}
 		
@@ -401,13 +392,13 @@ public class Homepage {
 			
 			//Check if user can view Billing Details,Order Details,Additional details and Payment gateway detail
 			String billingDetails = driver.findElement(By.xpath("//div[@class='woocommerce-billing-fields']/h3")).getText();
-			AssertJUnit.assertEquals(billingDetails, "Billing Details");
+			Assert.assertEquals(billingDetails, "Billing Details");
 			
 			String orderDetails = driver.findElement(By.id("order_review_heading")).getText();
-			AssertJUnit.assertEquals(orderDetails, "Your order");
+			Assert.assertEquals(orderDetails, "Your order");
 			
 			String additionalDetails = driver.findElement(By.xpath("//div[@class='woocommerce-shipping-fields']/h3")).getText();
-			AssertJUnit.assertEquals(additionalDetails, "Additional Information");
+			Assert.assertEquals(additionalDetails, "Additional Information");
 			
 			//check if payment gateway is displayed
 			driver.findElement(By.xpath("//ul[@class='wc_payment_methods payment_methods methods']")).isDisplayed();
@@ -443,7 +434,7 @@ public class Homepage {
 		    Thread.sleep(3000);
 		    
 		    //use can view confirmation page with order details,bank details,customer details and billing details
-			AssertJUnit.assertTrue(driver.findElement(By.xpath("//p[contains(text(), 'Thank you. Your order has been received.')]")).isDisplayed());
+			Assert.assertTrue(driver.findElement(By.xpath("//p[contains(text(), 'Thank you. Your order has been received.')]")).isDisplayed());
 			
 		}
 		

@@ -1,14 +1,13 @@
-package Nui51TestCases;
+package testCase51;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -42,7 +41,7 @@ public class MyAccountRegistration {
 		driver.findElement(By.xpath("//*[@id=\"reg_password\"]")).sendKeys("nnljl:)");
 		driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[2]/form/p[3]/input[3]")).click();
 		
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("/html/body")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("/html/body")).isDisplayed());
 	}
 
 	@Test
@@ -61,7 +60,7 @@ public class MyAccountRegistration {
 		String errorMessage = driver.findElement(By.xpath("//*[@class='woocommerce-error']/li")).getText();
 		
 		String expectedErrMsg = "Error: Please provide a valid email address.";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 		
 	}
 	
@@ -80,7 +79,7 @@ public class MyAccountRegistration {
 		String errorMessage = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[1]/ul/li")).getText();
 		System.out.println("Empty email: "+errorMessage);
 		String expectedErrMsg = "Error: Please provide a valid email address.";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 	}
 	
 	@Test
@@ -94,7 +93,7 @@ public class MyAccountRegistration {
 		String errorMessage = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul/li")).getText();
 		System.out.println("Empty Pwd: "+errorMessage);
 		String expectedErrMsg = "Error: Please enter an account password.";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 		
 	}  
 	
@@ -109,7 +108,7 @@ public class MyAccountRegistration {
 		String errorMessage = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul/li")).getText();
 		System.out.println("EmptyBoth: "+errorMessage);
 		String expectedErrMsg = "Error: Please provide a valid email address.";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 		
 	}
 	

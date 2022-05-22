@@ -1,15 +1,14 @@
-package Nui51TestCases;
+package testCase51;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -40,13 +39,13 @@ public class MyAccount {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
+		Assert.assertTrue(logOut.equals(signOut));
 		
 		//click on dashboard
 		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[1]/a")).click();
 		
 		//check if see dashboard
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[2]")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[2]")).isDisplayed());
 		
 	}
 	  
@@ -62,14 +61,14 @@ public class MyAccount {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
+		Assert.assertTrue(logOut.equals(signOut));
 		
 		//click on order link
 		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[2]/a")).click();
 		Thread.sleep(3000);
 		
 		//verify if see order detail on the page
-		AssertJUnit.assertTrue(driver.getCurrentUrl().contains("orders"));
+		Assert.assertTrue(driver.getCurrentUrl().contains("orders"));
 			
 	}
 	
@@ -85,7 +84,7 @@ public class MyAccount {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
+		Assert.assertTrue(logOut.equals(signOut));
 		
 		//go to shop to add something in the basket
 		driver.findElement(By.xpath("//*[@id=\"menu-item-40\"]/a")).click();
@@ -104,15 +103,15 @@ public class MyAccount {
 		//verify if user can see order details, customer details and billing details
 		String orderDetailsMsg = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/h2")).getText();
 		String expectedOrderMsg = "Order Details";
-		AssertJUnit.assertTrue(orderDetailsMsg.equals(expectedOrderMsg));
+		Assert.assertTrue(orderDetailsMsg.equals(expectedOrderMsg));
 		
 		String customerDetailsMsg = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/header[1]/h2")).getText();
 		String expectedCustomerMsg = "Customer Details";
-		AssertJUnit.assertTrue(customerDetailsMsg.equals(expectedCustomerMsg));
+		Assert.assertTrue(customerDetailsMsg.equals(expectedCustomerMsg));
 		
 		String billingDetailsMsg = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/header[2]/h3")).getText();
 		String expectedBillingMsg = "Billing Address";
-		AssertJUnit.assertTrue(billingDetailsMsg.equals(expectedBillingMsg));
+		Assert.assertTrue(billingDetailsMsg.equals(expectedBillingMsg));
 		
 		
 		
@@ -130,7 +129,7 @@ public class MyAccount {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
+		Assert.assertTrue(logOut.equals(signOut));
 		
 		//go to shop to add something in the basket
 		driver.findElement(By.xpath("//*[@id=\"menu-item-40\"]/a")).click();
@@ -152,7 +151,7 @@ public class MyAccount {
 		orderDetailsMsg = orderDetailsMsg.substring(0,7)+ " "+ orderDetailsMsg.substring(27,39)+ " "+orderDetailsMsg.substring(orderDetailsMsg.length()-11, orderDetailsMsg.length()-1);
 		System.out.println(orderDetailsMsg);
 		String expectedText = "Order # May 18, 2022 Processing";
-		AssertJUnit.assertTrue(orderDetailsMsg.equals(expectedText));
+		Assert.assertTrue(orderDetailsMsg.equals(expectedText));
 	}
 	
 	@Test
@@ -167,20 +166,14 @@ public class MyAccount {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
-		
-//		//click on order link
-//		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[2]/a")).click();
-//		
-//		//verify if see order detail on the page
-//		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div")).isDisplayed());
-//		
+		Assert.assertTrue(logOut.equals(signOut));
+	
 		//click on address link
 		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[4]/a")).click();
 		
 		//verify if user can see Billing and Shipping address
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[1]/header/h3")).isDisplayed());
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[2]/header/h3")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[1]/header/h3")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[2]/header/h3")).isDisplayed());
 		
 		
 	}
@@ -197,14 +190,14 @@ public class MyAccount {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
+		Assert.assertTrue(logOut.equals(signOut));
 		
 		//click on address link
 		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[4]/a")).click();
 		
 		//verify if user can see Billing and Shipping address
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[1]/header/h3")).isDisplayed());
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[2]/header/h3")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[1]/header/h3")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[2]/header/h3")).isDisplayed());
 		
 		//click edit shipping address
 		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/div/div[2]/header/a")).click();
@@ -245,7 +238,7 @@ public class MyAccount {
 		//verify if address has been changed successfully
 		String str = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div[1]")).getText();
 		String expectedStr = "Address changed successfully.";
-		AssertJUnit.assertTrue(str.equals(expectedStr));
+		Assert.assertTrue(str.equals(expectedStr));
 		
 	}
 	
@@ -253,24 +246,24 @@ public class MyAccount {
 	public void accountDetails() {
 		
 		//click on my account menu
-				driver.findElement(By.xpath("//*[@id=\"menu-item-50\"]/a")).click();
-				driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("nui@gmail.com");
-				
-				driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("nnljl:)");
-				driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/form/p[3]/input[3]")).click();
-				String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
-				String signOut = "Sign out";
-				//check if user logging in successfully
-				AssertJUnit.assertTrue(logOut.equals(signOut));
-				
-				//click on account details
-				driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a")).click();
-				
-				//verify if it show that we can change a new password
-				String newpwdstr = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/form/fieldset/p[2]/label")).getText();
-				System.out.println(newpwdstr);
-				String expectedNewPwd = "New Password (leave blank to leave unchanged)";
-				AssertJUnit.assertTrue(newpwdstr.equals(expectedNewPwd));
+		driver.findElement(By.xpath("//*[@id=\"menu-item-50\"]/a")).click();
+		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("nui@gmail.com");
+		
+		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("nnljl:)");
+		driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/form/p[3]/input[3]")).click();
+		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
+		String signOut = "Sign out";
+		//check if user logging in successfully
+		Assert.assertTrue(logOut.equals(signOut));
+		
+		//click on account details
+		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a")).click();
+		
+		//verify if it show that we can change a new password
+		String newpwdstr = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/form/fieldset/p[2]/label")).getText();
+		System.out.println(newpwdstr);
+		String expectedNewPwd = "New Password (leave blank to leave unchanged)";
+		Assert.assertTrue(newpwdstr.equals(expectedNewPwd));
 		
 	}
 	
@@ -285,7 +278,7 @@ public class MyAccount {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
+		Assert.assertTrue(logOut.equals(signOut));
 		
 		//click on logout button
 		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[6]/a")).click();
@@ -294,7 +287,7 @@ public class MyAccount {
 		String loginMsg = driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/h2")).getText();
 		System.out.println(loginMsg);
 		String expectedLoginMsg = "Login";
-		AssertJUnit.assertTrue(loginMsg.equals(expectedLoginMsg));
+		Assert.assertTrue(loginMsg.equals(expectedLoginMsg));
 		
 	}
 	

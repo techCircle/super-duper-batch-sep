@@ -1,10 +1,10 @@
-package Nui51TestCases;
+package testCase51;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.List;
@@ -15,12 +15,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.w3c.dom.Text;
-
 import Utilities.Currency;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -61,14 +58,13 @@ public class Shop {
 		driver.findElement(By.xpath("//*[@id=\"woocommerce_price_filter-2\"]/form/div/div[2]/button")).click();
 		
 		//check if it is now show the book up to 450
-		//driver.findElement(By.xpath("//*[@id=\"content\"]/form/select")).click();
 		Select price = new Select(driver.findElement(By.xpath("//*[@id=\"content\"]/form/select")));
 		price.selectByValue("price-desc");
 		
 		String priceText = driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[1]/a[1]/span[2]/ins/span")).getText();
 		System.out.println(priceText);
 		priceText = priceText.substring(1);
-		AssertJUnit.assertTrue(Double.valueOf(priceText)<= 450);
+		Assert.assertTrue(Double.valueOf(priceText)<= 450);
 	
 	}
 	
@@ -87,7 +83,7 @@ public class Shop {
 			text = item.getText();
 			System.out.println(text);
 			
-			AssertJUnit.assertTrue(text.contains("HTML"));
+			Assert.assertTrue(text.contains("HTML"));
 		}
 			
 	}
@@ -105,7 +101,7 @@ public class Shop {
 		
 		System.out.println(driver.getCurrentUrl());
 		String expectedText = "orderby=popularity";
-		AssertJUnit.assertTrue(driver.getCurrentUrl().contains(expectedText));
+		Assert.assertTrue(driver.getCurrentUrl().contains(expectedText));
 		
 	}
 	
@@ -122,7 +118,7 @@ public class Shop {
 				
 		System.out.println(driver.getCurrentUrl());
 		String expectedText = "orderby=rating";
-		AssertJUnit.assertTrue(driver.getCurrentUrl().contains(expectedText));
+		Assert.assertTrue(driver.getCurrentUrl().contains(expectedText));
 		
 		
 	}
@@ -140,7 +136,7 @@ public class Shop {
 				
 		System.out.println(driver.getCurrentUrl());
 		String expectedText = "orderby=date";
-		AssertJUnit.assertTrue(driver.getCurrentUrl().contains(expectedText));
+		Assert.assertTrue(driver.getCurrentUrl().contains(expectedText));
 		
 		
 	}
@@ -158,7 +154,7 @@ public class Shop {
 				
 		System.out.println(driver.getCurrentUrl());
 		String expectedText = "orderby=price";
-		AssertJUnit.assertTrue(driver.getCurrentUrl().contains(expectedText));
+		Assert.assertTrue(driver.getCurrentUrl().contains(expectedText));
 		
 	}
 	
@@ -175,7 +171,7 @@ public class Shop {
 				
 		System.out.println(driver.getCurrentUrl());
 		String expectedText = "orderby=price-desc";
-		AssertJUnit.assertTrue(driver.getCurrentUrl().contains(expectedText));
+		Assert.assertTrue(driver.getCurrentUrl().contains(expectedText));
 		
 		
 	}
@@ -196,14 +192,14 @@ public class Shop {
 		String text = driver.findElement(By.xpath("//*[@id=\"product-160\"]/div[2]/p")).getText();
 		System.out.println(text);
 		String expectedText = "Out of stock";
-		AssertJUnit.assertTrue(text.equals(expectedText));
+		Assert.assertTrue(text.equals(expectedText));
 		
 		//out of stock item cannot be add to the basket so verify after clicking that item does not add to the basket
 		driver.findElement(By.xpath("//*[@id=\"product-160\"]/div[2]/p")).click();
 		String numItem = driver.findElement(By.xpath("//*[@id=\"wpmenucartli\"]/a/span[1]")).getText();
 		System.out.println(numItem);
 		String expectedNumItem = "0 Items";
-		AssertJUnit.assertTrue(numItem.equals(expectedNumItem));
+		Assert.assertTrue(numItem.equals(expectedNumItem));
 
 
 	
@@ -222,7 +218,7 @@ public class Shop {
 		discountPrice = discountPrice.substring(1,4);
 		System.out.println("Original price = "+ originalPrice + " Discount price = "+ discountPrice);
 		
-		AssertJUnit.assertTrue(Integer.valueOf(originalPrice) > Integer.valueOf(discountPrice));
+		Assert.assertTrue(Integer.valueOf(originalPrice) > Integer.valueOf(discountPrice));
 		
 	}
 	
@@ -238,38 +234,38 @@ public class Shop {
 		System.out.println("Number of item is "+numItem);
 		//numItem = numItem.substring(0,1);
 		String expectedNumItem = "1 Item";
-		AssertJUnit.assertTrue(numItem.equals(expectedNumItem));
+		Assert.assertTrue(numItem.equals(expectedNumItem));
 		
 		String price = driver.findElement(By.xpath("//*[@class='amount']")).getText();
 		System.out.println("Price is "+ price);
 		price = price.substring(1);
 		String expectedPrice = "250.00";
-		AssertJUnit.assertTrue(price.equals(expectedPrice));
+		Assert.assertTrue(price.equals(expectedPrice));
 		
 		//Click on View Basket link which navigates to proceed to check out page.
 		driver.findElement(By.xpath("//*[@id='content']/ul/li[2]/a[3]")).click();
 		
 		
 		//check if subtotal and total are displayed
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/th")).isDisplayed());
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/th")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/th")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/th")).isDisplayed());
 		String subTotal = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/td/span")).getText();
 		String total = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/td/strong/span")).getText();
 		subTotal = subTotal.substring(1);
 		total = total.substring(1);
 		
 		//check if subtotal is more than total
-		AssertJUnit.assertTrue(Double.valueOf(total) > Double.valueOf(subTotal));
+		Assert.assertTrue(Double.valueOf(total) > Double.valueOf(subTotal));
 		System.out.println(subTotal+" and " + total);
 		
 		//Click on proceed to check out button
 		driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/div/a")).click();
 		
 		//Check billing detail, order detail, additional detail, payment gateway are displayed
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_details\"]/div[1]/div/h3")).isDisplayed());
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_details\"]/div[2]/div/h3")).isDisplayed());
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"order_review_heading\"]")).isDisplayed());
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"payment\"]/ul")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_details\"]/div[1]/div/h3")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_details\"]/div[2]/div/h3")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"order_review_heading\"]")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"payment\"]/ul")).isDisplayed());
 		
 		//fill billing detail form
 		driver.findElement(By.xpath("//*[@id=\"billing_first_name\"]")).sendKeys("Jane");
@@ -299,7 +295,7 @@ public class Shop {
 
 		String expectedMsg = "Thank you. Your order has been received.";
 		System.out.println(msg);
-		AssertJUnit.assertTrue(msg.equals(expectedMsg));
+		Assert.assertTrue(msg.equals(expectedMsg));
 	
 	}
 	
@@ -309,76 +305,76 @@ public class Shop {
 		driver.findElement(By.xpath("//*[@id=\"menu-item-40\"]/a")).click();
 		
 		//add to basket
-				driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[2]/a[2]")).click();
-				Thread.sleep(3000);
-				
-				String numItem = driver.findElement(By.xpath("//*[@class='cartcontents']")).getText();
-				System.out.println("Number of item is "+numItem);
-				//numItem = numItem.substring(0,1);
-				String expectedNumItem = "1 Item";
-				AssertJUnit.assertTrue(numItem.equals(expectedNumItem));
-				
-				String price = driver.findElement(By.xpath("//*[@class='amount']")).getText();
-				System.out.println("Price is "+ price);
-				price = price.substring(1);
-				String expectedPrice = "250.00";
-				AssertJUnit.assertTrue(price.equals(expectedPrice));
-				
-				//Click on Item link which navigates to proceed to check out page.
-				driver.findElement(By.xpath("//*[@id=\"wpmenucartli\"]/a/span[1]")).click();
-				
-				
-				//check if subtotal and total are displayed
-				AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/th")).isDisplayed());
-				AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/th")).isDisplayed());
-				String subTotal = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/td/span")).getText();
-				String total = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/td/strong/span")).getText();
-				subTotal = subTotal.substring(1);
-				total = total.substring(1);
-				
-				//check if subtotal is more than total
-				AssertJUnit.assertTrue(Double.valueOf(total) > Double.valueOf(subTotal));
-				System.out.println(subTotal+" and " + total);
-				
-				//Click on proceed to check out button
-				driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/div/a")).click();
-				
-				//Check billing detail, order detail, additional detail, payment gateway are displayed
-				AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_details\"]/div[1]/div/h3")).isDisplayed());
-				AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_details\"]/div[2]/div/h3")).isDisplayed());
-				AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"order_review_heading\"]")).isDisplayed());
-				AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"payment\"]/ul")).isDisplayed());
-				
-				//fill billing detail form
-				driver.findElement(By.xpath("//*[@id=\"billing_first_name\"]")).sendKeys("Jane");
-				driver.findElement(By.xpath("//*[@id=\"billing_last_name\"]")).sendKeys("Doe");
-				driver.findElement(By.xpath("//*[@id=\"billing_email\"]")).sendKeys("jane@gmail.com");
-				driver.findElement(By.xpath("//*[@id=\"billing_phone\"]")).sendKeys("1231231234");
-
-				driver.findElement(By.xpath("//*[@id=\"billing_address_1\"]")).sendKeys("123 boo st.");
-				driver.findElement(By.xpath("//*[@id=\"billing_city\"]")).sendKeys("San Francisco");
-
-				driver.findElement(By.xpath("//span[@id='select2-chosen-2']")).click();
-				WebElement box = driver.findElement(By.xpath("//*[@id=\"s2id_autogen2_search\"]"));
-				box.sendKeys("California");
-				box.sendKeys(Keys.RETURN);
-				
-				driver.findElement(By.xpath("//*[@id=\"billing_postcode\"]")).sendKeys("99999");
-				
-				//click choose payment
-				driver.findElement(By.xpath("//*[@id=\"payment_method_cod\"]")).click();
-				
-				//click continue to payment
-				driver.findElement(By.xpath("//*[@id=\"place_order\"]")).click();
-				Thread.sleep(5000);
-				
-				//confirmation page
-				String msg = driver.findElement(By.xpath("//*[@class='woocommerce-thankyou-order-received']")).getText();
-
-				String expectedMsg = "Thank you. Your order has been received.";
-				System.out.println(msg);
-				AssertJUnit.assertTrue(msg.equals(expectedMsg));
+		driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[2]/a[2]")).click();
+		Thread.sleep(3000);
 		
+		String numItem = driver.findElement(By.xpath("//*[@class='cartcontents']")).getText();
+		System.out.println("Number of item is "+numItem);
+		//numItem = numItem.substring(0,1);
+		String expectedNumItem = "1 Item";
+		Assert.assertTrue(numItem.equals(expectedNumItem));
+		
+		String price = driver.findElement(By.xpath("//*[@class='amount']")).getText();
+		System.out.println("Price is "+ price);
+		price = price.substring(1);
+		String expectedPrice = "250.00";
+		Assert.assertTrue(price.equals(expectedPrice));
+		
+		//Click on Item link which navigates to proceed to check out page.
+		driver.findElement(By.xpath("//*[@id=\"wpmenucartli\"]/a/span[1]")).click();
+		
+		
+		//check if subtotal and total are displayed
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/th")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/th")).isDisplayed());
+		String subTotal = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/td/span")).getText();
+		String total = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/td/strong/span")).getText();
+		subTotal = subTotal.substring(1);
+		total = total.substring(1);
+		
+		//check if subtotal is more than total
+		Assert.assertTrue(Double.valueOf(total) > Double.valueOf(subTotal));
+		System.out.println(subTotal+" and " + total);
+		
+		//Click on proceed to check out button
+		driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/div/a")).click();
+		
+		//Check billing detail, order detail, additional detail, payment gateway are displayed
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_details\"]/div[1]/div/h3")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_details\"]/div[2]/div/h3")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"order_review_heading\"]")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"payment\"]/ul")).isDisplayed());
+		
+		//fill billing detail form
+		driver.findElement(By.xpath("//*[@id=\"billing_first_name\"]")).sendKeys("Jane");
+		driver.findElement(By.xpath("//*[@id=\"billing_last_name\"]")).sendKeys("Doe");
+		driver.findElement(By.xpath("//*[@id=\"billing_email\"]")).sendKeys("jane@gmail.com");
+		driver.findElement(By.xpath("//*[@id=\"billing_phone\"]")).sendKeys("1231231234");
+
+		driver.findElement(By.xpath("//*[@id=\"billing_address_1\"]")).sendKeys("123 boo st.");
+		driver.findElement(By.xpath("//*[@id=\"billing_city\"]")).sendKeys("San Francisco");
+
+		driver.findElement(By.xpath("//span[@id='select2-chosen-2']")).click();
+		WebElement box = driver.findElement(By.xpath("//*[@id=\"s2id_autogen2_search\"]"));
+		box.sendKeys("California");
+		box.sendKeys(Keys.RETURN);
+		
+		driver.findElement(By.xpath("//*[@id=\"billing_postcode\"]")).sendKeys("99999");
+		
+		//click choose payment
+		driver.findElement(By.xpath("//*[@id=\"payment_method_cod\"]")).click();
+		
+		//click continue to payment
+		driver.findElement(By.xpath("//*[@id=\"place_order\"]")).click();
+		Thread.sleep(5000);
+		
+		//confirmation page
+		String msg = driver.findElement(By.xpath("//*[@class='woocommerce-thankyou-order-received']")).getText();
+
+		String expectedMsg = "Thank you. Your order has been received.";
+		System.out.println(msg);
+		Assert.assertTrue(msg.equals(expectedMsg));
+
 	}
 	
 	@Test 
@@ -430,8 +426,8 @@ public class Shop {
 		driver.findElement(By.xpath("//a[@class='wpmenucart-contents']")).click();
 		
 		//check if subtotal and total are displayed
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/th")).isDisplayed());
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/th")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/th")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/th")).isDisplayed());
 		String subTotal = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/td/span")).getText();
 		String total = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/td/strong/span")).getText();
 
@@ -444,7 +440,7 @@ public class Shop {
 		BigDecimal parsedSubTotal = Currency.parse(subTotal, Locale.US);
 		
 		//check if total is more than subtotal
-		AssertJUnit.assertTrue(Double.valueOf(parsedTotal.toString()) > Double.valueOf(parsedSubTotal.toString()));
+		Assert.assertTrue(Double.valueOf(parsedTotal.toString()) > Double.valueOf(parsedSubTotal.toString()));
 		System.out.println(parsedSubTotal+" and " + parsedTotal);
 		
 		int roamingTax = 5;
@@ -463,7 +459,7 @@ public class Shop {
 		double tax = Double.valueOf(taxstr);
 		
 		//check usa tax
-		AssertJUnit.assertTrue((Double.valueOf(parsedBookPrice.toString()) * roamingTax / 100) == tax); 
+		Assert.assertTrue((Double.valueOf(parsedBookPrice.toString()) * roamingTax / 100) == tax); 
 		
 		//check indian tax
 		//go to my account
@@ -497,16 +493,12 @@ public class Shop {
 		
 		//get indian tax 
 		String indianTaxSum = driver.findElement(By.xpath("//td[@data-title='Tax']")).getText();
-		BigDecimal parsedIndianTaxSum = Currency.parse(indianTaxSum, Locale.US);
-		
+		BigDecimal parsedIndianTaxSum = Currency.parse(indianTaxSum, Locale.US);	
 		
 		System.out.println("P BOOK price : "+ parsedBookPrice + " tax is "+ parsedIndianTaxSum);
+		System.out.println(Double.valueOf(parsedBookPrice.toString()) * indianTax / 100);		
 		
-		System.out.println(Double.valueOf(parsedBookPrice.toString()) * indianTax / 100);
-		
-		
-		AssertJUnit.assertTrue((Double.valueOf(parsedBookPrice.toString()) * indianTax / 100) == Double.valueOf(parsedIndianTaxSum.toString())); 
-					
+		Assert.assertTrue((Double.valueOf(parsedBookPrice.toString()) * indianTax / 100) == Double.valueOf(parsedIndianTaxSum.toString())); 				
 
 	}
 	

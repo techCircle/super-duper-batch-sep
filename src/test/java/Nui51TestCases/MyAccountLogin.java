@@ -1,14 +1,10 @@
-package Nui51TestCases;
+package testCase51;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.AssertJUnit;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -49,7 +45,7 @@ public class MyAccountLogin {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
+		Assert.assertTrue(logOut.equals(signOut));
 	}
 	
 	@Test
@@ -62,7 +58,7 @@ public class MyAccountLogin {
 		String errorMessage = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul/li")).getText();
 		System.out.println(errorMessage);
 		String expectedErrMsg = "Error: A user could not be found with this email address.";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 	}
 	
 	@Test
@@ -76,7 +72,7 @@ public class MyAccountLogin {
 		String errorMessage = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul/li")).getText();
 		System.out.println(errorMessage);
 		String expectedErrMsg = "Error: Password is required.";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 		
 	}
 	
@@ -91,7 +87,7 @@ public class MyAccountLogin {
 		String errorMessage = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul/li")).getText();
 		System.out.println(errorMessage);
 		String expectedErrMsg = "Error: Username is required.";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 		
 	}
 	
@@ -106,7 +102,7 @@ public class MyAccountLogin {
 		String errorMessage = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul/li")).getText();
 		System.out.println(errorMessage);
 		String expectedErrMsg = "Error: Username is required.";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 				
 	}
 	
@@ -117,7 +113,7 @@ public class MyAccountLogin {
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("ghythvhy");
 		
 		WebElement password = driver.findElement(By.xpath("//*[@class='woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide'][2]/input"));
-		AssertJUnit.assertTrue(password.getAttribute("type").equals("password")); 
+		Assert.assertTrue(password.getAttribute("type").equals("password")); 
 	}
 	
 	@Test
@@ -131,7 +127,7 @@ public class MyAccountLogin {
 		String errorMessage = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/ul")).getText();
 		System.out.println(errorMessage);
 		String expectedErrMsg = "ERROR: The password you entered for the username NUI@gmail.com is incorrect. Lost your password?";
-		AssertJUnit.assertTrue(errorMessage.equals(expectedErrMsg));
+		Assert.assertTrue(errorMessage.equals(expectedErrMsg));
 		
 	}
 	
@@ -146,14 +142,14 @@ public class MyAccountLogin {
 		String logOut = driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).getText();
 		String signOut = "Sign out";
 		//check if user logging in successfully
-		AssertJUnit.assertTrue(logOut.equals(signOut));
+		Assert.assertTrue(logOut.equals(signOut));
 		
 		driver.findElement(By.xpath("//*[@id=\"page-36\"]/div/div[1]/div/p[1]/a")).click();
 		driver.navigate().back();
 		Thread.sleep(3000);
 		
 		//check if general webpage is visible
-		AssertJUnit.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_login\"]")).isDisplayed());
+		Assert.assertTrue(driver.findElement(By.xpath("//*[@id=\"customer_login\"]")).isDisplayed());
 		
 	}
 	
