@@ -365,33 +365,22 @@ public class ObjectFactory extends Driver {
 	public WebElement billingDetail;
 
 	public void formFillIn() {
-		String firstName = "John";
-		String lastName = "Doe";
-		// have to change email every executed//
-		String email = "a@jmail.com";
-		String phone = "0123456789";
-		String address = "123 techcircle St";
-		String city = "TechCircle";
-		String zipCode = "01234";
-		String country = "Unit";
-		String state = "Vir";
-		String password = "!12345bee!12345bee!12345bee!12345bee";
-
-		firstNameBox.sendKeys(firstName);
-		lastNameBox.sendKeys(lastName);
-		billingEmailBox.sendKeys(email);
-		phoneBox.sendKeys(phone);
+		
+		firstNameBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("firstName"));
+		lastNameBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("lastName"));
+		billingEmailBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("email"));
+		phoneBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("phone"));
 		countryDropDown.click();
-		countryBox.sendKeys(country);
+		countryBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("country"));
 		countrySelect.click();
-		streetBox.sendKeys(address);
-		cityBox.sendKeys(city);
+		streetBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("address"));
+		cityBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("city"));
 		stateDropDown.click();
-		stateBox.sendKeys(state);
+		stateBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("state"));
 		stateSelect.click();
-		zipCodeBox.sendKeys(zipCode);
+		zipCodeBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("zipCode"));
 		createAccCheckBox.click();
-		createPassword.sendKeys(password);
+		createPassword.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("password"));
 	}
 
 	public void orderConfirm() {
