@@ -15,7 +15,7 @@ public class Driver {
 
 	public static WebDriver getDriver() {
 		if (driver == null) {
-			switch (ConfigurationProperties.getProperty("browser")) {
+			switch (thunpanBee51TestCases.ConfigurationProperties.getProperty("browser")) {
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
@@ -35,7 +35,7 @@ public class Driver {
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				break;
 			}
-			driver.get(ConfigurationProperties.getProperty("url"));
+			driver.get(thunpanBee51TestCases.ConfigurationProperties.getProperty("url"));
 		}
 		return driver;
 	}

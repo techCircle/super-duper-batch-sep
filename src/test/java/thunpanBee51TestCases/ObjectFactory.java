@@ -11,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class ObjectFactory extends Driver {
+	
 	JavascriptExecutor js;
 
 	// registration //
