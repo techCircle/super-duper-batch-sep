@@ -1,4 +1,4 @@
-package Utilities;
+package NuiUtilities;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;

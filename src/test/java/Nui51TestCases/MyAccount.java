@@ -1,4 +1,4 @@
-package testCase51;
+package Nui51TestCases;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;

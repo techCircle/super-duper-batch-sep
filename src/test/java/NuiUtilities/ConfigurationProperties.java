@@ -1,4 +1,4 @@
-package Utilities;
+package NuiUtilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;

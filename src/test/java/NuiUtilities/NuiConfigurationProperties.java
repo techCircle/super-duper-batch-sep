@@ -1,4 +1,4 @@
-package Utilities;
+package NuiUtilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -11,7 +11,7 @@ public class NuiConfigurationProperties {
 		
 		try {
 			
-			String path = "src/test/resources/propertiesFolder/51TestCases.properties";
+			String path = "src/test/resources/propertiesFolder/Nui51TestCases.properties";
 			FileInputStream input = new FileInputStream(path);
 			
 			props = new Properties();

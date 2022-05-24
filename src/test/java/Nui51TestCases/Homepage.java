@@ -1,12 +1,6 @@
-package testCase51;
+package Nui51TestCases;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.Assert;
 import java.math.BigDecimal;
-
 import java.text.ParseException;
 import java.util.List;
 import java.util.Locale;
@@ -20,8 +14,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import Utilities.Currency;
-import Utilities.NuiConfigurationProperties;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import NuiUtilities.Currency;
+import NuiUtilities.NuiConfigurationProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Homepage {
