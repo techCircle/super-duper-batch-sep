@@ -3,11 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumDay_10.NewTest">
+      <class name="SeleniumDay_11.retryFailedTest1">
         <methods>
-          <include name="myTest"/>
+          <include name="Test2"/>
+          <include name="Test1"/>
         </methods>
-      </class> <!-- SeleniumDay_10.NewTest -->
+      </class> <!-- SeleniumDay_11.retryFailedTest1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
