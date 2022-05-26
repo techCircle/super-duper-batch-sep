@@ -3,12 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumDay_11.retryFailedTest1">
+      <class name="SeleniumDay12_13.loginTestCases">
         <methods>
-          <include name="Test2"/>
-          <include name="Test1"/>
+          <include name="loginWithValidCredentials_lockoutUser"/>
+          <include name="tearDown"/>
+          <include name="loginWithValidCredentials_problemUser"/>
+          <include name="setUp"/>
+          <include name="loginWithValidCredentials_performanceGlitchUser"/>
         </methods>
-      </class> <!-- SeleniumDay_11.retryFailedTest1 -->
+      </class> <!-- SeleniumDay12_13.loginTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
