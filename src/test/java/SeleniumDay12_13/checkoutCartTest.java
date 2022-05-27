@@ -2,6 +2,7 @@ package SeleniumDay12_13;
 
 import java.util.concurrent.TimeUnit;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -41,8 +42,8 @@ public class checkoutCartTest {
 		
 		cp.chkout();
 		
-		
-		
+	
+		cp.verifyAlltheConfirmation();
 		
 		
 		
