@@ -2,6 +2,7 @@ package thunpanBee51TestCases;
 
 import java.util.concurrent.TimeUnit;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -34,7 +35,7 @@ public class Driver {
  				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
  				break;
  			}
- 			driver.get(ConfigurationProperties.getProperty("url"));
+ 			driver.get(ConfigurationProperties.getProperty("swagLabUrl"));
  		}
  		return driver;
  	}
