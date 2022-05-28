@@ -6,19 +6,24 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class LoginFunctionality extends Driver{
-	private ObjectFactory loginPage;
+import thunpanBee51TestCasesPageObj.AccountPageObj;
+import thunpanBee51TestCasesPageObj.LoginDashBoardObj;
+
+public class LoginFunctionality{
+	private AccountPageObj loginPage;
+	private LoginDashBoardObj loginDashBoard;
 
  	@BeforeClass
  	public void setUp() {
- 		getDriver();
+ 		Driver.getDriver();
  		System.out.println("Successful Open Browser");
 
  	}
 
  	@BeforeMethod
  	public void beforeTest() {
- 		loginPage = new ObjectFactory(driver);
+ 		loginPage = new AccountPageObj();
+ 		loginDashBoard = new LoginDashBoardObj();
  		loginPage.accBtn.click();
  	}
 
@@ -44,40 +49,34 @@ public class LoginFunctionality extends Driver{
  	}
 
  	@Test(dataProvider = "loginInvalidDataProvider")
- 	public void loginFunctionalityTest(String userName, String password) {
+ 	public void TC001_loginWithInvalidUserNameAndPassword(String userName,String password) {
 
- 		loginPage.userBox.sendKeys(userName);
- 		loginPage.passWordLoginBox.sendKeys(password);
- 		loginPage.loginBtn.click();
- 		loginPage.verify();
+ 		loginPage.invalidLogin(userName,password);
  	}
 
- 	@Test(dataProvider = "passwordMaskedData", dependsOnMethods = "loginFunctionalityTest")
- 	public void loginPasswordShouldBeMasked(String userName, String password) {
- 		loginPage.passWordLoginBox.sendKeys(password);
+ 	@Test(dataProvider = "passwordMaskedData", dependsOnMethods = "TC001_loginWithInvalidUserNameAndPassword")
+ 	public void TC002_loginPasswordShouldBeMasked(String userName, String password) {
+ 		loginPage.invalidLogin(password);
  		loginPage.passwordVerify();
+ 		
  	}
 
- 	@Test(dataProvider = "validLoginDataProvider", dependsOnMethods = "loginPasswordShouldBeMasked")
- 	public void validLogin(String userName, String password) {
- 		loginPage.userBox.sendKeys(userName);
- 		loginPage.passWordLoginBox.sendKeys(password);
- 		loginPage.loginBtn.click();
- 		loginPage.loginVerify();
- 		loginPage.signOutBtn.click();
+ 	@Test(dataProvider = "validLoginDataProvider", dependsOnMethods = "TC002_loginPasswordShouldBeMasked")
+ 	public void TC003_validLogin(String userName, String password) {
+ 		loginPage.validLogin(userName, password);
+ 		loginDashBoard.loginVerify();
+ 		loginDashBoard.clickOnSignOutBtn();
  	}
 
- 	@Test(dataProvider = "validLoginDataProvider", dependsOnMethods = "validLogin")
- 	public void authenticationLogin(String userName, String password) {
- 		loginPage.userBox.sendKeys(userName);
- 		loginPage.passWordLoginBox.sendKeys(password);
- 		loginPage.loginBtn.click();
- 		loginPage.signOutBtn.click();
- 		driver.navigate().back();
+ 	@Test(dataProvider = "validLoginDataProvider", dependsOnMethods = "TC003_validLogin")
+ 	public void TC004_authenticationLogin(String userName, String password) {
+ 		loginPage.authenticationLogin(userName, password);
+ 		loginDashBoard.clickOnSignOutBtn();
+ 		loginDashBoard.navigateBack();
  	}
-
- 	@AfterClass
- 	public void Destroy() {
- 		destroy();
- 	}
+//
+// 	@AfterClass
+// 	public void Destroy() {
+// 		Driver.destroy();
+// 	}
 }
