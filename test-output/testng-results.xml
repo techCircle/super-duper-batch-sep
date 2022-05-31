@@ -1,21 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5812" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:41:01 EDT">
+  <suite started-at="2022-05-31T12:50:35 EDT" name="Default suite" finished-at="2022-05-31T12:51:52 EDT" duration-ms="77215">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5812" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:41:01 EDT">
-      <class name="SeleniumDay12_13.checkoutCartTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:SeleniumDay12_13.checkoutCartTest@18b0930f]" name="setUp" is-config="true" duration-ms="856" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:40:56 EDT">
+    <test started-at="2022-05-31T12:50:35 EDT" name="Default test" finished-at="2022-05-31T12:51:52 EDT" duration-ms="77215">
+      <class name="Ratthanon51TestCases.HomePageTestcase">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:35 EDT" name="beforeClass" finished-at="2022-05-31T12:50:38 EDT" duration-ms="3240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testOrderConfirmation()[pri:0, instance:SeleniumDay12_13.checkoutCartTest@18b0930f]" name="testOrderConfirmation" duration-ms="4917" started-at="2022-05-26T21:40:56 EDT" finished-at="2022-05-26T21:41:01 EDT">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="CheckNumSlide()[pri:1, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:38 EDT" name="CheckNumSlide" finished-at="2022-05-31T12:50:38 EDT" duration-ms="21" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testOrderConfirmation -->
-      </class> <!-- SeleniumDay12_13.checkoutCartTest -->
+        </test-method> <!-- CheckNumSlide -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:38 EDT" name="beforeClass" finished-at="2022-05-31T12:50:41 EDT" duration-ms="3206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="ValidateArrival()[pri:2, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:41 EDT" name="ValidateArrival" finished-at="2022-05-31T12:50:41 EDT" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateArrival -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:41 EDT" name="beforeClass" finished-at="2022-05-31T12:50:44 EDT" duration-ms="2577" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="clickableImage()[pri:3, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:44 EDT" name="clickableImage" finished-at="2022-05-31T12:50:52 EDT" duration-ms="8340" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickableImage -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:52 EDT" name="beforeClass" finished-at="2022-05-31T12:50:55 EDT" duration-ms="2263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="ArrivalDescription()[pri:4, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:55 EDT" name="ArrivalDescription" finished-at="2022-05-31T12:50:57 EDT" duration-ms="2553" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[target frame detached
+  (Session info: chrome=102.0.5005.61)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Suwimons-MBP', ip: '2600:4040:285c:2200:f1a9:fc0c:1eaf:174c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.2', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.61, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /var/folders/mv/hy_nq8416bg...}, goog:chromeOptions: {debuggerAddress: localhost:65375}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5445b741872fbdf037533a06ee22c254
+*** Element info: {Using=xpath, value=//li[contains(@class,'description_tab')]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: target frame detached
+  (Session info: chrome=102.0.5005.61)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Suwimons-MBP', ip: '2600:4040:285c:2200:f1a9:fc0c:1eaf:174c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.2', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.61, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: /var/folders/mv/hy_nq8416bg...}, goog:chromeOptions: {debuggerAddress: localhost:65375}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5445b741872fbdf037533a06ee22c254
+*** Element info: {Using=xpath, value=//li[contains(@class,'description_tab')]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy11.click(Unknown Source)
+at RatthanonPageObject.HomePage.VerifyDescription(HomePage.java:145)
+at Ratthanon51TestCases.HomePageTestcase.ArrivalDescription(HomePageTestcase.java:71)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:808)
+at org.testng.TestRunner.run(TestRunner.java:603)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:429)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:423)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:383)
+at org.testng.SuiteRunner.run(SuiteRunner.java:326)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1249)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+at org.testng.TestNG.runSuites(TestNG.java:1092)
+at org.testng.TestNG.run(TestNG.java:1060)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ArrivalDescription -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:57 EDT" name="beforeClass" finished-at="2022-05-31T12:50:59 EDT" duration-ms="2213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="ImageReview()[pri:5, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:50:59 EDT" name="ImageReview" finished-at="2022-05-31T12:51:12 EDT" duration-ms="12490" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ImageReview -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:51:12 EDT" name="beforeClass" finished-at="2022-05-31T12:51:15 EDT" duration-ms="3122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="VerifyAddItemToBucket()[pri:6, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:51:15 EDT" name="VerifyAddItemToBucket" finished-at="2022-05-31T12:51:31 EDT" duration-ms="16159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAddItemToBucket -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:51:31 EDT" name="beforeClass" finished-at="2022-05-31T12:51:34 EDT" duration-ms="2699" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="VerifyAddMoreItemToBucket()[pri:7, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:51:34 EDT" name="VerifyAddMoreItemToBucket" finished-at="2022-05-31T12:51:52 EDT" duration-ms="18151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyAddMoreItemToBucket -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Ratthanon51TestCases.HomePageTestcase@6331250e]" started-at="2022-05-31T12:51:52 EDT" name="afterClass" finished-at="2022-05-31T12:51:52 EDT" duration-ms="132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Ratthanon51TestCases.HomePageTestcase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
