@@ -1,39 +1,15 @@
 package Emmie_Utilities;
 
-import java.io.FileInputStream;
-import java.util.Properties;
 
-public class ConfigurationProperties {
-	// using properties class to call properties
-		public static Properties configfile;
+public class Constants {
 
-		// example
-		// public static WebDriver driver;
+	public static final String config_filePath = System.getProperty("user.dir")
+			+ "/src/test/resources/propertiesFolder/Emmie.properties";
 
-		static {
+	public static final int implicitWaitTime = 10;
 
-			try {
-				// path the file
-				String path = "src/test/resources/propertiesFolder/Emmie.properties";
+	public static final int slidersCount = 3;
 
-				FileInputStream input = new FileInputStream(path);
-
-				configfile = new Properties();
-				// load everything in configFile
-				configfile.load(input);
-
-				input.close();
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-		}
-
-		public static String getProperty(String keyName) {
-
-			return configfile.getProperty(keyName);
-
-		}
+	public static final int arrivalsCount = 3;
 
 }
