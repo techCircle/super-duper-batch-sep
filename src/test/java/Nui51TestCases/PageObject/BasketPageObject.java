@@ -96,9 +96,6 @@ public class BasketPageObject {
 	public void checkIndianTax() throws ParseException {
 		BigDecimal parsedIndianTaxSum = Currency.parse(getIndianTax.getText(), Locale.US);	
 		BigDecimal parsedSubTotal = Currency.parse(stIndianPrice.getText(), Locale.US);
-		System.out.println("indiantax" + parsedIndianTaxSum);
-		System.out.println("indiantax" + parsedSubTotal);
-
 		Assert.assertTrue((Double.valueOf(parsedSubTotal.toString())  *  (Double.valueOf(NuiConfigurationProperties.getKeyValue("indianTax")) / 100.0)) == Double.valueOf(parsedIndianTaxSum.toString()));
 	}
 	

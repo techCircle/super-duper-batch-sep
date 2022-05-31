@@ -141,8 +141,10 @@ public class Homepage {
 		@Test 
 		public void arrivalsAddToBasketItemsCheckoutTotalAndSubTotalCondition() throws InterruptedException {
 			this.arrivalsAddToBasketItems();
-			String total = bp.tPrice.getText().substring(7);
-			String subTotal = bp.stPrice.getText().substring(10);
+			System.out.println("total p =" + bp.tPrice.getText() + "SubT ="+ bp.stPrice.getText());
+			String total = bp.tPrice.getText().substring(1);
+			String subTotal = bp.stPrice.getText().substring(1);
+			
 			Assert.assertTrue(Double.valueOf(total) > Double.valueOf(subTotal));
 		}
 		
@@ -176,7 +178,6 @@ public class Homepage {
 		
 		@AfterClass
 		public void after() {
-			
 			driver.close();
 		}
 
