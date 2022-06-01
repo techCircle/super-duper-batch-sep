@@ -161,27 +161,15 @@ public class homePage {
 		
 	public void addToBasket() {
 			
-		shopBtn.click();
-		homeBtn.click();
-		thirdPic.click();
+		//shopBtn.click();
+		//homeBtn.click();
+		//thirdPic.click();
 		//arrivalsPage		addToBasket.click();
 		String verifyAddToBasket = viewBasketText.getText();
 		Assert.assertTrue(verifyAddToBasket.contains("View Basket"));
 	}
 	
 	
-	
-	
-	
-
-
-
-
-
-
-
-
-
 	public void readMoreFunction() {		
 
 	//Indicate out of stock

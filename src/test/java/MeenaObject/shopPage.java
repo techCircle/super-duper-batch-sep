@@ -51,10 +51,10 @@ public class shopPage {
 		@FindBy(xpath="//*[@id='content']/ul/li[1]/a[1]/img")
 		public WebElement onSaleProduct;
 		
-		@FindBy(xpath="//*[@id='product-169']/div[2]/div[1]/p/del/span")
+		@FindBy(xpath="//*[@class='price']/del/span")
 		public WebElement originalPrice;
 		
-		@FindBy(xpath="//*[@id='product-169']/div[2]/div[1]/p/ins/span")
+		@FindBy(xpath="//*[@class='price']/ins/span")
 		public WebElement onSalePrice;
 		
 		
@@ -166,15 +166,16 @@ public class shopPage {
 
 		public void verifyOnSalePrice() {
 			String original = originalPrice.getText();
+			Assert.assertTrue(originalPrice.isDisplayed());
+			
 			String onSale = onSalePrice.getText();
-			
-			
+			Assert.assertTrue(onSalePrice.isDisplayed());
+		
+
 			System.out.println(original);
 			System.out.println(onSale);
-			Assert.assertTrue(Integer.valueOf(original) > Integer.valueOf(onSale));
-			
-			
 		}
+		
 		public void tearDown() {
 			MeenaDriver.tearDown();
 		}

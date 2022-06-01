@@ -71,7 +71,16 @@ public class homePageTestCases {
   
   }
   
-  
+  @Test(priority= 6 ,groups= {"Meena"})
+	public void ArrivalImagesAddToBasket() {
+
+		shop.shopBtn.click();
+		home.homeBtn.click();
+		home.thirdPic.click();
+		arrival.addToBasketBtn.click();
+		arrival.addToBasket();
+		
+}
   
   
   
