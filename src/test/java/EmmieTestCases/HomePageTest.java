@@ -9,13 +9,15 @@ import Emmie_Utilities.Emmie_Driver;
 import Emmie_automationTestingPage.HomePage;
 import Emmie_automationTestingPage.ProductPage;
 import Emmie_automationTestingPage.ShopPage;
+import in.automationTestingPages.BasketPage;
 
 
 public class HomePageTest {
+
 	HomePage hP = new HomePage();
 	ShopPage sP = new ShopPage();
 	ProductPage pD = new ProductPage();
-	
+	BasketPage bP = new BasketPage();
 
 	@BeforeClass
 	public void beforeTest() {
