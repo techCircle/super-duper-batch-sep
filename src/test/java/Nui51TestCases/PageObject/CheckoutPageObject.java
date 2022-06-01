@@ -74,15 +74,21 @@ public class CheckoutPageObject {
 	}
 	
 	public void fillBillingForm() {
+		billingFN.clear();
 		billingFN.sendKeys(NuiConfigurationProperties.getKeyValue("name"));
+		billingLN.clear();
 		billingLN.sendKeys(NuiConfigurationProperties.getKeyValue("lastName"));
+		billingEmail.clear();
 		billingEmail.sendKeys(NuiConfigurationProperties.getKeyValue("goodEmail"));
+		billingPhone.clear();
 		billingPhone.sendKeys(NuiConfigurationProperties.getKeyValue("phoneNumber"));
+		billingAdd.clear();
 		billingAdd.sendKeys(NuiConfigurationProperties.getKeyValue("address"));
 		billingCity.sendKeys(NuiConfigurationProperties.getKeyValue("city"));
 		ddState.click();
 		stateBox.sendKeys(NuiConfigurationProperties.getKeyValue("state"));
 		stateBox.sendKeys(Keys.RETURN);
+		billingZip.clear();
 		billingZip.sendKeys(NuiConfigurationProperties.getKeyValue("zipcode"));
 	}
 	

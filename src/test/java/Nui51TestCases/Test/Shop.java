@@ -1,11 +1,14 @@
 package Nui51TestCases.Test;
 
 import java.text.ParseException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,6 +21,7 @@ import Nui51TestCases.PageObject.EditAccountPageObject;
 import Nui51TestCases.PageObject.EditAddressPageObject;
 import Nui51TestCases.PageObject.EditAddressShippingPageObject;
 import Nui51TestCases.PageObject.HomePageObject;
+import Nui51TestCases.PageObject.LoginPageObject;
 import Nui51TestCases.PageObject.MyAccountPageObject;
 import Nui51TestCases.PageObject.ProductCategoryPageObject;
 import Nui51TestCases.PageObject.ProductPageObject;
@@ -44,6 +48,7 @@ public class Shop {
 	EditAddressPageObject ea = new EditAddressPageObject();
 	EditAddressShippingPageObject eas = new EditAddressShippingPageObject();
 	EditAccountPageObject eap = new EditAccountPageObject();
+	LoginPageObject lgp = new LoginPageObject();
 	
 	
 	@BeforeClass
@@ -146,6 +151,9 @@ public class Shop {
 		chkp.placeOrderBtn.click();
 		Thread.sleep(5000);
 		Assert.assertTrue(cf.cfMsg.getText().equals(NuiConfigurationProperties.getKeyValue("cfOrderMsg")));
+		//added below to sigh out. By clicking my account button makes it sign out automatically
+		cp.myaccountBtn.click();
+		
 	}
 	
 	@Test
@@ -159,15 +167,46 @@ public class Shop {
 		Assert.assertTrue(Double.valueOf(bp.tPrice.getText().substring(1)) > Double.valueOf(bp.stPrice.getText().substring(1)));
 		bp.proceedtoChkoutBtn.click();
 		chkp.fillBillingForm();
-		chkp.CashOnDeliveryPayment.click();
+		Thread.sleep(3000);
+		//chkp.CashOnDeliveryPayment.click();
+		driver.findElement(By.xpath("//*[@id='payment_method_cod']")).click();
 		chkp.placeOrderBtn.click();
 		Thread.sleep(5000);
 		Assert.assertTrue(cf.cfMsg.getText().equals(NuiConfigurationProperties.getKeyValue("cfOrderMsg")));
+		
+		// should have to remove item out of cart heres
+		
 	}
 	
 	@Test 
 	public void addToBasketViewBasketTax() throws InterruptedException, ParseException {
 		lg.validUsernamePassword();
+		
+		//I intended to leave the below code as it is for now (commented out) 
+		//So if I need to get back to my original one I can easily get to it.
+		//I will delete it later
+
+//		ap.addressBtn.click();
+//		ea.editShippingAddBtn.click();
+//		eas.fillFormEditShippingAdd();
+//		cp.clickShop.click();
+//		sp.buyBook.click();
+//		Thread.sleep(3000);
+//		cp.itemLink.click();
+//		bp.verifyToTalSubTotalDisplay();
+//		bp.totalMoreThanSubTotal();
+//		bp.checkUSTax();
+//		cp.myaccountBtn.click();
+//		ap.addressBtn.click();
+//		ea.editShippingAddBtn.click();
+//		Thread.sleep(3000);
+//		eas.fillFormEditShippingIndiaAdd();
+//		Thread.sleep(2000);
+//		cp.itemLink.click();
+//		System.out.println("debug 5");
+//		bp.checkIndianTax();
+//		System.out.println("debug 6");
+
 		ap.addressBtn.click();
 		ea.editShippingAddBtn.click();
 		eas.fillFormEditShippingAdd();
@@ -178,20 +217,34 @@ public class Shop {
 		bp.verifyToTalSubTotalDisplay();
 		bp.totalMoreThanSubTotal();
 		bp.checkUSTax();
+		//extra move to debug
+		bp.removeX.click();
 		cp.myaccountBtn.click();
+		
 		ap.addressBtn.click();
 		ea.editShippingAddBtn.click();
 		Thread.sleep(3000);
 		eas.fillFormEditShippingIndiaAdd();
 		Thread.sleep(2000);
+		
+		ap.signoutBtn.click();
+		
+		lg.validUsernamePassword();
+		cp.clickShop.click();
+		sp.buyBook.click();
+		Thread.sleep(3000);
 		cp.itemLink.click();
 		bp.checkIndianTax();
+		
+		//remove item to prepare for next test case
+		bp.removeX.click();
 	}
+	
+	
 	
 	@AfterClass
 	public void after() {
-		
-		driver.quit();
+		driver.close();
 	}
 
 }
