@@ -1,5 +1,6 @@
 package Meena_51TestCases;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -86,7 +87,7 @@ public class loginTest {
 		login.authentication();
 
 	}
-
+	@AfterClass
 	public void tearDown() {
 		MeenaDriver.tearDown();;
 	}

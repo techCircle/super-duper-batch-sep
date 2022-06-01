@@ -93,10 +93,6 @@ public class shopTest {
 	}
 	
 	
-	
-	
-	
-	
 	@AfterClass
 	public void teardown() {
 		MeenaDriver.tearDown();

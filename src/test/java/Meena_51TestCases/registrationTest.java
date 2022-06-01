@@ -92,11 +92,6 @@ public class registrationTest {
 		
 	}
 	
-	
-	
-	
-	
-	
 	@AfterClass
 	public void teardown() {
 		MeenaDriver.tearDown();
