@@ -29,6 +29,19 @@ public class ViewOrderPageObject {
 	@FindBy (xpath = "//*[@id='page-36']/div/div[1]/div/p")
 	public WebElement orderNumDateStatus;
 	
+	@FindBy (xpath = "//*[@id='page-36']/div/div[1]/div/p")
+	public WebElement orderDt;
+	
+	
+	
+	public void verifyOrderNumDateStatus() {
+		Assert.assertTrue(orderDt.getText().contains("Order"));
+		Assert.assertTrue(orderDt.getText().contains("placed on"));
+		Assert.assertTrue(orderDt.getText().contains("currently"));	
+	}
+	
+	
+	
 	
 	public void verifyViewOrderPage() {
 		Assert.assertTrue(orderDtMsg.getText().equals(NuiConfigurationProperties.getKeyValue("orderMsg")));
