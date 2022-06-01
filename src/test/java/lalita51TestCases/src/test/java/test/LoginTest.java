@@ -41,47 +41,7 @@ public class LoginTest {
         };
     }
 
-    @DataProvider
-    public Object[][] validUserValidPassword() {
-        return new Object[][]{
-                new Object[]{ConfigProp.getProperty("validUsername"), ConfigProp.getProperty("validPassword")},
-        };
-    }
 
-    @DataProvider
-    public Object[][] invalidUserInvalidPassword() {
-        return new Object[][]{
-                new Object[]{ConfigProp.getProperty("invalidUsername"), ConfigProp.getProperty("invalidPassword")},
-        };
-    }
-
-    @DataProvider
-    public Object[][] validUserEmptyPassword() {
-        return new Object[][]{
-                new Object[]{ConfigProp.getProperty("validUsername"), " "},
-        };
-    }
-
-    @DataProvider
-    public Object[][] emptyUserValidPassword() {
-        return new Object[][]{
-                new Object[]{" ", ConfigProp.getProperty("validPassword")},
-        };
-    }
-
-    @DataProvider
-    public Object[][] emptyUserEmptyPassword() {
-        return new Object[][]{
-                new Object[]{" ", " "},
-        };
-    }
-
-    @DataProvider
-    public Object[][] caseChangedValidUserValidPassword() {
-        return new Object[][]{
-                new Object[]{ConfigProp.getProperty("caseChangedValidUsername"), ConfigProp.getProperty("caseChangedValidPassword")},
-        };
-    }
 
     @Test(dataProvider = "newGeneratedEmailValidPassword")
     public void TC01_loginValidUsernameAndPassword(String username, String password) {
@@ -89,43 +49,32 @@ public class LoginTest {
         Assert.assertTrue(myAccPage.greetingContent.isDisplayed());
         myAccPage.signOutLink.click();
         myAccPage.login(username, password);
+        myAccPage.verifyLoginSuccess();
         myAccPage.signOutLink.click();
     }
 
-    @Test(dataProvider = "invalidUserInvalidPassword")
-    public void TC02_loginIncorrectUsernameIncorrectPassword(String username, String password) {
-        myAccPage.login(username, password);
-        Assert.assertTrue(myAccPage.errorLogin.isDisplayed());
-        Assert.assertTrue(myAccPage.usernameLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.passwordLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.loginBtn.isDisplayed());
+    @Test
+    public void TC02_loginIncorrectUsernameIncorrectPassword() {
+        myAccPage.login(ConfigProp.getProperty("invalidUsername"), ConfigProp.getProperty("invalidPassword"));
+        myAccPage.verifyErrorLoginAndPromptToLogin();
     }
 
-    @Test(dataProvider = "validUserEmptyPassword")
-    public void TC03_loginCorrectUsernameEmptyPassword(String username, String password) {
-        myAccPage.login(username, password);
-        Assert.assertTrue(myAccPage.errorLogin.isDisplayed());
-        Assert.assertTrue(myAccPage.usernameLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.passwordLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.loginBtn.isDisplayed());
+    @Test
+    public void TC03_loginCorrectUsernameEmptyPassword() {
+        myAccPage.login(ConfigProp.getProperty("validUsername"), " ");
+        myAccPage.verifyErrorLoginAndPromptToLogin();
     }
 
-    @Test(dataProvider = "emptyUserValidPassword")
-    public void TC04_loginEmptyUsernameValidPassword(String username, String password) {
-        myAccPage.login(username, password);
-        Assert.assertTrue(myAccPage.errorLogin.isDisplayed());
-        Assert.assertTrue(myAccPage.usernameLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.passwordLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.loginBtn.isDisplayed());
+    @Test
+    public void TC04_loginEmptyUsernameValidPassword() {
+        myAccPage.login(" ", ConfigProp.getProperty("validPassword"));
+        myAccPage.verifyErrorLoginAndPromptToLogin();
     }
 
-    @Test(dataProvider = "emptyUserEmptyPassword")
-    public void TC05_loginEmptyUsernameEmptyPassword(String username, String password) {
-        myAccPage.login(username, password);
-        Assert.assertTrue(myAccPage.errorLogin.isDisplayed());
-        Assert.assertTrue(myAccPage.usernameLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.passwordLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.loginBtn.isDisplayed());
+    @Test
+    public void TC05_loginEmptyUsernameEmptyPassword() {
+        myAccPage.login(" ", " ");
+        myAccPage.verifyErrorLoginAndPromptToLogin();
     }
 
     @Test
@@ -134,18 +83,15 @@ public class LoginTest {
         myAccPage.checkIsMasked(myAccPage.passwordLoginInput);
     }
 
-    @Test(dataProvider = "caseChangedValidUserValidPassword")
-    public void TC07_loginHandlesCaseSensitive(String username, String password) {
-        myAccPage.login(username, password);
-        Assert.assertTrue(myAccPage.errorLogin.isDisplayed());
-        Assert.assertTrue(myAccPage.usernameLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.passwordLoginInput.isDisplayed());
-        Assert.assertTrue(myAccPage.loginBtn.isDisplayed());
+    @Test
+    public void TC07_loginHandlesCaseSensitive() {
+        myAccPage.login(ConfigProp.getProperty("caseChangedValidUsername"), ConfigProp.getProperty("caseChangedValidPassword"));
+        myAccPage.verifyErrorLoginAndPromptToLogin();
     }
 
-    @Test(dataProvider = "validUserValidPassword")
-    public void TC08_loginAuthentication(String username, String password) {
-        myAccPage.login(username, password);
+    @Test
+    public void TC08_loginAuthentication() {
+        myAccPage.login(ConfigProp.getProperty("validUsername"), ConfigProp.getProperty("validPassword"));
         myAccPage.signOutLink.click();
         driver.navigate().back();
         myAccPage.checkIsSignIn();

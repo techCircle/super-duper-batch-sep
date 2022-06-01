@@ -2,11 +2,14 @@ package lalita51TestCases.src.test.java.pageObject;
 
 import lalita51TestCases.src.test.java.utilities.Constants;
 import lalita51TestCases.src.test.java.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +56,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@class='woocommerce-Button button']")
     public WebElement loginBtn;
 
-    @FindBy(xpath = "//*[@class='woocommerce']")
+    @FindBy(xpath = "//*[@class='woocommerce-error']/li")
     public WebElement errorLogin;
 
     @FindBy(xpath = "//*[@class='woocommerce-error']/li")
@@ -113,7 +116,7 @@ public class MyAccountPage {
     public List<WebElement> shippingAddress;
 
     //TC06
-    @FindBy(xpath = "//*[@class='woocommerce-Address-title title']/a")
+    @FindBy(xpath = "//*[@class='u-column2 col-2 woocommerce-Address']//a")
     public WebElement EditShippingAddressLink;
 
     @FindBy(xpath = "//form[@method='post']/p/input")
@@ -146,6 +149,14 @@ public class MyAccountPage {
         System.out.println("Login is successfully and navigated to the Home page");
     }
 
+    public void verifyErrorLoginAndPromptToLogin(){
+        Assert.assertTrue(errorLogin.isDisplayed());
+        Assert.assertTrue(usernameLoginInput.isDisplayed());
+        Assert.assertTrue(passwordLoginInput.isDisplayed());
+        Assert.assertTrue(loginBtn.isDisplayed());
+        System.out.println("Error is displayed and prompt to enter login again");
+    }
+
     public void getRegistrationValidationMessage(WebElement obj) {
 //        Boolean isValidInput = (Boolean) js.executeScript("return arguments[0].checkValidity();", obj);
 //        Assert.assertFalse(isValidInput);
@@ -164,8 +175,14 @@ public class MyAccountPage {
         loginBtn.click();
     }
 
+    public void verifyLoginSuccess(){
+        Assert.assertTrue(greetingContent.isDisplayed());
+        System.out.println("Successfully login to the web page");
+    }
+
     public void checkIsMasked(WebElement objectTest) {
         Assert.assertEquals(objectTest.getAttribute("type"), "password");
+        System.out.println("The password is not visible on the screen");
     }
 
     public void checkIsSignIn() {
@@ -174,6 +191,7 @@ public class MyAccountPage {
         Assert.assertTrue(usernameBox.isBlank());
         Assert.assertTrue(passwordBox.isBlank());
         Assert.assertTrue(loginBtn.isDisplayed());
+        System.out.println("No account have been signed in");
     }
 
     public void verifyDashboardSiteIsPresent() {
@@ -268,4 +286,9 @@ public class MyAccountPage {
 //        System.out.println(shippingAddressList);
         System.out.println("User able to view ship address");
     }
+
+//    public void editShippingAddress() {
+//
+//    }
+
 }
