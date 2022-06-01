@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 import Emmie_automationTestingPage.HomePage;
 import Emmie_automationTestingPage.ProductPage;
 import Emmie_automationTestingPage.ShopPage;
@@ -19,7 +19,7 @@ public class HomePageTest {
 	
 	@BeforeClass
 	public void beforeTest(){
-		Driver.getDriver();
+		Emmie_Driver.getDriver();
 	}
 	
 	
@@ -73,6 +73,6 @@ public class HomePageTest {
 	
 	@AfterClass
 	public void tearDown() {
-		Driver.tearDown();
+		Emmie_Driver.tearDown();
 	}
 }

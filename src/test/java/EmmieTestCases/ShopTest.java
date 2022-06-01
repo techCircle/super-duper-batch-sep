@@ -4,7 +4,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 import Emmie_automationTestingPage.HomePage;
 import Emmie_automationTestingPage.ShopPage;
 
@@ -14,7 +14,7 @@ public class ShopTest {
 
 	@BeforeClass
 	public void setUp() {
-		Driver.getDriver();
+		Emmie_Driver.getDriver();
 	}
 
 	@BeforeMethod

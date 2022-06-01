@@ -6,12 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 
 public class LoginPage {
 
 	public LoginPage() {
-		PageFactory.initElements(Driver.getDriver(), this);
+		PageFactory.initElements(Emmie_Driver.getDriver(), this);
 	}
 
 	@FindBy(xpath = "//*[@name='username']")
@@ -27,35 +27,35 @@ public class LoginPage {
 	public WebElement verifyLoginPage;
 
 	public void validEmailInput() {
-		loginField.sendKeys(Driver.getProperty("validEmail"));
+		loginField.sendKeys(Emmie_Driver.getProperty("validEmail"));
 	}
 
 	public void validPasswordInput() {
-		passField.sendKeys(Driver.getProperty("validPass"));
+		passField.sendKeys(Emmie_Driver.getProperty("validPass"));
 	}
 
 	public void invalidEmailInput() {
-		loginField.sendKeys(Driver.getProperty("InvalidEmail"));
+		loginField.sendKeys(Emmie_Driver.getProperty("InvalidEmail"));
 	}
 
 	public void invalidPassword() {
-		passField.sendKeys(Driver.getProperty("InvalidPass"));
+		passField.sendKeys(Emmie_Driver.getProperty("InvalidPass"));
 	}
 
 	public void emptyEmailInpuyt() {
-		loginField.sendKeys(Driver.getProperty("EmptyEmail"));
+		loginField.sendKeys(Emmie_Driver.getProperty("EmptyEmail"));
 	}
 
 	public void emptyPasswordInput() {
-		passField.sendKeys(Driver.getProperty("EmptyPass"));
+		passField.sendKeys(Emmie_Driver.getProperty("EmptyPass"));
 	}
 
 	public void caseChangeEmailInput() {
-		passField.sendKeys(Driver.getProperty("CaseChangeEmail"));
+		passField.sendKeys(Emmie_Driver.getProperty("CaseChangeEmail"));
 	}
 
 	public void caseChangePasswordInput() {
-		passField.sendKeys(Driver.getProperty("CaseChangePass"));
+		passField.sendKeys(Emmie_Driver.getProperty("CaseChangePass"));
 	}
 
 	public void loginBoxClick() {
@@ -65,7 +65,7 @@ public class LoginPage {
 	
 	public void verifyInValidInput() {
 
-		String actualText = Driver.driver.findElement(By.xpath("//*[@id='page-36']/div/div[1]/ul/li")).getText();
+		String actualText = Emmie_Driver.driver.findElement(By.xpath("//*[@id='page-36']/div/div[1]/ul/li")).getText();
 		String expectedText = actualText.toString();
 		Assert.assertTrue(actualText.contains(expectedText));
 	}

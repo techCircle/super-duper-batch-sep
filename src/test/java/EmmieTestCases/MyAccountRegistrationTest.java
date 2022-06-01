@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 import Emmie_automationTestingPage.RegistrationPage;
 import Emmie_automationTestingPage.ShopPage;
 
@@ -15,7 +15,7 @@ public class MyAccountRegistrationTest {
 
 	@BeforeClass
 	public void setUp() {
-		Driver.getDriver();
+		Emmie_Driver.getDriver();
 
 	}
 
@@ -31,7 +31,7 @@ public class MyAccountRegistrationTest {
 		rP.validEmailInput();
 		rP.validPasswordInput();
 		rP.registerBox.click();
-		Driver.getCurrentUrl();
+		Emmie_Driver.getCurrentUrl();
 
 	}
 
@@ -73,6 +73,6 @@ public class MyAccountRegistrationTest {
 
 	@AfterClass
 	public void tearDown() {
-		Driver.tearDown();
+		Emmie_Driver.tearDown();
 	}
 }

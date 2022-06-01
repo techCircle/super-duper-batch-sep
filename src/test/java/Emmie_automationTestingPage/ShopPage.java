@@ -9,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 
 public class ShopPage {
 	public ShopPage() {
-		PageFactory.initElements(Driver.getDriver(), this);
+		PageFactory.initElements(Emmie_Driver.getDriver(), this);
 	}
 
 	@FindBy(xpath = "//*[text()='Home']")
@@ -72,14 +72,14 @@ public class ShopPage {
 
 	public void clickProductCategory() {
 
-		Driver.clickProductFromList(categoriesList, Driver.getProperty("Android"));
+		Emmie_Driver.clickProductFromList(categoriesList, Emmie_Driver.getProperty("Android"));
 
 	}
 
 	public void verifyPrices() {
 		
-		System.out.println("Price after moved filter : " + Driver.getDouble(priceTag));
-		Assert.assertTrue(Driver.getDouble(priceTag) <= 450);
+		System.out.println("Price after moved filter : " + Emmie_Driver.getDouble(priceTag));
+		Assert.assertTrue(Emmie_Driver.getDouble(priceTag) <= 450);
 		
 
 	}

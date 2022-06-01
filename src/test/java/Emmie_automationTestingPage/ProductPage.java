@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 
 public class ProductPage {
 	public ProductPage() {
-		PageFactory.initElements(Driver.getDriver(), this);
+		PageFactory.initElements(Emmie_Driver.getDriver(), this);
 	}
 
 	@FindBy(xpath = "//*[text()='Thinking in HTML']")

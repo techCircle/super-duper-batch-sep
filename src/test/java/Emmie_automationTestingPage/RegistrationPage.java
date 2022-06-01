@@ -6,11 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 
 public class RegistrationPage {
 	public RegistrationPage() {
-		PageFactory.initElements(Driver.getDriver(), this);
+		PageFactory.initElements(Emmie_Driver.getDriver(), this);
 	}
 
 	@FindBy(id = "reg_email")
@@ -23,33 +23,33 @@ public class RegistrationPage {
 	public WebElement registerBox;
 
 	public void validEmailInput() {
-		emailField.sendKeys(Driver.getProperty("validEmail"));
+		emailField.sendKeys(Emmie_Driver.getProperty("validEmail"));
 	}
 
 	public void validPasswordInput() {
-		passwordlField.sendKeys(Driver.getProperty("validPass"));
+		passwordlField.sendKeys(Emmie_Driver.getProperty("validPass"));
 	}
 
 	public void invalidEmailInput() {
-		emailField.sendKeys(Driver.getProperty("InvalidEmail"));
+		emailField.sendKeys(Emmie_Driver.getProperty("InvalidEmail"));
 	}
 
 	public void invalidPassword() {
-		passwordlField.sendKeys(Driver.getProperty("InvalidPass"));
+		passwordlField.sendKeys(Emmie_Driver.getProperty("InvalidPass"));
 	}
 	
 	public void emptyEmailInpuyt() {
-		emailField.sendKeys(Driver.getProperty("EmptyEmail"));
+		emailField.sendKeys(Emmie_Driver.getProperty("EmptyEmail"));
 	}
 	public void emptyPasswordInput(){
-		passwordlField.sendKeys(Driver.getProperty("EmptyPass"));
+		passwordlField.sendKeys(Emmie_Driver.getProperty("EmptyPass"));
 	}
 	
 	
 
 	public void verifyErrorText() {
 		// Error (xPath)
-		String actualText = Driver.driver.findElement(By.xpath("//*[@id='page-36']/div/div[1]/ul/li")).getText();
+		String actualText = Emmie_Driver.driver.findElement(By.xpath("//*[@id='page-36']/div/div[1]/ul/li")).getText();
 		String expectedText = actualText.toString();
 		Assert.assertTrue(actualText.contains(expectedText));
 

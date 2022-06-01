@@ -9,11 +9,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 
 public class HomePage {
 	public HomePage() {
-		PageFactory.initElements(Driver.getDriver(), this);
+		PageFactory.initElements(Emmie_Driver.getDriver(), this);
 	}
 
 	@FindBy(xpath = "//*[text()='Shop']")
@@ -77,9 +77,9 @@ public class HomePage {
 			System.out.println("Expected: "+urls.get(i));
 			
 			
-			Assert.assertTrue(Driver.getDriver().getCurrentUrl().equalsIgnoreCase(urls.get(i)));
+			Assert.assertTrue(Emmie_Driver.getDriver().getCurrentUrl().equalsIgnoreCase(urls.get(i)));
 
-			Driver.getDriver().navigate().back();
+			Emmie_Driver.getDriver().navigate().back();
 
 			
 		}

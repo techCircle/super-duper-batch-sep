@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import Emmie_Utilities.Driver;
+import Emmie_Utilities.Emmie_Driver;
 import Emmie_automationTestingPage.LoginPage;
 import Emmie_automationTestingPage.MyAccountPage;
 import Emmie_automationTestingPage.ShopPage;
@@ -17,7 +17,7 @@ public class MyAccountLoginTest {
 
 	@BeforeClass
 	public void setUp() {
-		Driver.getDriver();
+		Emmie_Driver.getDriver();
 
 	}
 
@@ -99,12 +99,12 @@ public class MyAccountLoginTest {
 		lP.validPasswordInput();
 		lP.loginBox.click();
 		accPage.signOutBtn.click();
-		Driver.getCurrentUrl();
+		Emmie_Driver.getCurrentUrl();
 
 	}
 
 	@AfterClass
 	public void tearDown() {
-		Driver.tearDown();
+		Emmie_Driver.tearDown();
 	}
 }
