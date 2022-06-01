@@ -1,7 +1,8 @@
 package anoma51TestCases;
 
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import apPageObjects.ShopPage;
 import apUtilities.BaseClass;
@@ -10,7 +11,7 @@ public class ShopTest {
 
 	ShopPage sp = new ShopPage();
 
-	@BeforeClass
+	@BeforeSuite
 	public void setUp() throws InterruptedException {
 		BaseClass.getDriver();
 	}
@@ -91,6 +92,10 @@ public class ShopTest {
 		sp.chkoutPageDisplay();
 		sp.fillingchkoutForm();
 		sp.VerifyOrderComplete();
+	}
+	@AfterSuite
+	public void afterMethod() {
+		BaseClass.tearDown();
 	}
 
 }

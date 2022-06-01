@@ -18,7 +18,7 @@ public class HompageTestCases {
 	}
 
 	@BeforeMethod
-	public void beforeClass() {
+	public void beforeTest() {
 		hp.shopMenu.click();
 		hp.homeMenu.click();
 	}

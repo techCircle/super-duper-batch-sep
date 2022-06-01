@@ -1,7 +1,7 @@
 package anoma51TestCases;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import apPageObjects.RegisterPage;
@@ -20,7 +20,7 @@ public class RegistrationFunctionality {
 
 	RegisterPage rp = new RegisterPage();
 	
-	@BeforeClass
+	@BeforeSuite
 	public void setUp() {
 		BaseClass.getDriver();
 	}
@@ -35,7 +35,7 @@ public class RegistrationFunctionality {
 		rp.verify();
 	}
 
-	@AfterClass
+	@AfterSuite
 	public void tearDown() {
 		BaseClass.tearDown();
 	}

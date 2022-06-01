@@ -1,8 +1,8 @@
 package anoma51TestCases;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import apPageObjects.LoginPage;
 import apUtilities.BaseClass;
@@ -11,13 +11,13 @@ public class LoginFunctionality {
 
 	LoginPage lp = new LoginPage();
 
-	@BeforeClass
+	@BeforeSuite
 	public void setUp() throws InterruptedException {
 		BaseClass.getDriver();
 	}
 
 	@BeforeMethod
-	public void beforeClass() {
+	public void beforeTest() {
 		lp.accountMenu.click();
 	}
 
@@ -87,7 +87,7 @@ public class LoginFunctionality {
 		lp.VerifySignout();
 	}
 
-	@AfterClass
+	@AfterSuite
 	public void tearDown() {
 		BaseClass.tearDown();
 	}
