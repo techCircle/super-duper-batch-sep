@@ -15,8 +15,8 @@ public class Driver {
 		
 		
         if (driver == null) {
-
-            switch (ConfigurationProperties.getProperty("browser")) {
+        	
+            switch (NuiConfigurationProperties.getKeyValue("browser")) {
 
             case "firefox":
 
@@ -41,8 +41,6 @@ public class Driver {
                 break;
 
             }
-            
-            driver.get("https://www.techcircleschool.com");
 
         }
 

@@ -9,7 +9,8 @@ public class ConfigurationProperties {
  	static {
  		try {
  			// copy : path from content root OR absolute path
- 			String path = "src/test/resources/thunpanBeePropertiesFolder.properties/config.properties";
+// 			String path = "src/test/resources/thunpanBeePropertiesFolder.properties/config.properties";
+ 			String path = Constant.config_file;
  			FileInputStream input = new FileInputStream(path);
 
  			configFile = new Properties();
