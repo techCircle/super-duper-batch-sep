@@ -1,21 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5812" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:41:01 EDT">
+  <suite started-at="2022-06-01T01:23:57 EDT" name="Default suite" finished-at="2022-06-01T01:24:47 EDT" duration-ms="50054">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5812" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:41:01 EDT">
-      <class name="SeleniumDay12_13.checkoutCartTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:SeleniumDay12_13.checkoutCartTest@18b0930f]" name="setUp" is-config="true" duration-ms="856" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:40:56 EDT">
+    <test started-at="2022-06-01T01:23:57 EDT" name="Default test" finished-at="2022-06-01T01:24:47 EDT" duration-ms="50054">
+      <class name="Ratthanon51TestCases.AccoutTestCase">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:23:57 EDT" name="beforeClass" finished-at="2022-06-01T01:23:57 EDT" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testOrderConfirmation()[pri:0, instance:SeleniumDay12_13.checkoutCartTest@18b0930f]" name="testOrderConfirmation" duration-ms="4917" started-at="2022-05-26T21:40:56 EDT" finished-at="2022-05-26T21:41:01 EDT">
+        </test-method> <!-- beforeClass -->
+        <test-method signature="LoginValidUserPassword()[pri:1, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:23:57 EDT" name="LoginValidUserPassword" finished-at="2022-06-01T01:24:03 EDT" duration-ms="5910" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testOrderConfirmation -->
-      </class> <!-- SeleniumDay12_13.checkoutCartTest -->
+        </test-method> <!-- LoginValidUserPassword -->
+        <test-method signature="VerifyLogin(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:03 EDT" name="VerifyLogin" data-provider="LoginAccoutDataprovider" finished-at="2022-06-01T01:24:06 EDT" duration-ms="2676" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pradatopoo@hotmail]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[@Prada252627282930!??]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ERROR: Invalid username.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLogin -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:03 EDT" name="beforeClass" finished-at="2022-06-01T01:24:03 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="VerifyLogin(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:06 EDT" name="VerifyLogin" data-provider="LoginAccoutDataprovider" finished-at="2022-06-01T01:24:08 EDT" duration-ms="2268" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[pradatop@hotmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Error: Password is required.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLogin -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:06 EDT" name="beforeClass" finished-at="2022-06-01T01:24:06 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:08 EDT" name="beforeClass" finished-at="2022-06-01T01:24:08 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="VerifyLogin(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:08 EDT" name="VerifyLogin" data-provider="LoginAccoutDataprovider" finished-at="2022-06-01T01:24:10 EDT" duration-ms="2002" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[@Prada252627282930!?]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Error: Username is required.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLogin -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:10 EDT" name="beforeClass" finished-at="2022-06-01T01:24:10 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="VerifyLogin(java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:10 EDT" name="VerifyLogin" data-provider="LoginAccoutDataprovider" finished-at="2022-06-01T01:24:12 EDT" duration-ms="2043" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Error: Username is required.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLogin -->
+        <test-method signature="MaskedPassword()[pri:3, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:12 EDT" name="MaskedPassword" finished-at="2022-06-01T01:24:13 EDT" duration-ms="1120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MaskedPassword -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:12 EDT" name="beforeClass" finished-at="2022-06-01T01:24:12 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:13 EDT" name="beforeClass" finished-at="2022-06-01T01:24:13 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="LoginCaseSensitive()[pri:4, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:13 EDT" name="LoginCaseSensitive" finished-at="2022-06-01T01:24:15 EDT" duration-ms="1968" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginCaseSensitive -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:15 EDT" name="beforeClass" finished-at="2022-06-01T01:24:15 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="LoginAuthentication()[pri:5, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:15 EDT" name="LoginAuthentication" finished-at="2022-06-01T01:24:19 EDT" duration-ms="4049" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginAuthentication -->
+        <test-method signature="RegisterValidInfo()[pri:6, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:19 EDT" name="RegisterValidInfo" finished-at="2022-06-01T01:24:24 EDT" duration-ms="5120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterValidInfo -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:19 EDT" name="beforeClass" finished-at="2022-06-01T01:24:19 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:24 EDT" name="beforeClass" finished-at="2022-06-01T01:24:24 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="RegisterinValidEmail()[pri:7, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:24 EDT" name="RegisterinValidEmail" finished-at="2022-06-01T01:24:30 EDT" duration-ms="5715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterinValidEmail -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:30 EDT" name="beforeClass" finished-at="2022-06-01T01:24:30 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="RegisterWithemptyEmail()[pri:8, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:30 EDT" name="RegisterWithemptyEmail" finished-at="2022-06-01T01:24:36 EDT" duration-ms="5676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterWithemptyEmail -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:36 EDT" name="beforeClass" finished-at="2022-06-01T01:24:36 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="RegisterWithEmptypassword()[pri:9, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:36 EDT" name="RegisterWithEmptypassword" finished-at="2022-06-01T01:24:41 EDT" duration-ms="5645" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterWithEmptypassword -->
+        <test-method signature="RegisterWithEmptyemailpassword()[pri:10, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:41 EDT" name="RegisterWithEmptyemailpassword" finished-at="2022-06-01T01:24:47 EDT" duration-ms="5702" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegisterWithEmptyemailpassword -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:41 EDT" name="beforeClass" finished-at="2022-06-01T01:24:41 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Ratthanon51TestCases.AccoutTestCase@3ff57625]" started-at="2022-06-01T01:24:47 EDT" name="afterClass" finished-at="2022-06-01T01:24:47 EDT" duration-ms="107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Ratthanon51TestCases.AccoutTestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
