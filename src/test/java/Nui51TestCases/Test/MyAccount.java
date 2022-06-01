@@ -46,11 +46,10 @@ public class MyAccount {
 	EditAccountPageObject eap = new EditAccountPageObject();
 	
 	@BeforeMethod
-	public void setup() {
+	public void setup() throws InterruptedException {
 		driver = Driver.getDriver();
 		driver.get(NuiConfigurationProperties.getKeyValue("url"));
 		wait = new WebDriverWait(driver, 30);
-		
 	}
 	
 	@Test
@@ -58,6 +57,7 @@ public class MyAccount {
 		al.validUsernamePassword();
 		ap.dashboardBtn.click();
 		Assert.assertTrue(ap.dashboardMsg.getText().contains("dashboard"));
+		ap.signoutBtn.click();
 	}
 	  
 	@Test
@@ -66,6 +66,8 @@ public class MyAccount {
 		ap.orderBtn.click();
 		Assert.assertTrue(driver.getCurrentUrl().contains("orders"));
 		Assert.assertTrue(op.orderTxt.isDisplayed());
+		cp.myaccountBtn.click();
+		ap.signoutBtn.click();
 	}
 	
 	@Test  
@@ -78,6 +80,8 @@ public class MyAccount {
 		ap.orderBtn.click();
 		op.viewBtn.click();
 		vp.verifyViewOrderPage();
+		cp.myaccountBtn.click();
+		ap.signoutBtn.click();
 	}
 	
 	@Test
@@ -88,8 +92,10 @@ public class MyAccount {
 		cp.myaccountBtn.click();
 		ap.orderBtn.click();
 		op.viewBtn.click();
-		System.out.println(vp.orderNumDateStatus.getText());
-		Assert.assertTrue(vp.orderNumDateStatus.getText().equals(NuiConfigurationProperties.getKeyValue("confirmOrderDt")));
+		vp.verifyOrderNumDateStatus();
+		cp.myaccountBtn.click();
+		ap.signoutBtn.click();
+
 	}
 	
 	@Test
@@ -97,14 +103,20 @@ public class MyAccount {
 		al.validUsernamePassword();
 		ap.addressBtn.click();
 		ea.verifyBillingShippingAdd();
+		cp.myaccountBtn.click();
+		ap.signoutBtn.click();
 	}
 	
 	@Test 
 	public void addressFunctionalityV2() throws InterruptedException {
-		this.addressFunctionality();
+		al.validUsernamePassword();
+		ap.addressBtn.click();
+		ea.verifyBillingShippingAdd();
 		ea.editShippingAddBtn.click();
 		eas.fillFormEditShippingAdd();
 		Assert.assertTrue(ap.addChangeMsg.getText().equals(NuiConfigurationProperties.getKeyValue("addressChangeMsg")));
+		cp.myaccountBtn.click();
+		ap.signoutBtn.click();
 	}
 	
 	@Test
@@ -112,19 +124,20 @@ public class MyAccount {
 		al.validUsernamePassword();
 		ap.myAccBtn.click();
 		Assert.assertTrue(eap.EditPwdTxt.getText().equals(NuiConfigurationProperties.getKeyValue("newPwdChange")));
+		cp.myaccountBtn.click();
+		ap.signoutBtn.click();
 	}
 	
 	@Test
 	public void logout() {
 		al.validUsernamePassword();
 		ap.signoutBtn.click();
-		Assert.assertTrue(lg.loginTxt.getText().equals(NuiConfigurationProperties.getKeyValue("loginTxt")));
+		Assert.assertTrue(lg.loginTxt.getText().equals(NuiConfigurationProperties.getKeyValue("loginTxt"))); 
 	}
 	
 	@AfterClass
 	public void after() {
-		
-		driver.quit();
+	//	driver.close();;
 	}
 
 }
