@@ -3,7 +3,6 @@ package thunpanBee51TestCases;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
 import thunpanBeePageObj.CartPage;
 import thunpanBeePageObj.CheckOutCompletePage;
 import thunpanBeePageObj.CheckOutOverViewPage;
@@ -29,47 +28,15 @@ public class SwagLabLoginTesting {
 	@Test
 	public void TC001_doLogin() {
 		lp.doLogin();
-	}
-
-	@Test
-	public void TC002_verifyProductList() {
 		productPage.verifyPruductList();
-	}
-
-	@Test
-	public void TC003_addItemTocart() {
 		productPage.clickOnProduct();
-
-	}
-
-	@Test
-	public void TC004_verifyItemList() {
 		cartPage.verifyItemList();
-	}
-
-	@Test
-	public void TC005_verifyNavigateToCheckoutPage() {
 		checkoutPage.verifyToNextPage();
-	}
-
-	@Test
-	public void TC006_formInput() {
 		checkoutPage.formInput();
-	}
-
-	@Test
-	public void TC007_verifyCheckoutTitle() {
 		checkOutOV.verifyCheckOutTitle();
-	}
-
-	@Test
-	public void TC008_verifySumaryInfo() {
 		checkOutOV.verifySumaryInfo();
-	}
-
-	@Test
-	public void TC009_verifyCompleteCheckout() {
 		checkoutComplete.completeCheckOut();
+
 	}
 
 //		@AfterMethod

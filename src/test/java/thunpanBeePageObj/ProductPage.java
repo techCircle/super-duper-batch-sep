@@ -2,6 +2,7 @@ package thunpanBeePageObj;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,14 +17,6 @@ public class ProductPage {
 		PageFactory.initElements(Driver.getDriver(),this);
 	}
 	
-	@FindBy(xpath="//button[@id='add-to-cart-sauce-labs-backpack']")
-	public WebElement backPack;
-	
-	@FindBy(id="add-to-cart-sauce-labs-bolt-t-shirt")
-	public WebElement tShirt;
-	
-	@FindBy(id="add-to-cart-sauce-labs-onesie")
-	public WebElement onesieProduct;
 	
 	@FindBy(xpath = "//span[@class='shopping_cart_badge']")
 	public WebElement cartBtn;
@@ -34,9 +27,18 @@ public class ProductPage {
 	
 	
 	public void clickOnProduct() {
-		backPack.click();
-		tShirt.click();
-		onesieProduct.click();
+		
+        //2) loop through the list
+        for(WebElement listOfProduct : productList) {
+            // 3) get the "addCartButton" xpath
+            WebElement addCartBtn = listOfProduct.findElement(By.xpath(".//button[contains(text(), 'Add to cart')]"));
+            // 4) in this statement use .getAttribute to get attribute of <nameTag> in this
+            //   example : we use <id> and use .contain() to get whatever id that contain keyword as "t-shirt"
+            if(addCartBtn.getAttribute("id").contains("t-shirt")) {
+                // 5) click on items that contain "t-shirt"
+                addCartBtn.click();
+            }
+        }
 		cartBtn.click();
 	}
 	
