@@ -18,4 +18,8 @@ public class ThunpanBeeConstant {
 	/////////////////////////////////////////////
 	public static final String updateExp="updated";
 	public static final String desExp="Product Description";
+	public static final String couponExp="Coupon";
+	public static final String reviewExp="Reviews";
+	public static final String removeExp="removed";
+	public static final String totalTextExp="Total";
 }

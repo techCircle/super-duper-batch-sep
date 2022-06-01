@@ -2,7 +2,6 @@ package thunpanBee51TestCasesPageObj;
 
 import java.util.List;
 
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -22,10 +21,10 @@ public class ShopObjPage {
 
 	@FindBy(xpath = "//*[text()='Shop']")
 	private WebElement shopBtn;
-	
+
 	@FindBy(xpath = "//*[text()='Home']")
 	public WebElement homeBtn;
-	
+
 	@FindBy(xpath = "//button[contains(text(),'Filter')]")
 	private WebElement filterBtn;
 
@@ -78,7 +77,7 @@ public class ShopObjPage {
 
 	public void addProduct() {
 
-		// addBasket.get(1).click();
+		addBasket.get(1).click();
 
 	}
 
@@ -113,7 +112,7 @@ public class ShopObjPage {
 		selectSortingAvg();
 		selectSortingNew();
 		selectSortingLow();
-		selectSortingHigh();	
+		selectSortingHigh();
 	}
 
 	public void selectSorting() {
@@ -150,7 +149,7 @@ public class ShopObjPage {
 	}
 
 	public void verifyCategoryProuct() {
-		
+
 		String actual = productHeaderlabel.getText();
 		String expected = ThunpanBeeConstant.productLabel;
 		System.out.println("Actual Product Display: " + actual);
@@ -161,7 +160,7 @@ public class ShopObjPage {
 	public void verifyPrice() {
 
 		double price = Driver.getPriceAsInt(priceTag);
-		double expected = ThunpanBeeConstant.price;	
+		double expected = ThunpanBeeConstant.price;
 		System.out.println("Actual Price: " + price);
 		System.out.println("Expected Price: " + expected);
 		Assert.assertTrue(Double.valueOf(price) <= 450);

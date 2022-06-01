@@ -1,6 +1,12 @@
 package thunpanBee51TestCases;
 
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -79,4 +85,17 @@ public class Driver {
 			driver.close();
 		}
 	}
+	
+	//// ConvertCurrency ////
+	public static BigDecimal parse(final String amount, final Locale locale) throws ParseException {
+		final NumberFormat format = NumberFormat.getNumberInstance(locale);
+		if (format instanceof DecimalFormat) {
+			((DecimalFormat) format).setParseBigDecimal(true);
+		}
+		return (BigDecimal) format.parse(amount.replaceAll("[^\\d.,]", ""));
+	}
+	
+	
 }
+
+

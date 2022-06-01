@@ -1,12 +1,13 @@
 package thunpanBee51TestCases;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import thunpanBee51TestCasesPageObj.BasketObj;
+import thunpanBee51TestCasesPageObj.CheckoutPageObj;
 import thunpanBee51TestCasesPageObj.HomePageObj;
+import thunpanBee51TestCasesPageObj.OrderRecievedObj;
 import thunpanBee51TestCasesPageObj.ProductPageObj;
 import thunpanBee51TestCasesPageObj.ShopObjPage;
 
@@ -15,6 +16,8 @@ public class HomePageTesting {
 	private ShopObjPage shop;
 	private ProductPageObj productPage = new ProductPageObj();
 	private BasketObj basketPage = new BasketObj();
+	private CheckoutPageObj coPage = new CheckoutPageObj();
+	private OrderRecievedObj orderRecieved = new OrderRecievedObj();
 
 	@BeforeClass
 	public void setUp() {
@@ -57,7 +60,6 @@ public class HomePageTesting {
 		homepage.clickRelatedProduct();
 		productPage.clickDescription();
 		productPage.verifyDescription();
-
 	}
 
 	@Test
@@ -68,151 +70,165 @@ public class HomePageTesting {
 		productPage.verifyReview();
 
 	}
-    @Test
-    public void TC006_HomepageArrivalsImagesAddToBasket(){ 
-    	
-    	homepage.clickRelatedProduct();
-    	productPage.clickOnAddBasket();
-    	productPage.verifyViewCartIsDisplay();
-    	   	
-    }
 
-//    @Test(priority = 5)
-//    public void TC007_HomepageArrivalsAddToBasketWithMoreBooks(){ 
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.inputQuantity();
-//
-//    }
-//    @Test(priority = 6)
-//    public void TC008_HomeArrivalsAddToBasketItems(){ 
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.isCheckoutBtnEnable();
-//    }
-//    @Test(priority = 7)
-//    public void TC009_HomeArrivalsAddToBasketItemsCoupon(){ 
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.inputSend4();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.isCheckoutBtnEnable();
-//        homepage.couponBoxInput();
-//        homepage.couponVerify();
-//    }
-//    @Test(priority = 8)
-//    public void TC010_HomeArrivalsAddToBasketItemsCouponValue450(){
-//
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.isCheckoutBtnEnable();
-//        homepage.couponBoxInput();
-//        homepage.couponVerify();
-//    }
-//    @Test(priority = 9)
-//    public void TC011_HomeArrivalsAddToBasketItemsRemoveBook(){ 
-//
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.isCheckoutBtnEnable();
-//        homepage.removeBtn.click();
-//        homepage.removeVerify();
-//    }
+	@Test
+	public void TC006_HomepageArrivalsImagesAddToBasket() {
 
-//  @Test
-//	public void TC012_HomeArrivalsAddToBasketItemsAddBook() {
-//		homepage.verifyImagesInArrivalsShouldNavigate();
-//		homepage.clickRelatedProduct();
-//		productPage.verifyAddBasKetBtn();
-//		//productPage.clickOnAddBasket();
-//		basketPage.inoputQTYBox();
-//		basketPage.verifyUpadteInfo();
-//
-//	}
-//    @Test(priority = 11)
-//    public void TC013_HomeArrivalsAddToBasketItemsCheckoutBookFinalPrice(){ 
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.totalPriceVerify();
-//
-//    }
+		homepage.clickRelatedProduct();
+		productPage.clickOnAddBasket();
+		productPage.verifyViewCartIsDisplay();
 
-//    @Test(priority = 13)
-//    public void TC014_HomeArrivalsAddToBasketItemsCheckoutUpdateBasket(){ 
-//
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.totalAndSubtotal();
-//    }
-//    @Test(priority = 14)
-//    public void TC015_HomeArrivalsAddToBasketItemsCheckoutTotalSubTotalCondition(){ 
-//
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.totalAndSubtotal();
-//        homepage.checkOutBtn.click();
-//        homepage.getTitle();
-//
-//    }
-//    @Test(priority = 15)
-//    public void TC016_HomeArrivalsAddToBasketItemsCheckoutFunctionality(){ 
-//
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.totalAndSubtotal();
-//        homepage.checkOutBtn.click();
-//        homepage.billingLabelVerify();
-//        homepage.formVerify();
-//
-//    }
-//    @Test(priority = 16)
-//    public void TC017_HomeArrivalsAddToBasketItemsCheckoutPaymentGateway(){
-//        homepage.masterJavaBookImg.click();
-//        homepage.programmingBook.click();
-//        homepage.addCartBtn.click();
-//        homepage.verifyBasket();
-//        homepage.viewCart.click();
-//        homepage.totalAndSubtotal();
-//        homepage.checkOutBtn.click();
-//        homepage.billingLabelVerify();
-//        homepage.formVerify();
-//        homepage.formFillIn();//have to change email every executed//
-//        homepage.placeOrderBtn.click();
-//        homepage.orderConfirm();
-//    }
-//    	public void TC018_HomeArrivalsAddToBasketItemsCheckoutPaymentGatewayPlaceOrder() {
+	}
 
-//    	}
+	@Test
+	public void TC007_HomepageArrivalsAddToBasketWithMoreBooks() {
 
-//    @AfterClass
-//    public void Destroy(){
-//        Driver.destroy();
-//    }
-    
-    
+		homepage.clickRelatedProduct();
+		productPage.clickOnAddBasket();
+		productPage.verifyViewCartIsDisplay();
+		productPage.inputQuantity();
+
+	}
+
+	@Test
+	public void TC008_HomeArrivalsAddToBasketItems() {
+
+		homepage.clickRelatedProduct();
+		productPage.clickOnAddBasket();
+		productPage.verifyViewCartIsDisplay();
+		productPage.clickOnCartBtn();
+		basketPage.verifyCheckoutBtn();
+
+	}
+
+	@Test
+	public void TC009_HomeArrivalsAddToBasketItemsCoupon() throws InterruptedException {
+		homepage.clickRelatedProduct();
+		productPage.clickOnAddBasket();
+		productPage.verifyViewCartIsDisplay();
+		productPage.clickOnCartBtn();
+		basketPage.verifyCheckoutBtn();
+		basketPage.inputQTYBox();
+		Thread.sleep(2000);
+		basketPage.couponBoxInput();
+		basketPage.couponVerify();
+	}
+
+	@Test
+	public void TC010_HomeArrivalsAddToBasketItemsCouponValue450() {
+
+		homepage.clickRelatedProduct();
+		productPage.clickOnAddBasket();
+		productPage.verifyViewCartIsDisplay();
+		productPage.clickOnCartBtn();
+		basketPage.verifyCheckoutBtn();
+		basketPage.couponBoxInput();
+		basketPage.couponVerify();
+	}
+
+	@Test
+	public void TC011_HomeArrivalsAddToBasketItemsRemoveBook() throws InterruptedException {
+
+		homepage.clickRelatedProduct();
+		productPage.clickOnAddBasket();
+		productPage.verifyViewCartIsDisplay();
+		productPage.clickOnCartBtn();
+		basketPage.verifyCheckoutBtn();
+		basketPage.clickRvmBtn();
+		Thread.sleep(2000);
+		basketPage.verifyRemove();
+	}
+
+	@Test
+	public void TC012_HomeArrivalsAddToBasketItemsAddBook() {
+
+		homepage.clickRelatedProduct();
+		productPage.verifyAddBasKetBtn();
+		productPage.clickOnAddBasket();
+		productPage.clickOnCartBtn();
+		basketPage.inputQTYBox();
+		basketPage.verifyUpadteInfo();
+
+	}
+
+	@Test
+	public void TC013_HomeArrivalsAddToBasketItemsCheckoutBookFinalPrice() {
+
+		homepage.clickRelatedProduct();
+		productPage.verifyAddBasKetBtn();
+		productPage.clickOnAddBasket();
+		productPage.clickOnCartBtn();
+		basketPage.verifyTotalPrice();
+
+	}
+
+	@Test
+	public void TC014_HomeArrivalsAddToBasketItemsCheckoutUpdateBasket() {
+
+		homepage.clickRelatedProduct();
+		productPage.verifyAddBasKetBtn();
+		productPage.clickOnAddBasket();
+		productPage.clickOnCartBtn();
+		basketPage.inputQTYBox();
+		basketPage.verifyUpadteInfo();
+	}
+
+	@Test
+	public void TC015_HomeArrivalsAddToBasketItemsCheckoutTotalSubTotalCondition() {
+
+		homepage.clickRelatedProduct();
+		productPage.verifyAddBasKetBtn();
+		productPage.clickOnAddBasket();
+		productPage.clickOnCartBtn();
+		basketPage.totalAndSubtotal();
+
+	}
+
+	@Test
+	public void TC016_HomeArrivalsAddToBasketItemsCheckoutFunctionality() {
+
+		homepage.clickRelatedProduct();
+		productPage.verifyAddBasKetBtn();
+		productPage.clickOnAddBasket();
+		productPage.clickOnCartBtn();
+		basketPage.totalAndSubtotal();
+		basketPage.clickCheckout();
+		coPage.verifyBillinLabelAndForm();
+
+	}
+
+	@Test
+	public void TC017_HomeArrivalsAddToBasketItemsCheckoutPaymentGateway() {
+		homepage.clickRelatedProduct();
+		productPage.verifyAddBasKetBtn();
+		productPage.clickOnAddBasket();
+		productPage.clickOnCartBtn();
+		basketPage.totalAndSubtotal();
+		basketPage.clickCheckout();
+		coPage.verifyBillinLabelAndForm();
+		coPage.formFillIn();// have to change email every executed//
+		
+
+	}
+
+	@Test
+	public void TC018_HomeArrivalsAddToBasketItemsCheckoutPaymentGatewayPlaceOrder() {
+		homepage.clickRelatedProduct();
+		productPage.verifyAddBasKetBtn();
+		productPage.clickOnAddBasket();
+		productPage.clickOnCartBtn();
+		basketPage.totalAndSubtotal();
+		basketPage.clickCheckout();
+		coPage.verifyBillinLabelAndForm();
+		coPage.formFillIn();// have to change email every executed//
+		coPage.clickPlaceOrder();
+		orderRecieved.verifyOrderConfirm();
+	}
+	
+
+	@AfterClass
+	public void Destroy() {
+		Driver.destroy();
+	}
+
 }

@@ -2,8 +2,8 @@ package thunpanBee51TestCasesPageObj;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -12,6 +12,8 @@ import thunpanBee51TestCases.Driver;
 import thunpanBee51TestCases.ThunpanBeeConstant;
 
 public class ProductPageObj {
+
+	JavascriptExecutor js;
 
 	public ProductPageObj() {
 		PageFactory.initElements(Driver.getDriver(), this);
@@ -44,15 +46,15 @@ public class ProductPageObj {
 	@FindBy(xpath = "//*[@id='tab-description']")
 	private WebElement descriptionP;
 
-	@FindBy(xpath = "//*[@id='product-170']/div[3]/ul/li[2]/a")
+	@FindBy(xpath = "//*[@id='product-181']/div[3]/ul/li[2]/a")
 	public WebElement reviewTab;
 
 	@FindBy(xpath = "//div[@id='comments']")
 	public WebElement reviewText;
 
 	@FindBy(xpath = "//*[@name='quantity']")
-	public WebElement input;
-	
+	public WebElement inputBox;
+
 	public void clickOnAddBasket() {
 		addBaskeBtn.click();
 	}
@@ -62,11 +64,30 @@ public class ProductPageObj {
 	}
 
 	public void clickreview() {
-		reviewText.click();
+		reviewTab.click();
 	}
-	
+
+	public void clickOnCartBtn() {
+		viewCart.click();
+	}
+
 	public void inputQuantity() {
-		
+		String maxInput = inputBox.getAttribute("Max");
+		System.out.println("Maximum quantity : " + maxInput);
+
+		int maxPlusOne = Integer.parseInt(maxInput + 1);
+		inputBox.clear();
+		inputBox.sendKeys(maxPlusOne + "");
+		addBaskeBtn.click();
+
+		js = (JavascriptExecutor) Driver.getDriver();
+		Boolean isValidInput = (Boolean) js.executeScript("return arguments[0].checkValidity();", inputBox);
+		String validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", inputBox);
+		System.out.println("Actual Alert : " + validationMessage);
+		Assert.assertFalse(isValidInput);
+		String alert = String.format("Value must be less than or equal to %d.", Integer.valueOf(maxInput));
+		Assert.assertTrue(alert.contains(validationMessage));
+		System.out.println("Expected Alert : " + alert);
 	}
 
 	public void verifyViewCartIsDisplay() {
@@ -86,7 +107,7 @@ public class ProductPageObj {
 
 	public void verifyReview() {
 		String actualText = reviewText.getText();
-		String expected = "";
+		String expected = ThunpanBeeConstant.reviewExp;
 		System.out.println("Actual : " + actualText);
 		System.out.println("Expected : " + expected);
 		Assert.assertTrue(actualText.contains(expected));
@@ -96,7 +117,7 @@ public class ProductPageObj {
 
 		System.out.println("Add Basket isDisplayed: " + addBaskeBtn.isDisplayed());
 		Assert.assertTrue(addBaskeBtn.isEnabled());
-	
+
 	}
 
 	public void verifyOgAndSalePrice() {

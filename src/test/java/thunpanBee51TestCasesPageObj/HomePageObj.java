@@ -43,12 +43,6 @@ public class HomePageObj {
 		Driver.clickOnProduct(pp.relatedProductList, ConfigurationProperties.getInputDataProperty("relatedProduct"));
 	}
 
-
-	
-	
-	
-	
-
 	public void verifyHomePageSlide() {
 		int actualHpSlide = hpSlide.size();
 		int expectedSlide = ThunpanBeeConstant.hpSlide;
