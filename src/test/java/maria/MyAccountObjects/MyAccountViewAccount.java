@@ -1,4 +1,4 @@
-package Maria51TestCases;
+package maria.MyAccountObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,11 +15,11 @@ public class MyAccountViewAccount {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 
-
+//changes to push
 	@FindBy(id="account_first_name")
 	public WebElement firstNameEdit;
 
-//Hello
+
 
 	@FindBy(id="account_last_name")
 	public WebElement lastNameEdit;

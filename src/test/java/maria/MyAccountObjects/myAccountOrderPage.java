@@ -1,4 +1,4 @@
-package Maria51TestCases;
+package maria.MyAccountObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +13,7 @@ public class myAccountOrderPage {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 	
-	
+	//changes to push
 	@FindBy(xpath="//a[@class='button view']")
 	WebElement viewButton;
 	

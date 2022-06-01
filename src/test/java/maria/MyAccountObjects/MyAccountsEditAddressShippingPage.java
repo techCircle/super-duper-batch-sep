@@ -1,4 +1,4 @@
-package Maria51TestCases;
+package maria.MyAccountObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -18,7 +18,7 @@ public class MyAccountsEditAddressShippingPage {
 	}
 
 
-
+//changes to push
 	@FindBy(xpath="//input[@id='shipping_first_name']")
 	WebElement firstNameShipping;
 

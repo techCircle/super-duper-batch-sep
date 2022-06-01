@@ -1,18 +1,18 @@
-package com.MyAccountTestRunner;
+package maria.MyAccountTestRunner;
 
 import org.testng.annotations.Test;
 
-import com.MyAccountObjects.MyAccountDashBoardPage;
-import com.MyAccountObjects.MyAccountPageObject;
-import com.MyAccountObjects.MyAccountViewAccount;
-import com.MyAccountObjects.MyAccountsEditAddressPage;
-import com.MyAccountObjects.MyAccountsEditAddressShippingPage;
-import com.MyAccountObjects.MyAccountsViewOrderPage;
-import com.MyAccountObjects.myAccountOrderPage;
-
 import Utilities.Driver;
+import maria.MyAccountObjects.MyAccountDashBoardPage;
+import maria.MyAccountObjects.MyAccountPageObject;
+import maria.MyAccountObjects.MyAccountViewAccount;
+import maria.MyAccountObjects.MyAccountsEditAddressPage;
+import maria.MyAccountObjects.MyAccountsEditAddressShippingPage;
+import maria.MyAccountObjects.MyAccountsViewOrderPage;
+import maria.MyAccountObjects.myAccountOrderPage;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
@@ -27,12 +27,16 @@ public class MyAccountTests {
 	MyAccountViewAccount mAcVAc=new MyAccountViewAccount();
 
 
-	@BeforeMethod
-
-	public void setUp() {
-		Driver.getDriver();
+	@BeforeClass public void beforeClass() {
+		System.out.println("Before class");
 	}
-	@AfterMethod
+	//changes to push
+	@BeforeMethod
+	public void setUp() {
+		Driver.getDriver();}
+
+
+	@AfterClass
 	public void afterMethod() {
 		Driver.tearDown();
 	}
@@ -102,13 +106,6 @@ public class MyAccountTests {
 
 	}
 
-
-
-
-
-
-
-
 	@Test
 
 
@@ -131,5 +128,5 @@ public class MyAccountTests {
 
 
 
-	
+
 }

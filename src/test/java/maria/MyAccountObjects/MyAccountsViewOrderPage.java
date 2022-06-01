@@ -1,4 +1,4 @@
-package Maria51TestCases;
+package maria.MyAccountObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +14,7 @@ public class MyAccountsViewOrderPage {
 	}
 	
 	
-	
+	//changes to push
 	@FindBy(xpath="//*[text()=\"Order Details\"]")
 	WebElement orderDetailsDisplayed;
 	

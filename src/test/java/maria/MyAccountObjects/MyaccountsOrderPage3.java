@@ -1,4 +1,4 @@
-package Maria51TestCases;
+package maria.MyAccountObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +12,7 @@ public class MyaccountsOrderPage3 {
 	public MyaccountsOrderPage3() {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
-	
+	// changes to push
 	
 	@FindBy(className="order-number")
 	WebElement orderNumber;

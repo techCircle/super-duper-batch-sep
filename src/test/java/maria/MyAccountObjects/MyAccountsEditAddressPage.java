@@ -1,4 +1,4 @@
-package Maria51TestCases;
+package maria.MyAccountObjects;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,9 +17,9 @@ PageFactory.initElements(Driver.getDriver(), this);
 	
 	
 	
+	////////////////////////changes to push
 	
-	
-	@FindBy(xpath="//*[text()=\"Billing Address\"]")
+	@FindBy(xpath="//h3[normalize-space()='Billing Address']")
 	WebElement billingAddress;
 	
 	@FindBy(xpath="//div[@class='u-column1 col-1 woocommerce-Address']//address[1]")
