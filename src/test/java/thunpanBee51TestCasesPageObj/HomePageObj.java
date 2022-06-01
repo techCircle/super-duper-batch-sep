@@ -10,8 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import thunpanBee51TestCases.ConfigurationProperties;
-import thunpanBee51TestCases.Constant;
+
 import thunpanBee51TestCases.Driver;
+import thunpanBee51TestCases.ThunpanBeeConstant;
 
 public class HomePageObj {
 
@@ -50,7 +51,7 @@ public class HomePageObj {
 
 	public void verifyHomePageSlide() {
 		int actualHpSlide = hpSlide.size();
-		int expectedSlide = Constant.hpSlide;
+		int expectedSlide = ThunpanBeeConstant.hpSlide;
 		System.out.println("Actual Homepage slide: " + actualHpSlide);
 		System.out.println("Expected : " + expectedSlide);
 		Assert.assertEquals(actualHpSlide, expectedSlide);
@@ -58,7 +59,7 @@ public class HomePageObj {
 
 	public void verifyNewArrivalSlide() {
 		int actualImageSlide = newArrivalImageList.size();
-		int expectedSlide = Constant.newArrivalSlide;
+		int expectedSlide = ThunpanBeeConstant.newArrivalSlide;
 		System.out.println("Actual image slide: " + actualImageSlide);
 		System.out.println("Expected : " + expectedSlide);
 		Assert.assertEquals(actualImageSlide, expectedSlide);

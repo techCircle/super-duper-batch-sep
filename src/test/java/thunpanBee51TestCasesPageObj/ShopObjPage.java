@@ -2,7 +2,7 @@ package thunpanBee51TestCasesPageObj;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,8 +12,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import thunpanBee51TestCases.ConfigurationProperties;
-import thunpanBee51TestCases.Constant;
+
 import thunpanBee51TestCases.Driver;
+import thunpanBee51TestCases.ThunpanBeeConstant;
 
 public class ShopObjPage {
 
@@ -151,7 +152,7 @@ public class ShopObjPage {
 	public void verifyCategoryProuct() {
 		
 		String actual = productHeaderlabel.getText();
-		String expected = Constant.productLabel;
+		String expected = ThunpanBeeConstant.productLabel;
 		System.out.println("Actual Product Display: " + actual);
 		System.out.println("Expected Product Display: " + expected);
 		Assert.assertTrue(actual.contains(expected));
@@ -160,7 +161,7 @@ public class ShopObjPage {
 	public void verifyPrice() {
 
 		double price = Driver.getPriceAsInt(priceTag);
-		double expected = Constant.price;	
+		double expected = ThunpanBeeConstant.price;	
 		System.out.println("Actual Price: " + price);
 		System.out.println("Expected Price: " + expected);
 		Assert.assertTrue(Double.valueOf(price) <= 450);

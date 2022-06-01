@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import thunpanBee51TestCases.Constant;
 import thunpanBee51TestCases.Driver;
+import thunpanBee51TestCases.ThunpanBeeConstant;
 
 public class ProductPageObj {
 
@@ -78,7 +78,7 @@ public class ProductPageObj {
 
 	public void verifyDescription() {
 		String des = descriptionP.getText();
-		String expected = Constant.desExp;
+		String expected = ThunpanBeeConstant.desExp;
 		System.out.println("Actual : " + des);
 		System.out.println("Expected : " + expected);
 		Assert.assertTrue(des.contains(expected));
@@ -110,7 +110,7 @@ public class ProductPageObj {
 
 	public void verifyOutOfStock() {
 		String actual = OOSLabel.getText();
-		String expected = Constant.outOfStock;
+		String expected = ThunpanBeeConstant.outOfStock;
 		System.out.println("Actual Displayed : " + actual);
 		System.err.println("Expected : " + expected);
 		Assert.assertTrue(actual.contains(expected));
