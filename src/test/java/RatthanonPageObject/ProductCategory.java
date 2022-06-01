@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 public class ProductCategory {
 	//ul[@class='products masonry-done']/li
 	
-	WebDriver driver = BaseClass.getDriver();
+	WebDriver driver = BaseClassR.getDriver();
 
 	public ProductCategory() {
 

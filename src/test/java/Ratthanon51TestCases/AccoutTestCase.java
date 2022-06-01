@@ -23,7 +23,7 @@ import org.testng.annotations.Test;
 import RatthanonPageObject.AccoutDetail;
 import RatthanonPageObject.HomePage;
 import RatthanonPageObject.MyAccountPage;
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 import RatthanonUtilities.Constants_ratthanon;
 
 
@@ -42,7 +42,7 @@ public class AccoutTestCase {
 
 	@BeforeMethod
 	public void beforeClass() {
-		BaseClass.getDriver();
+		BaseClassR.getDriver();
 	}
 
 	@Test(priority = 1)
@@ -98,7 +98,7 @@ public class AccoutTestCase {
 		  ac.loginButton.click();
 		  
 		  ad.signOutlink.click();
-		  BaseClass.getDriver().navigate().back();	
+		  BaseClassR.getDriver().navigate().back();	
 		  Assert.assertTrue(ac.loginForm.isDisplayed());
 		 
 		  
@@ -164,6 +164,6 @@ public class AccoutTestCase {
 
 	@AfterClass
 	public void afterClass() {
-		BaseClass.tearDown();
+		BaseClassR.tearDown();
 	}
 }

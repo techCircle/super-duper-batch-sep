@@ -10,11 +10,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 public class ProductPage {
 	
-	WebDriver driver = BaseClass.getDriver();
+	WebDriver driver = BaseClassR.getDriver();
 
 	public ProductPage() {
 

@@ -9,11 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import RatthanonUtilities.Constants_ratthanon;
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 public class MyAccountPage {
 	
-	public WebDriver driver = BaseClass.getDriver();
+	public WebDriver driver = BaseClassR.getDriver();
 
 	public MyAccountPage() {
 		PageFactory.initElements(driver, this);

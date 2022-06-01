@@ -6,11 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 public class BasketPage {
 	
-	public WebDriver driver = BaseClass.getDriver();
+	public WebDriver driver = BaseClassR.getDriver();
 	String titleweb[] = {"selenium-ruby","thinking-in-html","mastering-javascript"};
 		
 			

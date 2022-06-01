@@ -10,11 +10,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 public class ShopPage {
 	
-public WebDriver driver = BaseClass.getDriver();
+public WebDriver driver = BaseClassR.getDriver();
 	
 	
 	int adjustPrice;

@@ -25,7 +25,7 @@ import RatthanonPageObject.ProductCategory;
 import RatthanonPageObject.ProductPage;
 import RatthanonPageObject.ShopPage;
 import RatthanonUtilities.Constants_ratthanon;
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 public class ShopTestCase {
 	
@@ -36,7 +36,7 @@ public class ShopTestCase {
 	
 	@BeforeMethod
 	public void beforeClass() {
-		BaseClass.getDriver();
+		BaseClassR.getDriver();
 	}
 
 	@Test(priority = 1)
@@ -64,7 +64,7 @@ public class ShopTestCase {
 	public void VerifyPopularity(){
 		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.Popularity_item);
-		  Assert.assertTrue(BaseClass.getDriver().getCurrentUrl().contains(Constants_ratthanon.Popularity_item));
+		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.Popularity_item));
 		 				 
 		  
 	}
@@ -73,7 +73,7 @@ public class ShopTestCase {
 	public void VerifyRating(){
 		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.Averageratings);
-		  Assert.assertTrue(BaseClass.getDriver().getCurrentUrl().contains(Constants_ratthanon.Averageratings ));		 				 
+		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.Averageratings ));		 				 
 		  
 	}
 	
@@ -81,7 +81,7 @@ public class ShopTestCase {
 	public void VerifyNewDate() {
 		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.Newnessratings);
-		  Assert.assertTrue(BaseClass.getDriver().getCurrentUrl().contains(Constants_ratthanon.Newnessratings));		 				 
+		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.Newnessratings));		 				 
 		  
 	}
 	
@@ -89,7 +89,7 @@ public class ShopTestCase {
 	public void VerifyLoToHiPrice(){
 		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.LowtoHigh);
-		  Assert.assertTrue(BaseClass.getDriver().getCurrentUrl().contains(Constants_ratthanon.LowtoHigh));		 				 
+		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.LowtoHigh));		 				 
 		  
 	}
 	
@@ -97,7 +97,7 @@ public class ShopTestCase {
 	public void VerifyHiToLoPrice() {
 		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.HightoLow);
-		  Assert.assertTrue(BaseClass.getDriver().getCurrentUrl().contains(Constants_ratthanon.HightoLow));
+		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.HightoLow));
 	}
 	
 	@Test(priority = 8)
@@ -121,6 +121,6 @@ public class ShopTestCase {
 
 	@AfterClass
 	public void afterClass() {
-		BaseClass.tearDown();
+		BaseClassR.tearDown();
 	}
 }

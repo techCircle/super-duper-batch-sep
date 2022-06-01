@@ -28,7 +28,7 @@ import RatthanonPageObject.HomePage;
 import RatthanonPageObject.ProductPage;
 import RatthanonPageObject.ShopPage;
 import RatthanonUtilities.Constants_ratthanon;
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 public class HomePageTestcase {
 	
@@ -40,7 +40,7 @@ public class HomePageTestcase {
 	@BeforeMethod
 	public void beforeClass() {
 	
-		BaseClass.getDriver();
+		BaseClassR.getDriver();
 		hp.ShopMenu.click();
 		sp.HomeMenu.click();
 	}
@@ -57,6 +57,7 @@ public class HomePageTestcase {
 	  public void ValidateArrival() {
 		  Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 	  }
+	  
 	 
 	  @Test(priority = 3)
 	  public void clickableImage() {
@@ -107,6 +108,6 @@ public class HomePageTestcase {
 
 	@AfterClass
 	public void afterClass() {
-		BaseClass.tearDown();
+		BaseClassR.tearDown();
 	}
 }

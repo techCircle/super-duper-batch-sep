@@ -11,12 +11,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import RatthanonUtilities.Constants_ratthanon;
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 
 public class HomePage {
 	
-	public WebDriver driver = BaseClass.getDriver();
+	public WebDriver driver = BaseClassR.getDriver();
 	String titleweb[] = {"selenium-ruby","thinking-in-html","mastering-javascript"};
 		
 			
@@ -95,7 +95,7 @@ public class HomePage {
 		
 		public void verifyClickItem() throws InterruptedException {
 			itemPrice.click();
-			Assert.assertTrue(BaseClass.getDriver().getCurrentUrl().contains("basket"));
+			Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains("basket"));
 			//viewbusket.click();
 		}
 		

@@ -1,7 +1,7 @@
 package RatthanonUtilities;
 
 import org.testng.annotations.AfterMethod;
-import RatthanonUtilities.BaseClass;
+import RatthanonUtilities.BaseClassR;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -14,7 +14,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseClass {
+public class BaseClassR {
 	
 	// DRIVER CLASS
 			public static WebDriver driver;
@@ -23,7 +23,7 @@ public class BaseClass {
 
 				if (driver == null) {
 
-					switch (BaseClass.getProperty("browser")) {
+					switch (BaseClassR.getProperty("browser")) {
 
 					case "firefox":
 						WebDriverManager.firefoxdriver().setup();
@@ -46,7 +46,7 @@ public class BaseClass {
 
 					}
 					
-					 driver.get(BaseClass.getProperty("url"));
+					 driver.get(BaseClassR.getProperty("url"));
 					 driver.manage().window().maximize();
 					 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
 					  
