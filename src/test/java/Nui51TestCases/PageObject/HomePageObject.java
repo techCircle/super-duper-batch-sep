@@ -20,6 +20,7 @@ public class HomePageObject {
 	WebDriver driver = Driver.getDriver();
 	CommonPageObject cpo = new CommonPageObject();
 	ProductPageObject pp = new ProductPageObject();
+	BasketPageObject bp = new BasketPageObject();
 	WebDriverWait wait;
 
 	public HomePageObject() {
@@ -171,11 +172,15 @@ public class HomePageObject {
 		pp.addToBasketBtn.click();	
 	}
 	
-	public void verifyCorrectBookAndPriceInBasket() {
+	public void verifyCorrectBookAndPriceInBasket() throws InterruptedException {
 		String inCartPrice = priceInCart.getText();
 		String expectedPrice = price.getText();
+		System.out.println(inCartPrice + " " + expectedPrice);
 		Assert.assertTrue(inCartPrice.equals(expectedPrice));
-		
+		//bp.removeX.click();
+		cpo.cartLink.click();
+		driver.findElement(By.xpath("//*[@id='page-34']/div/div[1]/form/table/tbody/tr[1]/td[5]/div/input")).clear();
+		bp.updateBasketBtn.click();
 	}
 	
 
