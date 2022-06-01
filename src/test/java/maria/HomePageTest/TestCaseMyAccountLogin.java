@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -59,6 +60,7 @@ public class TestCaseMyAccountLogin {
 
 
 	}
+
 	@Test	
 	//correct user name and empty password
 	public void testCase3() {
@@ -135,15 +137,18 @@ public class TestCaseMyAccountLogin {
 		//Click on My Account Menu
 		driver.findElement(By.xpath("//*[@id='menu-item-50']/a")).click();
 
-		driver.findElement(By.xpath("//*[@id='username']")).sendKeys("tahirmaria2020@gmail.com");
-		driver.findElement(By.xpath("//*[@id='password']")).sendKeys("Rtmamt786*");
+		driver.findElement(By.xpath("//*[@id='username']")).sendKeys("tahimar@gmail.com");
+		driver.findElement(By.xpath("//*[@id='password']")).sendKeys("MariaTahir786**");
 		driver.findElement(By.xpath("//*[@id=\"customer_login\"]/div[1]/form/p[3]/input[3]")).click();
 
 		System.out.println("log in successful");
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
+		
 
-		driver.findElement(By.xpath("//a[normalize-space()='Sign out']")); 		   
-		boolean genPage=driver.findElement(By.xpath("//*[@id=\"page-36\"]/div")).isDisplayed();
+		driver.findElement(By.xpath("//*[text()='Logout']")).click(); 
+		Thread.sleep(3000);
+		//driver.navigate().back();
+		boolean genPage=driver.findElement(By.id("customer_login")).isDisplayed();
 
 		Assert.assertTrue(genPage);
 
