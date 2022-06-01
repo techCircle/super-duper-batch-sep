@@ -15,9 +15,5 @@ public class Currency {
 	    }
 	    return (BigDecimal) format.parse(amount.replaceAll("[^\\d.,]",""));
 	}
-	
-	public String hi() {
-		return "Hi";
-	}
 
 }
