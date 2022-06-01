@@ -1,11 +1,9 @@
 package Kanokwan_51TestCases;
 
-
-import org.junit.After;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import KanokwanObject.homePage;
 import KanokwanUtilities.KanokwanBaseClass;
 
@@ -64,7 +62,7 @@ public class homePageTest {
 
  		
  	}	 
- 	  @After
+ 	  @AfterClass
  	  public void tearDown() {
  		  
  		  KanokwanBaseClass.tearDown();
