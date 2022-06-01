@@ -17,6 +17,9 @@ public class Victor_Constants {
 	public static final String EmpyUsernameMessageError = "Error: Username is required.";
 	public static final String wrongPasswordMessageError = "ERROR: The password you entered for the username v_daniel30@hotmail.com is incorrect. Lost your password?";
 	public static final String excelFilePath = "/Users/victorvargas/eclipse-workspace/batch10/src/test/resources/excelFiles/VictorExcel.xlsx";
+	public static final String invalidEmailAddress ="Error: Please provide a valid email address.";
+	public static final String emptyPasswordError = "Error: Please enter an account password.";
+	public static final String orderStatusMessage = "Order #10816 was placed on June 1, 2022 and is currently On Hold.";
 
 
 }

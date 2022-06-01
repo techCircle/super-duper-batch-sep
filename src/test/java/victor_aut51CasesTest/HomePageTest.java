@@ -1,6 +1,6 @@
 package victor_aut51CasesTest;
 
-import org.junit.AfterClass;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -55,7 +55,7 @@ public class HomePageTest {
 		hP.VerifyImagesInArrivalsShouldNavigateWithDescription();
 		
 		}
-	@Test(priority= 5, enabled = false)
+	@Test(priority= 5, enabled = true)
 	public void HomPageArrivalsImagesReviews () {
 		
 		hP.checkArrivalsCount(Victor_Constants.arrivalsCount);
@@ -64,7 +64,7 @@ public class HomePageTest {
 		
 		}
 	
-	@Test(priority= 6, enabled = true)
+	@Test(priority= 6, enabled = false)
 	public void HomePageArrivalsImagesAddToBasket () {
 		
 		hP.checkArrivalsCount(Victor_Constants.arrivalsCount);
