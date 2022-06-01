@@ -6,8 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import Utilities.ConfigurationProperties;
-import Utilities.Driver;
+import mariaUtilities.ConfigurationProperties;
+import mariaUtilities.Driver;
+
+
+
 
 public class BillingCheckoutPage {
 	public BillingCheckoutPage() {

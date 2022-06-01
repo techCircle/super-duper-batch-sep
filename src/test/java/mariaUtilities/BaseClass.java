@@ -65,7 +65,7 @@ public class BaseClass {
 		static {
 
 			try {
-				String filePath = "src/test/resources/propertiesFolder/config.properties";
+				String filePath = "src/test/resources/mariapropertiesFolder/config.properties";
 				//String filePath =Constants.config_filePath;// we creats
 
 				FileInputStream input = new FileInputStream(filePath);

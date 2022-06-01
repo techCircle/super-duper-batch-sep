@@ -4,9 +4,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import Utilities.Driver;
+
 import maria.HomePage.HomePagePage;
 import maria.HomePage.shopPage;
+import mariaUtilities.Driver;
 //changes to pushzzz
 public class homePageTests {
 

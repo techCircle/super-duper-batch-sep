@@ -13,9 +13,9 @@ public class ConfigurationProperties {
 	//changes to push
 	
 	static {
-
+		System.out.println("before");
 		try {
-			String path = "src/test/resources/propertiesFolder/config.properties";
+			String path = "src/test/resources/mariapropertiesFolder/config.properties";
 			FileInputStream input = new FileInputStream(path);//FileInputStream is also a class like scanner and if you 
 			//hover over it  you will see. its function is to fetch the data from
 			//this path src/test/resources/propertiesFolder/userData.properties // which is the userData files
@@ -25,7 +25,7 @@ public class ConfigurationProperties {
 			//hover over load and you will see 
 
 			input.close();
-
+System.out.println("hiii");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
