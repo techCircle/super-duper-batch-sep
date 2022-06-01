@@ -1,4 +1,4 @@
-package KanokwanUtilities;
+package kanokwanUtilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;
