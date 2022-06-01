@@ -14,7 +14,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Driver {
+public class Emmie_Driver {
 	
 	public static WebDriver driver;
 
@@ -22,31 +22,31 @@ public class Driver {
 
 		if (driver == null) {
 
-			switch (Driver.getProperty("browser")) {
+			switch (Emmie_Driver.getProperty("browser")) {
 
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
-				driver.get(Driver.getProperty("url"));
+				driver.get(Emmie_Driver.getProperty("url"));
 				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(Constants.implicitWaitTime, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(Emmie_Constants.implicitWaitTime, TimeUnit.SECONDS);
 				break;
 
 			case "chrome":
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
-				driver.get(Driver.getProperty("url"));
+				driver.get(Emmie_Driver.getProperty("url"));
 				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(Constants.implicitWaitTime, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(Emmie_Constants.implicitWaitTime, TimeUnit.SECONDS);
 
 				break;
 
 			case "safari":
 //				WebDriverManager.safaridriver().setup();
 				driver = new SafariDriver();
-				driver.get(Driver.getProperty("url"));
+				driver.get(Emmie_Driver.getProperty("url"));
 				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(Constants.implicitWaitTime, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(Emmie_Constants.implicitWaitTime, TimeUnit.SECONDS);
 
 				break;
 
@@ -61,14 +61,14 @@ public class Driver {
 	}
 
 	public static void getCurrentUrl() {
-		System.out.println("CURRENT URL : " + Driver.getDriver().getCurrentUrl());
+		System.out.println("CURRENT URL : " + Emmie_Driver.getDriver().getCurrentUrl());
 	}
 
 	public static void clickProductFromList(List<WebElement> list, String str) {
 
 		for (WebElement products : list) {
 			String productList = products.getText();
-			if (productList.contains(Driver.getProperty(str))) {
+			if (productList.contains(Emmie_Driver.getProperty(str))) {
 				products.click();
 				break;
 			}
@@ -82,7 +82,7 @@ public class Driver {
 	}
 
 	public static void navigateBack() {
-		Driver.getDriver().navigate().back();
+		Emmie_Driver.getDriver().navigate().back();
 	}
 
 	// close or quit the browser
@@ -101,7 +101,7 @@ public class Driver {
 	static {
 
 		try {
-			String filePath = Constants.config_filePath;
+			String filePath = Emmie_Constants.config_filePath;
 
 			FileInputStream input = new FileInputStream(filePath);
 

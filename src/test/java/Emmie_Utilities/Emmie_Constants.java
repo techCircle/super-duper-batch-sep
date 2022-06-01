@@ -1,7 +1,7 @@
 package Emmie_Utilities;
 
 
-public class Constants {
+public class Emmie_Constants {
 
 	public static final String config_filePath = System.getProperty("user.dir")
 			+ "/src/test/resources/propertiesFolder/Emmie.properties";
