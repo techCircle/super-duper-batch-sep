@@ -17,7 +17,7 @@ public class HomePagePage {
 	public HomePagePage() {
 		PageFactory.initElements(Driver.getDriver(), this);
 
-///changes to push
+///changes to pushzzz
 	}
 
 	@FindBy(xpath="//img[@title='Selenium Ruby']")

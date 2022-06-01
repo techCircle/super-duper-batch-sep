@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import Utilities.ConfigurationProperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
-//changes to push
+//changes to pushzzzz
 public class Registeration {
 	WebDriver driver;
 

@@ -13,7 +13,7 @@ public class CheckoutPage {
 	public CheckoutPage() {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
-	//changes to push
+	//changes to pushzzz
 	@FindBy(xpath="//*[@id=\"page-34\"]/div/div[1]/div/div/div/a")
 	public WebElement arrivalsubImg2CartProceedTocheckoutBTn;
 	

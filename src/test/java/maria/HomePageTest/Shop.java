@@ -17,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Shop {
 
-	//changes to push
+	//changes to pushzzzz
 	WebDriver driver;
 
 	@BeforeClass

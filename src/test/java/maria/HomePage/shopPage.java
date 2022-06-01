@@ -8,7 +8,7 @@ import Utilities.Driver;
 
 public class shopPage {
 	
-	//changes to push
+	//changes to pushzzz
 	
 	public shopPage() {
 		PageFactory.initElements(Driver.getDriver(), this);

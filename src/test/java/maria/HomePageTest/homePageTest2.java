@@ -18,7 +18,7 @@ public class homePageTest2 {
 	CheckoutPage coP=new CheckoutPage();
 	BillingCheckoutPage bCoP=new BillingCheckoutPage();
 
-//changes to push
+//changes to pushzzz
 	@BeforeMethod
 	public void setUp() throws InterruptedException {
 

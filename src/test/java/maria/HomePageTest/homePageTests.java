@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import Utilities.Driver;
 import maria.HomePage.HomePagePage;
 import maria.HomePage.shopPage;
-//changes to push
+//changes to pushzzz
 public class homePageTests {
 
 	HomePagePage hP = new HomePagePage();
