@@ -20,19 +20,19 @@ public class Driver {
  				WebDriverManager.firefoxdriver().setup();
  				driver = new FirefoxDriver();
  				driver.manage().window().maximize();
- 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+ 				driver.manage().timeouts().implicitlyWait(Constant.implicitWait, TimeUnit.SECONDS);
  				break;
  			case "Chrome":
  				WebDriverManager.chromedriver().setup();
  				driver = new ChromeDriver();
  				driver.manage().window().maximize();
- 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+ 				driver.manage().timeouts().implicitlyWait(Constant.implicitWait, TimeUnit.SECONDS);
  				break;
  			case "safari":
  //                    WebDriverManager.safaridriver().setup();
  				driver = new SafariDriver();
  				driver.manage().window().maximize();
- 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+ 				driver.manage().timeouts().implicitlyWait(Constant.implicitWait, TimeUnit.SECONDS);
  				break;
  			}
  			driver.get(ConfigurationProperties.getProperty("swagLabUrl"));
