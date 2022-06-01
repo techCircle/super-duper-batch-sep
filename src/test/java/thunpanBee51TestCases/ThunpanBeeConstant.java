@@ -1,6 +1,7 @@
 package thunpanBee51TestCases;
 
-public class Constant {
+public class ThunpanBeeConstant {
+	
 
 	public static final String config_file = System.getProperty("user.dir")
 			+ "/src/test/resources/thunpanBeePropertiesFolder.properties/config.properties";

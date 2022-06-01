@@ -1,6 +1,7 @@
 package thunpanBee51TestCases;
 
 import java.io.FileInputStream;
+
 import java.util.Properties;
 
 public class ConfigurationProperties {
@@ -11,8 +12,8 @@ public class ConfigurationProperties {
 		try {
 			// copy : path from content root OR absolute path
 // 			String path = "src/test/resources/thunpanBeePropertiesFolder.properties/config.properties";
-			String path = Constant.config_file;
-			String path2 = Constant.config_input_data;
+			String path = ThunpanBeeConstant.config_file;
+			String path2 = ThunpanBeeConstant.config_input_data;
 			FileInputStream input = new FileInputStream(path);
 			FileInputStream input2 = new FileInputStream(path2);
 
