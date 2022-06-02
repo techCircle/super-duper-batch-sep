@@ -28,40 +28,40 @@ public class HomePageObject {
 	}
 	
 	
-	@FindBy (xpath = "//div[@class=\"n2-ss-slider-3\"]/div")
+	@FindBy (xpath = "//div[@class='n2-ss-slider-3']/div")
 	public List<WebElement> threeSliders; 
 	
-	@FindBy (xpath = "//h2[contains(text(),\"new arrivals\")]/../../../../../div/div[2]/div")
+	@FindBy (xpath = "//h2[contains(text(),'new arrivals')]/../../../../../div/div[2]/div")
 	public List<WebElement> newArrivals;
 	
-	@FindBy (xpath = "//*[@id=\"text-22-sub_row_1-0-2-0-0\"]/div/ul/li/a[1]/img")
+	@FindBy (xpath = "//*[@id='text-22-sub_row_1-0-2-0-0']/div/ul/li/a[1]/img")
 	public WebElement firstBook;
 	
-	@FindBy (xpath = "//*[@id=\"text-22-sub_row_1-0-2-1-0\"]/div/ul/li/a[1]/img")
+	@FindBy (xpath = "//*[@id='text-22-sub_row_1-0-2-1-0']/div/ul/li/a[1]/img")
 	public WebElement secondBook;
 	
-	@FindBy (xpath = "//*[@id=\"text-22-sub_row_1-0-2-2-0\"]/div/ul/li/a[1]/img")
+	@FindBy (xpath = "//*[@id='text-22-sub_row_1-0-2-2-0']/div/ul/li/a[1]/img")
 	public WebElement thirdBook;
 	
-	@FindBy (xpath = "//*[@id=\"tab-description\"]/h2")
+	@FindBy (xpath = "//*[@id='tab-description']/h2")
 	public WebElement firstBookDescription;
 	
-	@FindBy (xpath = "//*[@id=\"product-163\"]/div[3]/ul/li[1]/a")
+	@FindBy (xpath = "//*[@id='product-163']/div[3]/ul/li[1]/a")
 	public WebElement secondBookDescription;
 	
-	@FindBy (xpath = "//*[@id=\"tab-description\"]/h2")
+	@FindBy (xpath = "//*[@id='tab-description']/h2")
 	public WebElement thirdBookDescription;
 	
 	@FindBy (xpath = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div")
 	public List<WebElement> arrivalsImgs;
 	
-	@FindBy (xpath = "//*[@id=\"product-160\"]/div[3]/ul/li[2]/a")
+	@FindBy (xpath = "//*[@id='product-160']/div[3]/ul/li[2]/a")
 	public WebElement firstBookReviewBtn;
 	
-	@FindBy (xpath = "//*[@id=\"product-163\"]/div[3]/ul/li[2]/a")
+	@FindBy (xpath = "//*[@id='product-163']/div[3]/ul/li[2]/a")
 	public WebElement secondBookReviewBtn;
 	
-	@FindBy (xpath = "//*[@id=\"product-165\"]/div[3]/ul/li[2]/a")
+	@FindBy (xpath = "//*[@id='product-165']/div[3]/ul/li[2]/a")
 	public WebElement thirdBookReviewBtn;
 	
 	@FindBy (xpath = "//h2[@class='woocommerce-Reviews-title']")
