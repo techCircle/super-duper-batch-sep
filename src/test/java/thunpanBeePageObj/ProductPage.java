@@ -2,6 +2,10 @@ package thunpanBeePageObj;
 
 import java.util.List;
 
+
+
+import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,6 +20,7 @@ public class ProductPage {
 		PageFactory.initElements(Driver.getDriver(),this);
 	}
 	
+
 	@FindBy(xpath="//button[@id='add-to-cart-sauce-labs-backpack']")
 	public WebElement backPack;
 	
@@ -24,6 +29,7 @@ public class ProductPage {
 	
 	@FindBy(id="add-to-cart-sauce-labs-onesie")
 	public WebElement onesieProduct;
+
 	
 	@FindBy(xpath = "//span[@class='shopping_cart_badge']")
 	public WebElement cartBtn;
@@ -34,9 +40,7 @@ public class ProductPage {
 	
 	
 	public void clickOnProduct() {
-		backPack.click();
-		tShirt.click();
-		onesieProduct.click();
+
 		cartBtn.click();
 	}
 	
