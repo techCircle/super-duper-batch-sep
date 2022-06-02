@@ -2,39 +2,60 @@ package thunpanBee51TestCases;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class RegistrationFunctionality extends Driver{
-	private ObjectFactory registerPage;
+import thunpanBee51TestCasesPageObj.AccountPageObj;
 
- 	@BeforeClass
- 	public void setUp() {
- 		getDriver();
- 		System.out.println("Successful Open Browser");
- 	}
+public class RegistrationFunctionality {
+	private AccountPageObj registerPage;
 
- 	@DataProvider(name = "RegistrationDataProvider")
- 	public Object[][] dpMethod() {
- 		return new Object[][] { { "be_bee@gmail.com", "!12345bee!12345bee!12345bee!12345bee" }, // registrationWithValidEmailAndValidPassword
- 				{ "bbee@g", "!12345bee!12345bee!12345bee!12345bee" }, // registrationWithInvalidEmailID
- 				{ "", "!12345bee!12345bee!12345bee!12345bee" }, // registrationWithEmptyEmailID
- 				{ "be_bee@gmail.com", "" }, // registrationWithEmptyPassword
- 				{ "", "" } };// registrationWithEmptyEmailIDAndPassword
- 	}
+	@BeforeClass
+	public void setUp() {
+		Driver.getDriver();
+		System.out.println("Successful Open Browser");
+	}
 
- 	@Test(dataProvider = "RegistrationDataProvider")
- 	public void registrationFunctionality(String username, String password) {
- 		registerPage = new ObjectFactory(driver);
- 		registerPage.accBtn.click();
- 		registerPage.emailBox.sendKeys(username);
- 		registerPage.passWordBox.sendKeys(password);
- 		registerPage.registerBtn.click();
- 		registerPage.verify();
- 	}
+	@BeforeMethod
+	public void beforeMethod() {
+		registerPage = new AccountPageObj();
+		registerPage.clickAccBtn();
+	}
 
- 	@AfterClass
- 	public void Destroy() {
- 		destroy();
- 	}
+	@Test
+	public void TC001_RegistrationSignin() {
+		registerPage.inputValidRegister();
+		registerPage.verifyRegistration();
+	}
+
+	@Test
+	public void TC002_RegistrationWithInvalidEmailId() {
+		registerPage.inputInvalidRegisterEmail();
+		registerPage.verifyInvalidRegistrationEmail();
+
+	}
+
+	@Test
+	public void TC003_RegistrationWithEmptyEmailId() {
+		registerPage.inputEmptyRegisterEmail();
+		registerPage.verifyInvalidRegistrationEmail();
+	}
+
+	@Test
+	public void TC004_RegistrationWithEmptyPassword() {
+		registerPage.inputEmptyRegisterPassword();
+		registerPage.verifyEmptyRegisterPassword();
+	}
+
+	@Test
+	public void TC005_RegistrationWithEmptyEmailiIdAndPassword() {
+		registerPage.inputEmptyRegister();
+		registerPage.verifyInvalidRegistrationEmail();
+	}
+
+	@AfterClass
+	public void Destroy() {
+		Driver.destroy();
+	}
 }
