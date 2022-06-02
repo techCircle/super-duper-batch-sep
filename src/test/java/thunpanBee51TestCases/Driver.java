@@ -64,6 +64,18 @@ public class Driver {
 			}
 		}
 	}
+	
+	public static void clickAutualObj(List<WebElement> list, String key) {
+		for (WebElement Option : list) {
+			String Select = Option.getText();
+			if (Select.equals(key)) {
+				Option.click();
+				break;
+			}
+		}
+	}
+	
+	
 
 	public void productDisplayed(List<WebElement> list, String key) {
 		for (WebElement Option : list) {
