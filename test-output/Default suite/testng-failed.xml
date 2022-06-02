@@ -3,18 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="maria.HomePageTest.Registeration">
+      <class name="maria.HomePageTest.homePageTest2">
         <methods>
-          <include name="setUp"/>
-          <include name="testCase1"/>
-          <include name="testCase4"/>
-          <include name="testCase3"/>
-          <include name="testCase5"/>
-          <include name="beforeClass"/>
           <include name="tearDown"/>
-          <include name="testCase2"/>
+          <include name="test16"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- maria.HomePageTest.Registeration -->
+      </class> <!-- maria.HomePageTest.homePageTest2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

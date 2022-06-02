@@ -119,12 +119,17 @@ public class CheckoutPage {
 		Assert.assertTrue(totalBTNcheckout.isDisplayed());
 
 		String total = totalBTNcheckout.getText().substring(7);
+		
+		if (total.contains(",")) {
+			total.replaceAll(",", "");
+		}
+		
 		Double TotalFinal=Double.parseDouble(total);
 		//System.out.println(total);
 		String subTotal =subTotalBTNcheckout.getText().substring(10);
 		Double SubTotalFinal=Double.parseDouble(subTotal);
 		Assert.assertTrue(TotalFinal>SubTotalFinal);
-		//System.out.println(subTotal);
+		System.out.println(subTotal);
 
 		//Assert.assertTrue(Float.valueOf(total) > Float.valueOf(subTotal));
 

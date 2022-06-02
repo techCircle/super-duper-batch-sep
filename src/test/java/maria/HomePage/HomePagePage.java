@@ -134,7 +134,8 @@ public class HomePagePage {
 		Assert.assertTrue(arrivalsubImg2CartPrice.isDisplayed());
 	}
 
-	public void arrivalSubImgProceedToCheckout() {
+	public void arrivalSubImgProceedToCheckout() throws InterruptedException {
+		Thread.sleep(3000);
 		arrivalsubImg2CartPrice.click();
 
 	}

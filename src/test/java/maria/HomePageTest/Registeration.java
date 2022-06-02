@@ -11,8 +11,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import Utilities.ConfigurationProperties;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import mariaUtilities.ConfigurationProperties;
 //changes to pushzzzz
 public class Registeration {
 	WebDriver driver;
