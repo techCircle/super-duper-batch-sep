@@ -178,9 +178,9 @@ public class HomePageObject {
 		System.out.println(inCartPrice + " " + expectedPrice);
 		Assert.assertTrue(inCartPrice.equals(expectedPrice));
 		//bp.removeX.click();
-		cpo.cartLink.click();
-		driver.findElement(By.xpath("//*[@id='page-34']/div/div[1]/form/table/tbody/tr[1]/td[5]/div/input")).clear();
-		bp.updateBasketBtn.click();
+//		cpo.cartLink.click();
+//		driver.findElement(By.xpath("//*[@id='page-34']/div/div[1]/form/table/tbody/tr[1]/td[5]/div/input")).clear();
+//		bp.updateBasketBtn.click();
 	}
 	
 
