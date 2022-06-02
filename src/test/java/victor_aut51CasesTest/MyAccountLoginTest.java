@@ -5,8 +5,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import victor.utilities.Victor_BaseClass;
 import victor.automationTesting.pages.MyAccountPage;
+import victor.utilities.Victor_BaseClass;
 
 public class MyAccountLoginTest {
 	MyAccountPage mAP = new MyAccountPage ();
@@ -17,37 +17,37 @@ public class MyAccountLoginTest {
 		mAP.myAccount.click();
 	}
 	
-	@Test(priority= 1, enabled = false)
+	@Test(priority= 1, enabled = true)
 	public void LoginWithValidUsernameAndPassword () {
 		mAP.loginWithValidUserAndPAssword();	
 	}
 	
-	@Test(priority= 2, enabled = false)
+	@Test(priority= 2, enabled = true)
 	public void LoginWithIncorrectUsernameAndIncorrectPassword () {
 		mAP.loginWithInvalidUserAndPAssword();
 	}
 	
-	@Test(priority= 3, enabled = false)
+	@Test(priority= 3, enabled = true)
 	public void LoginWithCorrectUsernameAndEmptyPassword () {
 		mAP.loginWithValidUserAndEmpyPAssword();
 	}
 	
-	@Test(priority= 4, enabled = false)	
+	@Test(priority= 4, enabled = true)	
 	public void LoginWithEmpyUsernameAndValidPassword () {
 		mAP.loginWithEmpyUserAndValidPAssword();
 	}
 	
-	@Test(priority= 5, enabled = false)
+	@Test(priority= 5, enabled = true)
 	public void LoginWithEmpyUsernameAndEmptyPassword () {
 		mAP.loginWithEmpyUserAndEmptyPAssword();
 	}
 	
-	@Test(priority= 6, enabled = false)
+	@Test(priority= 6, enabled = true)
 	public void LogInPasswordShouldBeMasked () {
 		mAP.passwordField();
 	}
 	
-	@Test(priority= 7, enabled = false)
+	@Test(priority= 7, enabled = true)
 	public void LoginHandlesCaseSensitive () {
 	
 		mAP.loginWithValidUserAndPsasword();

@@ -4,9 +4,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import victor.utilities.Victor_BaseClass;
 import victor.automationTesting.pages.MyAccountLogInPage;
 import victor.automationTesting.pages.MyAccountPage;
+import victor.utilities.Victor_BaseClass;
 
 public class MyAccountRegistrationTest {
 
@@ -20,23 +20,23 @@ public class MyAccountRegistrationTest {
 		mAP.myAccount.click();
 	}
 	
-	@Test(priority= 1, enabled = false)
+	@Test(priority= 1, enabled = true)
 	public void RegistrationSignIn () {
 		mAP.registrationSignIn();	
 		mALP.logOut.click();
 	}
 	
-	@Test(priority= 2, enabled = false)
+	@Test(priority= 2, enabled = true)
 	public void RegistrationWithInvalidEmailId () {
 		mAP.registrationInvalidEmail();	
 	}
 	
-	@Test(priority= 3, enabled = false)
+	@Test(priority= 3, enabled = true)
 	public void RegistrationWithEmpyEmailId () {
 		mAP.registrationEmpyEmail();	
 	}
 	
-	@Test(priority= 4, enabled = false)
+	@Test(priority= 4, enabled = true)
 	public void RegistrationWithEmpyPassword () {
 		mAP.registrationEmpyPassword();
 	}

@@ -4,10 +4,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import victor.utilities.Victor_BaseClass;
-import victor.utilities.Victor_Constants;
 import victor.automationTesting.pages.homePage;
 import victor.automationTesting.pages.shopPage;
+import victor.utilities.Victor_BaseClass;
+import victor.utilities.Victor_Constants;
 
 public class HomePageTest {
 	homePage hP = new homePage (); 
@@ -23,14 +23,14 @@ public class HomePageTest {
 	
 	
 	
-	@Test(priority= 1, enabled = false)
+	@Test(priority= 1, enabled = true)
 	public void HomePageWithThreeSlidersOnly() {
 		
 	    hP.checkSlidersCount(Victor_Constants.slidersCount);
 	    
 	 }
 	
-	@Test(priority= 2, enabled = false)
+	@Test(priority= 2, enabled = true)
 	
 	public void HomePageWithThreeArrivalsOnly () {
 	    
@@ -38,7 +38,7 @@ public class HomePageTest {
 	    	
 	}
 	
-	@Test(priority= 3, enabled = false)
+	@Test(priority= 3, enabled = true)
 	public void HomePageImagesInArrivalsShouldNavigate () {
 		
 		hP.checkArrivalsCount(Victor_Constants.arrivalsCount);
@@ -47,7 +47,7 @@ public class HomePageTest {
 			
 		}
 	
-	@Test(priority= 4, enabled = false)
+	@Test(priority= 4, enabled = true)
 	public void HomPageArrivalsImagesDescription () {
 		
 		hP.checkArrivalsCount(Victor_Constants.arrivalsCount);

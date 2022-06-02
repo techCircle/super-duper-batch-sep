@@ -29,4 +29,7 @@ public class MyAccountLogInPage {
 	
 	@FindBy (xpath= "//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[4]/a")
 	public WebElement addresses;
+	
+	@FindBy (xpath= "//*[@id=\"page-36\"]/div/div[1]/nav/ul/li[5]/a")
+	public WebElement accountDetails;
 }

@@ -21,7 +21,6 @@ public class homePage {
 	}
 	
 	
-	
 	@FindBy (id="menu-item-40")
 	public WebElement shopbutton;
 	
@@ -39,6 +38,8 @@ public class homePage {
 	
 	@FindBy (xpath = "//*/button[@type='submit']")
 	public WebElement AddToBasket;
+	
+	
 	
 	
 	public void checkSlidersCount(int count) {
@@ -107,4 +108,5 @@ public class homePage {
 			}
 		}
 		
+	
 }

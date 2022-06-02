@@ -9,8 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import Utilities.Victor_BaseClass;
-import Utilities.Victor_Constants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Victor_BaseClass {

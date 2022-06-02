@@ -2,7 +2,7 @@ package victor.utilities;
 
 public class Victor_Constants {
 	
-	public static final String config_filePath = System.getProperty("user.dir")+"/src/test/resources/propertiesFolder/Victor_config.properties";
+	public static final String config_filePath = "src/test/resources/propertiesFolder/Victor_config.properties";
 	
 	public static final int implicitWaitTime = 10;
 	
