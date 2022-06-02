@@ -4,9 +4,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import Utilities.Driver;
+
 import maria.MyAccountObjects.MyAccountPageObject;
 import maria.MyAccountObjects.myAccountOrderPage;
+import mariaUtilities.Driver;
 
 public class MyAccountOrdersTest {
  
@@ -15,7 +16,7 @@ public class MyAccountOrdersTest {
 	myAccountOrderPage myAOrder=new myAccountOrderPage();
 	
 	@Test
-  public void myAccountDashBoard() {
+  public void myAccountDashBoard() throws InterruptedException {
 		
 		myAccount.clickMyAccount();
 		myAOrder.orderclick();		

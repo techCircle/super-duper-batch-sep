@@ -1,8 +1,8 @@
 package maria.MyAccountTestRunner;
 
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import maria.MyAccountObjects.MyAccountDashBoardPage;
@@ -36,7 +36,7 @@ public class MyAccountTests {
 //		Driver.getDriver();}
 
 
-	@AfterClass
+	@AfterMethod
 	public void afterMethod() {
 		Driver.tearDown();
 	}
@@ -44,48 +44,32 @@ public class MyAccountTests {
 
 	@Test
 
-	public void MyAccountDashBoard() {
+	public void My1AccountDashBoard() throws InterruptedException {
 		map.clickMyAccount();
 		mapdash.dashBoardPageVerify();
-	}
+	
 
-	@Test
-	public void MyAccountOrders() {
-
-		map.clickMyAccount();
-		mapdash.dashBoardPageVerify();
+		
 		mapdash.orderLinkBtnClick();
-		myAOrder.orderclick();
+		myAOrder.orderclick();//display assert
 
-	}
-
-
-	@Test
-
-	public void MyAccountOrders2() {
-		this.MyAccountOrders();
+	
 
 		myAOrder.viewBTNclick();
 		mAviewOP.viewOrderDetails();
 
-	}
-
-
-
-	@Test
-
-	public void MyAccountOrders3() {
-		this.MyAccountOrders2();
+	
 		mAviewOP.orderStatusAndnumber();
 
-
 	}
 
 	@Test
 
-	public void MyAccountAddressFunc1() {
-		this.MyAccountDashBoard();
+	public void My5AccountAddressFunc1() throws InterruptedException {
+		map.clickMyAccount();
+		mapdash.dashBoardPageVerify();
 		mapdash.MyAccountLinkClik();
+		Thread.sleep(2000);
 		mapdash.addressBtnClick();
 		mAEditAddress.verifyingbillingAndshipAddress();
 
@@ -94,8 +78,9 @@ public class MyAccountTests {
 
 	@Test
 
-	public void MyAccountAddressFunc2() throws InterruptedException {
-		this.MyAccountDashBoard();
+	public void My6AccountAddressFunc2() throws InterruptedException {
+		map.clickMyAccount();
+		mapdash.dashBoardPageVerify();
 		mapdash.MyAccountLinkClik();
 		mapdash.addressBtnClick();
 		mAEditAddress.editShipAddressClick();
@@ -108,8 +93,9 @@ public class MyAccountTests {
 	@Test
 
 
-	public void accountDetails () {
-		this.MyAccountDashBoard();
+	public void My7accountDetails () throws InterruptedException {
+		map.clickMyAccount();
+		mapdash.dashBoardPageVerify();
 		mapdash.MyAccountLinkClik();
 		mapdash.AccountDetailsBTNClick();
 		mAcVAc.editAccountDetails();
@@ -118,8 +104,9 @@ public class MyAccountTests {
 	@Test
 
 
-	public void accountlogout () {
-		this.MyAccountDashBoard();
+	public void My8accountlogout () throws InterruptedException {
+		map.clickMyAccount();
+		mapdash.dashBoardPageVerify();
 		mapdash.MyAccountLinkClik();
 		mapdash.LogoutButtonClick();
 		map.homePageDisplay();

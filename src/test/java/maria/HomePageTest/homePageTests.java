@@ -37,7 +37,7 @@ public class homePageTests {
 	}
 
 	@Test(priority=3)
-	public void HomePageImagesArrivalsShouldNavigate() {
+	public void HomePageImagesArrivalsShouldNavigate() throws InterruptedException {
 
 		hP.checkArrivalsCount();
 
@@ -46,7 +46,7 @@ public class homePageTests {
 
 		}
 	@Test(priority=4)         //test4
-	public void HomePageImagesArrivalImageDescription() {
+	public void HomePageImagesArrivalImageDescription() throws InterruptedException {
 		this.HomePageImagesArrivalsShouldNavigate();
 	hP.arrivalImage2click();
 	hP.arrivalImage2description();
@@ -55,7 +55,7 @@ public class homePageTests {
 	}
 
 	@Test(priority=5)         //test5
-	public void HomePageImagesArrivalImageReview() {
+	public void HomePageImagesArrivalImageReview() throws InterruptedException {
 		this.HomePageImagesArrivalsShouldNavigate();
 		hP.arrivalImage2click();
 		hP.arrivalImage2Review();
@@ -63,7 +63,7 @@ public class homePageTests {
 	}
 	
 	@Test(priority=6)         //test6
-	public void ArrivalImageAddToBasket() {
+	public void ArrivalImageAddToBasket() throws InterruptedException {
 		this.HomePageImagesArrivalsShouldNavigate();
 		hP.arrivalImage2click();
 		hP.arrivalImg2AddToBasket();
@@ -71,13 +71,12 @@ public class homePageTests {
 	}
 	
 	@Test(priority=7)     //test7
-	public void ArrivalImageAddMoreToBasket() {
+	public void ArrivalImageAddMoreToBasket() throws InterruptedException {
 		this.ArrivalImageAddToBasket();
 		hP.arrivalsubImg2CartPriceMax();
 		
 	}
 	
-
 
 	@AfterClass
 	public void tearDown() {

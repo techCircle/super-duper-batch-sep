@@ -66,7 +66,7 @@ public class HomePageObj {
 			String label = pp.productLabel.getText();
 
 			System.out.println("Label Displayed: " + label);
-			System.out.println("Expected : " + expected.get(i));
+			System.out.println("Expected : " + expected.get(i));s
 
 			Assert.assertTrue(label.contains(expected.get(i)));
 

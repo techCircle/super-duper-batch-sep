@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -34,32 +35,36 @@ public class HomePagePage {
 	@FindBy(id = "menu-item-40")
 	public WebElement shopButton;
 
-	@FindBy(xpath = "//*[@id=\"n2-ss-6\"]/div[1]/div/div/div")
+	@FindBy(xpath = "//*[@id='n2-ss-6']/div[1]/div/div/div")
 	public List<WebElement> sliders;
-	@FindBy(xpath = "//*[@id=\"themify_builder_content-22\"]/div[2]/div/div/div/div/div[2]/div")
+	@FindBy(xpath = "//*[@id='themify_builder_content-22']/div[2]/div/div/div/div/div[2]/div")
 	public List<WebElement> arrivals;
 
-	@FindBy(xpath="//*[@id=\"tab-description\"]")
+	@FindBy(xpath="//*[@id='tab-description']")
 	public WebElement arrivalImg2Description;
 
-	@FindBy(xpath="//*[@id=\"product-163\"]/div[3]/ul/li[2]")
+	@FindBy(xpath="//*[@id='product-163']/div[3]/ul/li[2]")
 	public WebElement arrivalImg2Review;
 
-	@FindBy(xpath="//*[@id=\"comments\"]")
+	@FindBy(xpath="//*[@id='comments']")
 	public WebElement arrivalImg2ReviewDisplay;
 
 
 
-	@FindBy(xpath=" //*[@id=\"product-163\"]/div[5]/ul/li[2]/a[1]")
+	@FindBy(xpath=" //*[@id='product-163']/div[5]/ul/li[2]/a[1]")
 	public WebElement arrivalImg2AddToBasketBtn;
 
 	@FindBy(xpath="//button[contains(text(), 'Add to basket')]")
 	public WebElement arrivalsubImg2AddToBasketBtn;
 
-	@FindBy(xpath="//*[@id=\"wpmenucartli\"]/a/span[2]")
+	@FindBy(xpath="//*[@id='wpmenucartli']/a/span[2]")
 	public WebElement arrivalsubImg2CartPrice;
+	
+	
+	@FindBy(xpath="//li[@id='wpmenucartli']")
+	public WebElement viewShoppingCart;
 
-
+	
 
 	@FindBy(xpath="//*[@class='quantity']/input ")
 	public WebElement arrivalsubImg2CartPriceMax;
@@ -88,22 +93,37 @@ public class HomePagePage {
 		Assert.assertEquals(count, arrivals.size());
 	}
 
-	public void verifyImagesInArrivalsShouldNavigate() {
+	public void verifyImagesInArrivalsShouldNavigate() throws InterruptedException {
 		String[] expectedTexts = new String[]{"Selenium Ruby", "Thinking in HTML", "Mastering JavaScript"};
+/*try {
 
+button.click();
+
+} catch (WebDriverException e) {
+
+e.printStackTrace();
+
+}
+    }*/
 		for(int i = 0; i<arrivals.size(); i++) {
-
+try {
 			String pathText = String.format("//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[%d]", i+1);
-
+		
 			Driver.getDriver().findElement(By.xpath(pathText)).click();
+			Thread.sleep(2000);
 			String text = Driver.getDriver().findElement(By.xpath("//*[@class='product_title entry-title']")).getText();
-
+			
 			Assert.assertTrue(expectedTexts[i].equals(text)) ;                    
 			Driver.getDriver().navigate().back();            
+		Thread.sleep(2000);
+} catch (WebDriverException e) {
+
+e.printStackTrace();
+				
 		}
 
-
-	}
+		}}
+	
 	public void arrivalImage2click() {
 		thinkingInHTMLimg.click();
 
@@ -135,9 +155,9 @@ public class HomePagePage {
 	}
 
 	public void arrivalSubImgProceedToCheckout() throws InterruptedException {
-		Thread.sleep(3000);
+		
 		arrivalsubImg2CartPrice.click();
-
+		Thread.sleep(3000);
 	}
 
 	public void arrivalsubImg2CartPriceMax() {
@@ -164,8 +184,7 @@ public class HomePagePage {
 	}
 
 
-
-
+	
 
 
 

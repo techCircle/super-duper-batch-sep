@@ -19,7 +19,7 @@ public class CheckoutPage {
 	@FindBy(xpath="//*[@id=\"page-34\"]/div/div[1]/div/div/div/a")
 	public WebElement arrivalsubImg2CartProceedTocheckoutBTn;
 	
-	@FindBy(name="coupon_code")
+	@FindBy(xpath="//input[@id='coupon_code']")
 	public WebElement couponCode;
 	
 	@FindBy(name="apply_coupon")
@@ -50,10 +50,10 @@ public class CheckoutPage {
 	
 	
 	
-	@FindBy(xpath="//tr[@class='cart-subtotal']")
+	@FindBy(xpath="//td[@data-title='Subtotal']//span[@class='woocommerce-Price-amount amount']")
 	public WebElement subTotalBTNcheckout;
 	
-	@FindBy(xpath="//tr[@class='order-total']")
+	@FindBy(xpath="//strong//span[@class='woocommerce-Price-amount amount']")
 	public WebElement totalBTNcheckout;
 	
 
@@ -74,9 +74,10 @@ public class CheckoutPage {
 	}
 	
 	
-	public void couponCodeEntry() {   
+	public void couponCodeEntry() throws InterruptedException {   
 		couponCode.sendKeys(ConfigurationProperties.getProperty("CouponCode"));
 		applyCoupon.click();
+		Thread.sleep(1000);
 		Assert.assertTrue(couponInvalid.isDisplayed());
 		
 	}
@@ -118,18 +119,21 @@ public class CheckoutPage {
 		Assert.assertTrue(subTotalBTNcheckout.isDisplayed());
 		Assert.assertTrue(totalBTNcheckout.isDisplayed());
 
-		String total = totalBTNcheckout.getText().substring(7);
 		
-		if (total.contains(",")) {
-			total.replaceAll(",", "");
-		}
 		
-		Double TotalFinal=Double.parseDouble(total);
+		
+	
 		//System.out.println(total);
-		String subTotal =subTotalBTNcheckout.getText().substring(10);
+		String subTotal =subTotalBTNcheckout.getText().substring(1, subTotalBTNcheckout.getText().length());
+         String total = totalBTNcheckout.getText().substring(1, totalBTNcheckout.getText().length());
+		
+		if (total.contains(",")&&subTotal.contains(",")) {
+			total.replaceAll(",", "");
+		subTotal.replaceAll(",", "");
+			Double TotalFinal=Double.parseDouble(total);
 		Double SubTotalFinal=Double.parseDouble(subTotal);
 		Assert.assertTrue(TotalFinal>SubTotalFinal);
-		System.out.println(subTotal);
+		System.out.println(subTotal);}
 
 		//Assert.assertTrue(Float.valueOf(total) > Float.valueOf(subTotal));
 

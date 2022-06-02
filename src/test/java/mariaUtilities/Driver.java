@@ -56,12 +56,13 @@ public class Driver {
 	}
 
 	// close/quit browser
-	public static void tearDown() {
-
-		if (driver != null) {
+public static void tearDown() {
+		
+		if(driver != null) {
 			driver.close();
-			 //driver = null;
+			
 		}
-
+		
 	}
 }
+

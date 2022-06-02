@@ -36,10 +36,11 @@ public class MyAccountPageObject {
 
 
 
-	public void clickMyAccount() {
+	public void clickMyAccount() throws InterruptedException {
 		
 		
 		myAccountBtn.click();
+		Thread.sleep(2000);
 		
 		userName.sendKeys(ConfigurationProperties.getProperty("userName"));
 		userPassword.sendKeys(ConfigurationProperties.getProperty("userPassword"));
