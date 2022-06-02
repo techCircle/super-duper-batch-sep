@@ -13,7 +13,7 @@ public class ConfigurationProperties {
 	static {
 
 		try {
-			String path = "src/test/resources/propertiesFolder/config.properties";
+			String path = System.getProperty("user.dir")+"/src/test/resources/propertiesFolder/config.properties";
 			FileInputStream input = new FileInputStream(path);
 
 			configfile = new Properties();
