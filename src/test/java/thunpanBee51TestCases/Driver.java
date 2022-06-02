@@ -20,6 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Driver {
 	public static WebDriver driver;
 
+
 	public static WebDriver getDriver() {
 		if (driver == null) {
 			switch (ConfigurationProperties.getProperty("browser")) {
@@ -106,8 +107,7 @@ public class Driver {
 		}
 		return (BigDecimal) format.parse(amount.replaceAll("[^\\d.,]", ""));
 	}
-	
-	
+
 }
 
 

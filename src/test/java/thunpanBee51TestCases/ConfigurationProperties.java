@@ -37,5 +37,4 @@ public class ConfigurationProperties {
 	public static String getInputDataProperty(String name) {
 		return configFileInput.getProperty(name);
 	}
-
 }
