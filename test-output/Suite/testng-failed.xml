@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="FireFoxTest(failed)">
-    <parameter name="browser" value="firefox"/>
+  <listeners>
+    <listener class-name="Utilities.ListernersTestNG"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="SeleniumDay_10.MultiBrowserTesting">
+      <class name="SeleniumDay_11.testListerners">
         <methods>
-          <include name="BeforeClass"/>
-          <include name="login"/>
+          <include name="test2"/>
+          <include name="test3"/>
         </methods>
-      </class> <!-- SeleniumDay_10.MultiBrowserTesting -->
+      </class> <!-- SeleniumDay_11.testListerners -->
     </classes>
-  </test> <!-- FireFoxTest(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
