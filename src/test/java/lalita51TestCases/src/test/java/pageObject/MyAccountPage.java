@@ -56,7 +56,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@class='woocommerce-Button button']")
     public WebElement loginBtn;
 
-    @FindBy(xpath = "//*[@class='woocommerce-error']/li")
+    @FindBy(xpath = "//ul[@class='woocommerce-error']/li")
     public WebElement errorLogin;
 
     @FindBy(xpath = "//*[@class='woocommerce-error']/li")
@@ -154,6 +154,7 @@ public class MyAccountPage {
         Assert.assertTrue(usernameLoginInput.isDisplayed());
         Assert.assertTrue(passwordLoginInput.isDisplayed());
         Assert.assertTrue(loginBtn.isDisplayed());
+        System.out.println(errorLogin.getText());
         System.out.println("Error is displayed and prompt to enter login again");
     }
 
