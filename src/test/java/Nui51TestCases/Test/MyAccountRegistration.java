@@ -10,6 +10,7 @@ import Nui51TestCases.PageObject.LoginPageObject;
 import Nui51TestCases.PageObject.MyAccountPageObject;
 import NuiUtilities.Driver;
 import NuiUtilities.NuiConfigurationProperties;
+import NuiUtilities.RandomString;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
@@ -43,7 +44,9 @@ public class MyAccountRegistration {
 	@Test
 	public void signIn() throws InterruptedException {
 		cp.myaccountBtn.click();
-		lg.regEmailField.sendKeys(NuiConfigurationProperties.getKeyValue("registeredEmail"));
+		lg.regEmailField.sendKeys(RandomString.generateRandomString(10)+ "@gmail.com");
+		lg.regPwdField.sendKeys(NuiConfigurationProperties.getKeyValue("goodPassword"));
+		Thread.sleep(1000);
 		lg.regPwdField.sendKeys(NuiConfigurationProperties.getKeyValue("goodPassword"));
 		lg.registerBtn.click();
 		Thread.sleep(3000);
