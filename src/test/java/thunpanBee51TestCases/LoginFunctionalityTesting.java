@@ -1,16 +1,14 @@
 package thunpanBee51TestCases;
 
 import org.testng.annotations.AfterClass;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import thunpanBee51TestCasesPageObj.AccountPageObj;
-import thunpanBee51TestCasesPageObj.LoginDashBoardObj;
 
 public class LoginFunctionalityTesting {
 	private AccountPageObj loginPage;
-	private LoginDashBoardObj loginDashBoard;
 
 	@BeforeClass
 	public void setUp() {
@@ -22,7 +20,6 @@ public class LoginFunctionalityTesting {
 	@BeforeMethod
 	public void beforeTest() {
 		loginPage = new AccountPageObj();
-		loginDashBoard = new LoginDashBoardObj();
 		loginPage.clickAccBtn();
 
 	}
@@ -30,8 +27,8 @@ public class LoginFunctionalityTesting {
 	@Test
 	public void TC001_LoginWithValidUsernameAndPassword() {
 		loginPage.inputValidEmailAndPassword();
-		loginDashBoard.loginVerify();
-		loginDashBoard.clickOnSignOutBtn();
+		loginPage.loginVerify();
+		loginPage.clickOnSignOutBtn();
 	}
 
 	@Test
@@ -77,11 +74,11 @@ public class LoginFunctionalityTesting {
 	@Test
 	public void TC008_LoginAuthentication() {
 		loginPage.inputValidEmailAndPassword();
-		loginDashBoard.loginVerify();
-		loginDashBoard.clickOnSignOutBtn();
+		loginPage.loginVerify();
+		loginPage.clickOnSignOutBtn();
 		Driver.navBack();
 		loginPage.verifyLabel();
-		Driver.getURL();	
+		Driver.getURL();
 	}
 
 	@AfterClass
