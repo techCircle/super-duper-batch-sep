@@ -33,7 +33,8 @@ public class ConfigurationProperties {
 		return configFile.getProperty(keyName);
 	}
 
+
 	public static String getInputDataProperty(String name) {
 		return configFileInput.getProperty(name);
-	}
+  }
 }
