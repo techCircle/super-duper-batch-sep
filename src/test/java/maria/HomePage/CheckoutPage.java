@@ -97,11 +97,15 @@ public class CheckoutPage {
 	}
 	
 	public void updateBasketCheck(){
-		
+		increaseQuantity.click();
 		increaseQuantity.clear();
-		increaseQuantity.sendKeys(ConfigurationProperties.getProperty("increaseBookNoby"));
+			increaseQuantity.sendKeys(ConfigurationProperties.getProperty("increaseBookNoby"));
+
+		}
 		
-	}	
+		
+		
+	
 	
 	public void updateCart() {
 		Assert.assertTrue(updateCartBtn.isEnabled());

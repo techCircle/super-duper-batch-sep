@@ -17,16 +17,21 @@ public class homePageTest2 {
 	CheckoutPage coP = new CheckoutPage();
 	BillingCheckoutPage bCoP = new BillingCheckoutPage();
 	@BeforeClass
-	public void beforeclass() {}
-	//changes to pushzzz
+	public void beforeclass() {
+	Driver.getDriver();
+	}
 	
 	@BeforeMethod
 	public void setUp() throws InterruptedException  {
 
-		Driver.getDriver();
+		
 		hP.shopButton.click();
 		sP.homeButton.click();
-
+		}
+	
+	
+@Test(priority=0)
+public void test8() throws InterruptedException  {
 
 		hP.checkSlidersCount();
 		hP.checkArrivalsCount();
@@ -35,7 +40,7 @@ public class homePageTest2 {
 		hP.arrivalImage2click();
 		Thread.sleep(3000);
 		hP.arrivalImg2AddToBasket();
-		hP.arrivalsubImg2CartPrice();
+		hP.arrivalsubImg2CartPrice();               
 		hP.arrivalSubImgProceedToCheckout();
 		Thread.sleep(2000);
 		coP.arrivalsubImg2CartProceedTocheckoutBtn();
@@ -44,7 +49,7 @@ public class homePageTest2 {
 
 	@Test(priority=1)
 	public void test9to11() throws InterruptedException {
-		
+		this.test8();
 		coP.couponCodeEntry();
 		Thread.sleep(3000);
 		coP.couponCodeCondition();
@@ -53,13 +58,16 @@ public class homePageTest2 {
 
 	@Test(priority=2)
 	public void test12() throws InterruptedException {
-
+		this.test8();
 		coP.updateBasketCheck();
 		coP.updateCart();
-	}
+
+
+}
 
 	@Test(priority=3)
-	public void test13() {
+	public void test13() throws InterruptedException {
+		this.test12();
 		coP.orderTotalChkout();
 	}
 
@@ -72,6 +80,7 @@ public class homePageTest2 {
 
 	@Test(priority=5)
 	public void test15() throws InterruptedException {
+		this.test12();
 		coP.totalSubTotalDisplay();
 
 	}

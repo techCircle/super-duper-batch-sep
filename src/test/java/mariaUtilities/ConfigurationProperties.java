@@ -15,7 +15,7 @@ public class ConfigurationProperties {
 	static {
 		System.out.println("before");
 		try {
-			String path = "src/test/resources/mariapropertiesFolder/config.properties";
+			String path = "src/test/resources/propertiesFolder/mariaConfig.properties";
 			FileInputStream input = new FileInputStream(path);//FileInputStream is also a class like scanner and if you 
 			//hover over it  you will see. its function is to fetch the data from
 			//this path src/test/resources/propertiesFolder/userData.properties // which is the userData files

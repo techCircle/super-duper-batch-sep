@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -14,9 +15,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import maria.MyAccountObjects.MyAccountsEditAddressShippingPage;
 
 public class Shop {
-
+	MyAccountsEditAddressShippingPage macsa=new MyAccountsEditAddressShippingPage();
 	//changes to pushzzzz
 	WebDriver driver;
 
@@ -37,7 +39,7 @@ public class Shop {
 	public void tearDown() {
 		driver.close();
 	}
-
+@Ignore
 	@Test        
 	public void Test1filterByPrice() {
 		driver.findElement(By.xpath("//*[text()='Shop']")).click();
@@ -53,7 +55,7 @@ public class Shop {
 		Assert.assertEquals(currentUrl, expectedUrl);		
 
 	}
-	
+@Ignore
 	@Test    //2
 	public void Test2productCategory() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -66,7 +68,7 @@ public class Shop {
 
 
 	}
-	
+@Ignore
 	@Test//3
 	public void Test3sortingFunctionality() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -82,7 +84,7 @@ public class Shop {
 		System.out.println("Sorting Functionality working");
 
 	}
-	
+@Ignore
 	@Test//4
 	public void Test4defaultSorting() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -99,7 +101,7 @@ public class Shop {
 
 	}
 
-	
+@Ignore
 	@Test//5
 	public void Test5newnessSorting() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -115,7 +117,7 @@ public class Shop {
 		System.out.println("newness Sorting Functionality working");
 
 	}
-	
+@Ignore
 	@Test//6
 	public void Test6priceLowToHighSorting() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -131,7 +133,7 @@ public class Shop {
 		System.out.println("low to high Sorting Functionality working");
 
 	}
-	
+@Ignore
 	@Test//7
 	public void Test7priceHighToLowSorting() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -147,7 +149,7 @@ public class Shop {
 		System.out.println(" high to low Sorting Functionality working");
 
 	}
-	
+@Ignore
 	@Test//8
 	public void Test8readMoreOut() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -159,7 +161,7 @@ public class Shop {
 
 	}
 
-	
+@Ignore
 	@Test//9
 	public void Test9shopSale() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -168,7 +170,7 @@ public class Shop {
 		Boolean salePrice=driver.findElement(By.xpath("//*[@id=\"product-169\"]/div[2]/div[1]/p")).isDisplayed();
 		Assert.assertTrue(salePrice);
 	}
-	
+@Ignore
 	@Test   //10
 	public void Test10addToBasket() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@class='main-nav']/li[1]")).click();
@@ -225,7 +227,7 @@ public class Shop {
 
 
 	}
-	
+@Ignore
 	@Test   //11
 	//this one is exactly same as test10
 	public void Test11viewBasketThroughItemLink() throws InterruptedException {
@@ -290,7 +292,6 @@ public class Shop {
 
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[@class='wpmenucart-contents']")).click();
-		// how to get values here for comparing xpaths
 		Boolean checkoutPage=driver.findElement(By.xpath("//*[@class='shop_table shop_table_responsive']")).isDisplayed();
 		Assert.assertTrue(checkoutPage);
 		WebElement subTotal=driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[1]/td/span"));
@@ -309,8 +310,14 @@ public class Shop {
 		double indiaTax=price*indianTaxRate;
 		System.out.println("Tax for india is 0.02 of price so the price is: "+indiaTax);
 		double abroadTax=price*taxRateAbroad;
-		System.out.println(abroadTax);
-
+		macsa.editShippingaddress();
+		String indiaCountry="India";
+if("countryName".equals(indiaCountry)) {
+	TotalFinal.equals(indiaTax);
+}else {
+	//TotalFinal.equals(abroadTax);
+	System.out.println(abroadTax);
+}
 
 
 
