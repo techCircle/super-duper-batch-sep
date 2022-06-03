@@ -16,7 +16,7 @@ public class MyaccountsOrderPage3 {
 	
 	@FindBy(className="order-number")
 	WebElement orderNumber;
-	
+	//shipping
 	
 	@FindBy(className="order-date")
 	WebElement orderDate;
