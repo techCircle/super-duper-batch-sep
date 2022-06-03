@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="FireFoxTest(failed)">
-    <parameter name="browser" value="firefox"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumDay_10.MultiBrowserTesting">
+      <class name="SeleniumDay12_13.loginTestCases">
         <methods>
-          <include name="BeforeClass"/>
-          <include name="login"/>
+          <include name="loginWithValidCredentials_lockoutUser"/>
+          <include name="tearDown"/>
+          <include name="loginWithValidCredentials_problemUser"/>
+          <include name="setUp"/>
+          <include name="loginWithValidCredentials_performanceGlitchUser"/>
         </methods>
-      </class> <!-- SeleniumDay_10.MultiBrowserTesting -->
+      </class> <!-- SeleniumDay12_13.loginTestCases -->
     </classes>
-  </test> <!-- FireFoxTest(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
