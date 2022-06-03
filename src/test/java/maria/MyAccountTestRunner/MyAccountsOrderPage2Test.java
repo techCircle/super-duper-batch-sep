@@ -18,7 +18,7 @@ public class MyAccountsOrderPage2Test {
 	
 	
 	@Test
-  public void viewAndVerifyDetails() {
+  public void viewAndVerifyDetails() throws InterruptedException {
 		
 		myAccount.clickMyAccount();
 		myAOrder.orderclick();

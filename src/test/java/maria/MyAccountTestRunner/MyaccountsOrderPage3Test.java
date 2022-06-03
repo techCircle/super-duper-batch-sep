@@ -20,7 +20,7 @@ public class MyaccountsOrderPage3Test {
 	
 	
 	@Test
-  public void orderStatusAndNumber() {
+  public void orderStatusAndNumber() throws InterruptedException {
 		myAccount.clickMyAccount();
 		myAOrder.orderclick();
 		myAOrder2.viewOrderDetails();

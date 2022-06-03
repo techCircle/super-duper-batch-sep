@@ -13,8 +13,6 @@ import org.testng.Assert;
 import mariaUtilities.ConfigurationProperties;
 import mariaUtilities.Driver;
 
-
-
 public class HomePagePage {
 
 	public HomePagePage() {
@@ -23,13 +21,13 @@ public class HomePagePage {
 ///changes to pushzzz
 	}
 
-	@FindBy(xpath="//img[@title='Selenium Ruby']")
+	@FindBy(xpath = "//img[@title='Selenium Ruby']")
 	public WebElement seleniumRubyimg;
 
-	@FindBy(xpath="//img[@title='Thinking in HTML']")
+	@FindBy(xpath = "//img[@title='Thinking in HTML']")
 	public WebElement thinkingInHTMLimg;
 
-	@FindBy(xpath="//img[@title='Mastering JavaScript']")
+	@FindBy(xpath = "//img[@title='Mastering JavaScript']")
 	public WebElement MasteringJavaScriptimg;
 
 	@FindBy(id = "menu-item-40")
@@ -40,99 +38,95 @@ public class HomePagePage {
 	@FindBy(xpath = "//*[@id='themify_builder_content-22']/div[2]/div/div/div/div/div[2]/div")
 	public List<WebElement> arrivals;
 
-	@FindBy(xpath="//*[@id='tab-description']")
+	@FindBy(xpath = "//*[@id='tab-description']")
 	public WebElement arrivalImg2Description;
 
-	@FindBy(xpath="//*[@id='product-163']/div[3]/ul/li[2]")
+	@FindBy(xpath = "//*[@id='product-163']/div[3]/ul/li[2]")
 	public WebElement arrivalImg2Review;
 
-	@FindBy(xpath="//*[@id='comments']")
+	@FindBy(xpath = "//*[@id='comments']")
 	public WebElement arrivalImg2ReviewDisplay;
 
-
-
-	@FindBy(xpath=" //*[@id='product-163']/div[5]/ul/li[2]/a[1]")
+	@FindBy(xpath = " //*[@id='product-163']/div[5]/ul/li[2]/a[1]")
 	public WebElement arrivalImg2AddToBasketBtn;
 
-	@FindBy(xpath="//button[contains(text(), 'Add to basket')]")
+	@FindBy(xpath = "//button[contains(text(), 'Add to basket')]")
 	public WebElement arrivalsubImg2AddToBasketBtn;
 
-	@FindBy(xpath="//*[@id='wpmenucartli']/a/span[2]")
+	@FindBy(xpath = "//*[@id='wpmenucartli']/a/span[2]")
 	public WebElement arrivalsubImg2CartPrice;
-	
-	
-	@FindBy(xpath="//li[@id='wpmenucartli']")
+
+	@FindBy(xpath = "//li[@id='wpmenucartli']")
 	public WebElement viewShoppingCart;
 
-	
-
-	@FindBy(xpath="//*[@class='quantity']/input ")
+	@FindBy(xpath = "//*[@class='quantity']/input ")
 	public WebElement arrivalsubImg2CartPriceMax;
 
-	@FindBy(xpath="//form/div/input")
+	@FindBy(xpath = "//form/div/input")
 	public WebElement arrivalsubImg2quntityBox;
 
-	@FindBy(xpath="//button[contains(text(), 'Add to basket')]")
+	@FindBy(xpath = "//button[contains(text(), 'Add to basket')]")
 	public WebElement arrivalsubImg2quntityBoxcliik;
 
 	@SuppressWarnings("unused")
 	private int moreThanMax;
 
-
-
-	//Methods
+	// Methods
 
 	public void checkSlidersCount() throws InterruptedException {
-		int count=3;
+		int count = 3;
 		Assert.assertEquals(count, sliders.size());
 		Thread.sleep(3000);
 	}
 
 	public void checkArrivalsCount() {
-		int count=3;
+		int count = 3;
 		Assert.assertEquals(count, arrivals.size());
 	}
 
 	public void verifyImagesInArrivalsShouldNavigate() throws InterruptedException {
-		String[] expectedTexts = new String[]{"Selenium Ruby", "Thinking in HTML", "Mastering JavaScript"};
-/*try {
+		String[] expectedTexts = new String[] { "Selenium Ruby", "Thinking in HTML", "Mastering JavaScript" };
+		/*
+		 * try {
+		 * 
+		 * button.click();
+		 * 
+		 * } catch (WebDriverException e) {
+		 * 
+		 * e.printStackTrace();
+		 * 
+		 * } }
+		 */
+		for (int i = 0; i < arrivals.size(); i++) {
+			try {
+				String pathText = String.format(
+						"//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[%d]",
+						i + 1);
 
-button.click();
+				Driver.getDriver().findElement(By.xpath(pathText)).click();
+				Thread.sleep(2000);
+				String text = Driver.getDriver().findElement(By.xpath("//*[@class='product_title entry-title']"))
+						.getText();
 
-} catch (WebDriverException e) {
+				Assert.assertTrue(expectedTexts[i].equals(text));
+				Driver.getDriver().navigate().back();
+				Thread.sleep(2000);
+			} catch (WebDriverException e) {
 
-e.printStackTrace();
+				e.printStackTrace();
 
-}
-    }*/
-		for(int i = 0; i<arrivals.size(); i++) {
-try {
-			String pathText = String.format("//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[%d]", i+1);
-		
-			Driver.getDriver().findElement(By.xpath(pathText)).click();
-			Thread.sleep(2000);
-			String text = Driver.getDriver().findElement(By.xpath("//*[@class='product_title entry-title']")).getText();
-			
-			Assert.assertTrue(expectedTexts[i].equals(text)) ;                    
-			Driver.getDriver().navigate().back();            
-		Thread.sleep(2000);
-} catch (WebDriverException e) {
+			}
 
-e.printStackTrace();
-				
 		}
+	}
 
-		}}
-	
 	public void arrivalImage2click() {
 		thinkingInHTMLimg.click();
 
-
 	}
+
 	public void arrivalImage2description() {
 		Assert.assertTrue(arrivalImg2Description.isDisplayed());
-
-
 
 	}
 
@@ -142,11 +136,8 @@ e.printStackTrace();
 		Assert.assertTrue(arrivalImg2ReviewDisplay.isDisplayed());
 	}
 
-
-
-
 	public void arrivalImg2AddToBasket() {
-		arrivalImg2AddToBasketBtn.click();		
+		arrivalImg2AddToBasketBtn.click();
 		arrivalsubImg2AddToBasketBtn.click();
 	}
 
@@ -155,23 +146,23 @@ e.printStackTrace();
 	}
 
 	public void arrivalSubImgProceedToCheckout() throws InterruptedException {
-		
+
 		arrivalsubImg2CartPrice.click();
 		Thread.sleep(3000);
 	}
 
 	public void arrivalsubImg2CartPriceMax() {
-		String getMax=arrivalsubImg2CartPriceMax.getAttribute("Max");
-		moreThanMax = Integer.valueOf(getMax)+1;
+		String getMax = arrivalsubImg2CartPriceMax.getAttribute("Max");
+		moreThanMax = Integer.valueOf(getMax) + 1;
 		arrivalsubImg2quntityBox.clear();
 		arrivalsubImg2quntityBox.sendKeys(ConfigurationProperties.getProperty("moreThanMax"));
 		arrivalsubImg2quntityBoxcliik.click();
 
 		WebElement ele = arrivalsubImg2quntityBox;
 		JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-		Boolean isValidInput = (Boolean)js.executeScript("return arguments[0].checkValidity();", ele);
+		Boolean isValidInput = (Boolean) js.executeScript("return arguments[0].checkValidity();", ele);
 		System.out.println(isValidInput);
-		String validationMessage = (String)js.executeScript("return arguments[0].validationMessage;", ele);
+		String validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", ele);
 		System.out.println(validationMessage);
 
 		Assert.assertFalse(isValidInput);
@@ -180,12 +171,6 @@ e.printStackTrace();
 
 		Assert.assertTrue(validationMessage.equals(alert));
 
-
 	}
-
-
-	
-
-
 
 }

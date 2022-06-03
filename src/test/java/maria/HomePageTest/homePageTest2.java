@@ -19,6 +19,7 @@ public class homePageTest2 {
 	@BeforeClass
 	public void beforeclass() {}
 	//changes to pushzzz
+	
 	@BeforeMethod
 	public void setUp() throws InterruptedException  {
 
