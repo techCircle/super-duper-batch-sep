@@ -6,5 +6,7 @@ public class Constant {
 			+"/src/test/resources/thunpanBeePropertiesFolder.properties/config.properties";
 
 	public static final int implicitWait = 10;
+	public static final int roamingTax = 5;
+	public static final int indianTax=2;
 }
 

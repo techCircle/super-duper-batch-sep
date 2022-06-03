@@ -1,5 +1,8 @@
 package thunpanBee51TestCases;
 
+import java.text.ParseException;
+
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import org.testng.annotations.BeforeMethod;
@@ -124,22 +127,21 @@ public class ShopTesting {
 	}
 
 	@Test
-	public void TC012_ShopAddToBasketViewBasketTaxFunctionality() {
+	public void TC012_ShopAddToBasketViewBasketTaxFunctionality() throws InterruptedException, ParseException {
 		shop.addProduct();
 		productPage.verifyViewCartIsDisplay();
 		productPage.clickOnCartBtn();
 		basketPage.totalAndSubtotal();
 		basketPage.clickCheckout();
-		coPage.compareTax();
-		coPage.compareTax2();
-		
-	}
+		coPage.roamingTax();
+		coPage.indianTax();
 
+	}
 	
-	
-	
-		
-	
+	@AfterClass
+	public void tearDown() {
+		Driver.destroy();
+	}
 }
 
 
