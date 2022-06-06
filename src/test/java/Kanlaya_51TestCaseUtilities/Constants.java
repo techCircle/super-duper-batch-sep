@@ -2,7 +2,7 @@ package Kanlaya_51TestCaseUtilities;
 
 public class Constants {
 	
-	public static final String config_filePath = System.getProperty("user.dir") + "/src/test/resources/propertiesFolder/configTestCase.properties";
+	public static final String config_filePath = System.getProperty("user.dir") + "/src/test/resources/propertiesFolder/KanlayaConfigTestCase.properties";
 
 	public static final int implicitWaitTime = 10;
 	
