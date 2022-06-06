@@ -44,7 +44,7 @@ public class MyAccountsEditAddressShippingPage {
 
 	@FindBy(xpath="//*[@id='select2-chosen-1']")
 	WebElement selectCountry;
-
+	
 	@FindBy(xpath="//input[@id='shipping_address_1']")
 	WebElement streetaddress;
 

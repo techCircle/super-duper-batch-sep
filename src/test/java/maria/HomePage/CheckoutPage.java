@@ -35,7 +35,7 @@ public class CheckoutPage {
 	public WebElement removeBookConfirmMessage;
 	
 	
-	@FindBy(xpath="//input[@title='Qty']")
+	@FindBy(xpath="//*[@id=\"page-34\"]/div/div[1]/form/table/tbody/tr[1]/td[5]/div/input")
 	public WebElement increaseQuantity;
 	
 
@@ -70,7 +70,8 @@ public class CheckoutPage {
 	
 	//Methods
 	public void arrivalsubImg2CartProceedTocheckoutBtn() {
-		Assert.assertTrue(arrivalsubImg2CartProceedTocheckoutBTn.isDisplayed());	
+		Assert.assertTrue(arrivalsubImg2CartProceedTocheckoutBTn.isDisplayed());
+		
 	}
 	
 	
@@ -97,11 +98,17 @@ public class CheckoutPage {
 	}
 	
 	public void updateBasketCheck(){
-		
+		increaseQuantity.click();
 		increaseQuantity.clear();
-		increaseQuantity.sendKeys(ConfigurationProperties.getProperty("increaseBookNoby"));
+			increaseQuantity.sendKeys(ConfigurationProperties.getProperty("increaseBookNoby"));
+
+		}
 		
-	}	
+		public void cheeckoutBtnClick() {
+			
+		}
+		
+	
 	
 	public void updateCart() {
 		Assert.assertTrue(updateCartBtn.isEnabled());
@@ -112,20 +119,18 @@ public class CheckoutPage {
 	
 	public void orderTotalChkout() {
 	Assert.assertTrue(orderTotalChkout.isDisplayed());
-	System.out.println(orderTotalChkout.getText());
+	System.out.println("Total= "+orderTotalChkout.getText().substring(7));
 	}
 	
 	public void totalSubTotalDisplay()  {
 		Assert.assertTrue(subTotalBTNcheckout.isDisplayed());
 		Assert.assertTrue(totalBTNcheckout.isDisplayed());
 
-		
-		
-		
+				
 	
 		//System.out.println(total);
-		String subTotal =subTotalBTNcheckout.getText().substring(1, subTotalBTNcheckout.getText().length());
-         String total = totalBTNcheckout.getText().substring(1, totalBTNcheckout.getText().length());
+		String subTotal =subTotalBTNcheckout.getText();
+         String total = totalBTNcheckout.getText();
 		
 		if (total.contains(",")&&subTotal.contains(",")) {
 			total.replaceAll(",", "");
@@ -133,26 +138,13 @@ public class CheckoutPage {
 			Double TotalFinal=Double.parseDouble(total);
 		Double SubTotalFinal=Double.parseDouble(subTotal);
 		Assert.assertTrue(TotalFinal>SubTotalFinal);
-		System.out.println(subTotal);}
-
-		//Assert.assertTrue(Float.valueOf(total) > Float.valueOf(subTotal));
-
-//		String totalBTNcheckout = tPrice.getText();
-//		String subTotalBTNcheckout = stPrice.getText();
-//		Assert.assertTrue(Double.valueOf(totalBTNcheckout.toString()) > Double.valueOf(subTotalBTNcheckout.toString()));
-/*String value = subTotal.getText().substring(1, subTotal.getText().length());
-		Double price = Double.parseDouble(value); 
-
-		total.getText();
-		String totalPrice=total.getText().substring(1, total.getText().length());
-		Double TotalFinal=Double.parseDouble(totalPrice);
-		Assert.assertTrue(TotalFinal>price);
-		Thread.sleep(3000);*/
-		
+		}
+		System.out.println(subTotal);
 		
 	}
 	
-	public void checkOutPagePayment() {
+	public void checkOutPagePayment() throws InterruptedException {
+		Thread.sleep(2000);
 		Assert.assertTrue(checkOutPagePayment.isDisplayed());
 	}
 	

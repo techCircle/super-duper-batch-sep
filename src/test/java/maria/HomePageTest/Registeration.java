@@ -47,7 +47,7 @@ public class Registeration {
 		
 		driver.findElement(By.xpath("//*[@id=\"menu-item-50\"]/a")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);	
-		driver.findElement(By.xpath("//input[@id='reg_email']")).sendKeys("mmamiarl2020@gmail.com");
+		driver.findElement(By.xpath("//input[@id='reg_email']")).sendKeys("mmamiarl25020@gmail.com");
 		driver.findElement(By.name("password")).sendKeys("Rtmamt786*");
 		driver.findElement(By.xpath("//form[@class='register']/p[3]")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
