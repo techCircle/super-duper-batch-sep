@@ -67,7 +67,7 @@ public void test8() throws InterruptedException  {
 
 	@Test(priority=3)
 	public void test13() throws InterruptedException {
-		this.test12();
+		this.test8();
 		coP.orderTotalChkout();
 	}
 
@@ -80,7 +80,7 @@ public void test8() throws InterruptedException  {
 
 	@Test(priority=5)
 	public void test15() throws InterruptedException {
-		this.test12();
+		this.test8();
 		coP.totalSubTotalDisplay();
 
 	}
@@ -88,7 +88,7 @@ public void test8() throws InterruptedException  {
 	@Test(priority=6)
 	public void test16() throws InterruptedException {
 		this.test15();
-		coP.arrivalsubImg2CartProceedTocheckoutBTn.click();
+		coP.arrivalsubImg2CartProceedTocheckoutBtn();
 		coP.checkOutPagePayment();
 	}
 

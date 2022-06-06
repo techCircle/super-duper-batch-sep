@@ -86,17 +86,7 @@ public class HomePagePage {
 
 	public void verifyImagesInArrivalsShouldNavigate() throws InterruptedException {
 		String[] expectedTexts = new String[] { "Selenium Ruby", "Thinking in HTML", "Mastering JavaScript" };
-		/*
-		 * try {
-		 * 
-		 * button.click();
-		 * 
-		 * } catch (WebDriverException e) {
-		 * 
-		 * e.printStackTrace();
-		 * 
-		 * } }
-		 */
+		
 		for (int i = 0; i < arrivals.size(); i++) {
 			try {
 				String pathText = String.format(
@@ -120,7 +110,8 @@ public class HomePagePage {
 		}
 	}
 
-	public void arrivalImage2click() {
+	public void arrivalImage2click() throws InterruptedException {
+		Thread.sleep(3000);
 		thinkingInHTMLimg.click();
 
 	}
@@ -155,7 +146,7 @@ public class HomePagePage {
 		String getMax = arrivalsubImg2CartPriceMax.getAttribute("Max");
 		moreThanMax = Integer.valueOf(getMax) + 1;
 		arrivalsubImg2quntityBox.clear();
-		arrivalsubImg2quntityBox.sendKeys(ConfigurationProperties.getProperty("moreThanMax"));
+		arrivalsubImg2quntityBox.sendKeys("moreThanMax");
 		arrivalsubImg2quntityBoxcliik.click();
 
 		WebElement ele = arrivalsubImg2quntityBox;
