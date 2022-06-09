@@ -1,14 +1,22 @@
 package thunpanBee51TestCases;
 
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,23 +35,20 @@ public class Driver {
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
-				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(ThunpanBeeConstant.implicitWait, TimeUnit.SECONDS);
 				break;
 			case "Chrome":
 				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(ThunpanBeeConstant.implicitWait, TimeUnit.SECONDS);
+				driver = new ChromeDriver();			
 				break;
 			case "safari":
 				// WebDriverManager.safaridriver().setup();
 				driver = new SafariDriver();
-				driver.manage().window().maximize();
-				driver.manage().timeouts().implicitlyWait(ThunpanBeeConstant.implicitWait, TimeUnit.SECONDS);
 				break;
 			}
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(ThunpanBeeConstant.implicitWait, TimeUnit.SECONDS);
 			driver.get(ConfigurationProperties.getProperty("url"));
+			PageInitialized.init();
 		}
 		return driver;
 	}
@@ -98,6 +103,18 @@ public class Driver {
 			driver.close();
 		}
 	}
+	 
+	
+	public static String generateRandomString(int size) {
+        Random rand = new Random();
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0 ; i < size ; i++) {
+            char c = 'a';
+            c += rand.nextInt(26);
+            sb.append(c);
+        }
+        return sb.toString();
+    }
 	
 	//// ConvertCurrency ////
 	public static BigDecimal parse(final String amount, final Locale locale) throws ParseException {
@@ -107,6 +124,27 @@ public class Driver {
 		}
 		return (BigDecimal) format.parse(amount.replaceAll("[^\\d.,]", ""));
 	}
+	
+	public static String getTimeStamp() {
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat(" yyyy_MM_dd_HH:mm:ss");
+        return sdf.format(date.getTime());
+    }
+	
+	public static byte[] takeScreenshot(String filename, WebElement element) {
+        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        byte[] picBytes = element.getScreenshotAs(OutputType.BYTES);
+
+        File file = element.getScreenshotAs(OutputType.FILE);
+        String destinationFile = Constant.SCREENSHOT_FILEPATH + filename + getTimeStamp() + ".png";
+
+        try {
+            FileUtils.copyFile(file, new File(destinationFile));
+        } catch (Exception ex) {
+            System.out.println("Cannot take screenshot!");
+        }
+        return picBytes;
+    }
 
 }
 

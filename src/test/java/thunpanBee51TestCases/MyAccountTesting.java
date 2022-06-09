@@ -1,13 +1,12 @@
 package thunpanBee51TestCases;
 
 import org.testng.annotations.AfterClass;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import thunpanBee51TestCasesPageObj.AccountPageObj;
 
-public class MyAccountTesting {
-	private AccountPageObj accPage;
+public class MyAccountTesting extends PageInitialized {
 
 	@BeforeClass
 	public void setUp() {
@@ -17,8 +16,6 @@ public class MyAccountTesting {
 
 	@BeforeMethod
 	public void setUpBeforeMethod() {
-
-		accPage = new AccountPageObj();
 		accPage.clickAccBtn();
 		accPage.inputValidEmailAndPassword();
 
@@ -42,7 +39,6 @@ public class MyAccountTesting {
 
 	@Test
 	public void TC003_AccountsOrders() {
-
 		accPage.clickAccBtn();
 		accPage.clickOrderLink();
 		accPage.clickviewBtn();
@@ -52,7 +48,6 @@ public class MyAccountTesting {
 
 	@Test
 	public void TC004_AccountsOrders() {
-
 		accPage.clickAccBtn();
 		accPage.clickOrderLink();
 		accPage.clickviewBtn();
@@ -62,7 +57,6 @@ public class MyAccountTesting {
 
 	@Test
 	public void TC005_AccountsAddressFunctionality() {
-
 		accPage.clickAccBtn();
 		accPage.clickAddressLink();
 		accPage.Detail.isDisplayed();

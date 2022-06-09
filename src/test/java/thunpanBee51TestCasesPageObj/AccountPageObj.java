@@ -1,6 +1,7 @@
 package thunpanBee51TestCasesPageObj;
 
 import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -77,6 +78,9 @@ public class AccountPageObj {
 
 	@FindBy(xpath = "//*[@id='page-36']/div/div[1]/div/div/div[2]/header/a")
 	private WebElement shippingEditLink;
+	
+	@FindBy(xpath = "//*[@id='customer_login']/div[1]/form")
+	protected WebElement loginFormBox;
 
 	public void verifyDashBoard() {
 		String dashBoard = dashBoardDisplay.getText();

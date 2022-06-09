@@ -1,23 +1,12 @@
 package thunpanBee51TestCases;
 
 import org.testng.annotations.AfterClass;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import thunpanBee51TestCasesPageObj.BasketObj;
-import thunpanBee51TestCasesPageObj.CheckoutPageObj;
-import thunpanBee51TestCasesPageObj.HomePageObj;
-import thunpanBee51TestCasesPageObj.OrderRecievedObj;
-import thunpanBee51TestCasesPageObj.ProductPageObj;
-import thunpanBee51TestCasesPageObj.ShopObjPage;
 
-public class HomePageTesting {
-	private HomePageObj homepage;
-	private ShopObjPage shop;
-	private ProductPageObj productPage = new ProductPageObj();
-	private BasketObj basketPage = new BasketObj();
-	private CheckoutPageObj coPage = new CheckoutPageObj();
-	private OrderRecievedObj orderRecieved = new OrderRecievedObj();
+public class HomePageTesting extends PageInitialized {
 
 	@BeforeClass
 	public void setUp() {
@@ -27,8 +16,7 @@ public class HomePageTesting {
 
 	@BeforeMethod
 	public void test1and2() {
-		shop = new ShopObjPage();
-		homepage = new HomePageObj();
+
 		homepage.clickShop();
 		shop.clickOnHomeBtn();
 	}
@@ -198,7 +186,7 @@ public class HomePageTesting {
 	}
 
 	@Test
-	public void TC017_HomeArrivalsAddToBasketItemsCheckoutPaymentGateway() {
+	public void TC017_HomeArrivalsAddToBasketItemsCheckoutPaymentGateway() throws InterruptedException {
 		homepage.clickRelatedProduct();
 		productPage.verifyAddBasKetBtn();
 		productPage.clickOnAddBasket();
@@ -206,13 +194,12 @@ public class HomePageTesting {
 		basketPage.totalAndSubtotal();
 		basketPage.clickCheckout();
 		coPage.verifyBillinLabelAndForm();
-		coPage.formFillIn();// have to change email every executed//
-		
+		coPage.formFillIn();
 
 	}
 
 	@Test
-	public void TC018_HomeArrivalsAddToBasketItemsCheckoutPaymentGatewayPlaceOrder() {
+	public void TC018_HomeArrivalsAddToBasketItemsCheckoutPaymentGatewayPlaceOrder() throws InterruptedException {
 		homepage.clickRelatedProduct();
 		productPage.verifyAddBasKetBtn();
 		productPage.clickOnAddBasket();
@@ -220,11 +207,10 @@ public class HomePageTesting {
 		basketPage.totalAndSubtotal();
 		basketPage.clickCheckout();
 		coPage.verifyBillinLabelAndForm();
-		coPage.formFillIn();// have to change email every executed//
+		coPage.formFillIn();
 		coPage.clickPlaceOrder();
 		orderRecieved.verifyOrderConfirm();
 	}
-	
 
 	@AfterClass
 	public void Destroy() {
