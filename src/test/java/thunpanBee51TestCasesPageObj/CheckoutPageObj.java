@@ -45,12 +45,10 @@ public class CheckoutPageObj {
 	private WebElement cityBox;
 	
 	// stateSeS //
-	@FindBy(xpath = "//*[@id='s2id_billing_state']/a/span[2]/b")
-	private WebElement stateDropDown;
 	@FindBy(xpath = "//*[@id='s2id_autogen2_search']")
 	private WebElement stateBox;
-	@FindBy(xpath = "//*[@id='select2-result-label-418']")
-	private WebElement stateSelect;
+	@FindBy(xpath = "//*[@id='select2-results-2']/li")
+	private List<WebElement> stateList;
 	@FindBy(xpath = "//*[@id='billing_postcode']")
 	private WebElement zipCodeBox;
 	@FindBy(xpath = "//*[@id='createaccount']")
@@ -69,21 +67,25 @@ public class CheckoutPageObj {
 	private WebElement romingTax;
 	@FindBy(xpath = "//*[@id=\"select2-result-label-460\"]/span")
 	private WebElement india;
+	
+	@FindBy(xpath = "//*[@id='select2-chosen-2']")
+	private WebElement db;
 
-	public void formFillIn() {
+	public void formFillIn() throws InterruptedException {
 
 		firstNameBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("firstName"));
 		lastNameBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("lastName"));
-		billingEmailBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("email"));
+		billingEmailBox.sendKeys(Driver.generateRandomString(4)+"@dmail.com");
 		phoneBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("phone"));
 		countryDropDown.click();
 		countryBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("country"));
-		// Driver.clickOnProduct(countryList, null);
+		Thread.sleep(2000);
+		countryList.get(0).click();
 		streetBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("address"));
 		cityBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("city"));
-		stateDropDown.click();
+		db.click();
 		stateBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("state"));
-		stateSelect.click();
+		stateList.get(0).click();
 		zipCodeBox.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("zipCode"));
 		createAccCheckBox.click();
 		createPassword.sendKeys(thunpanBee51TestCases.ConfigurationProperties.getProperty("password"));

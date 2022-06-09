@@ -1,6 +1,7 @@
 package thunpanBee51TestCasesPageObj;
 
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import thunpanBee51TestCases.Driver;
@@ -19,7 +20,6 @@ public class OrderRecievedObj {
 	private WebElement billingDetail;
 
 	public void verifyOrderConfirm() {
-
 		System.out.println("OrderDetail isDisplayed : " + orderDetail.isDisplayed());
 		System.out.println("CustomerDetail isDisplayed : " + customerDetail.isDisplayed());
 		System.out.println("BillingDetail isDisplayed : " + billingDetail.isDisplayed());

@@ -9,20 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-import thunpanBee51TestCasesPageObj.BasketObj;
-import thunpanBee51TestCasesPageObj.CheckoutPageObj;
-import thunpanBee51TestCasesPageObj.OrderRecievedObj;
-import thunpanBee51TestCasesPageObj.ProductPageObj;
-import thunpanBee51TestCasesPageObj.ShopObjPage;
-
-public class ShopTesting {
-
-	private ShopObjPage shop;
-	private ProductPageObj productPage;
-	private BasketObj basketPage = new BasketObj();
-	private CheckoutPageObj coPage = new CheckoutPageObj();
-	private OrderRecievedObj orderRecieved = new OrderRecievedObj();
-
+public class ShopTesting extends PageInitialized {
 
 	@BeforeClass
 	public void setUp() {
@@ -32,8 +19,6 @@ public class ShopTesting {
 
 	@BeforeMethod
 	public void beforeTest() {
-		shop = new ShopObjPage();
-		productPage = new ProductPageObj();
 		shop.clickShopBtn();
 	}
 
@@ -49,7 +34,7 @@ public class ShopTesting {
 		shop.clickOnProductCatagoryOption();
 		shop.verifyCategoryProuct();
 	}
-	
+
 	@Ignore
 	@Test
 	public void TC003_TO_TC007_sortingFunctionality() {
@@ -100,28 +85,28 @@ public class ShopTesting {
 	}
 
 	@Test
-	public void TC010_ShopAddToBasketViewBasketFunctionality() {
+	public void TC010_ShopAddToBasketViewBasketFunctionality() throws InterruptedException {
 		shop.addProduct();
 		productPage.verifyViewCartIsDisplay();
 		productPage.clickOnCartBtn();
 		basketPage.totalAndSubtotal();
 		basketPage.clickCheckout();
 		coPage.verifyBillinLabelAndForm();
-		coPage.formFillIn();// have to change email every executed//
+		coPage.formFillIn();
 		coPage.clickPlaceOrder();
 		orderRecieved.verifyOrderConfirm();
-		
+
 	}
 
 	@Test
-	public void TC011_ShopAddToBasketViewBasketThroughItemLink() {
+	public void TC011_ShopAddToBasketViewBasketThroughItemLink() throws InterruptedException {
 		shop.addProduct();
 		productPage.verifyViewCartIsDisplay();
 		productPage.clickOnCartBtn();
 		basketPage.totalAndSubtotal();
 		basketPage.clickCheckout();
 		coPage.verifyBillinLabelAndForm();
-		coPage.formFillIn();// have to change email every executed//
+		coPage.formFillIn();
 		coPage.clickPlaceOrder();
 		orderRecieved.verifyOrderConfirm();
 	}
@@ -137,21 +122,9 @@ public class ShopTesting {
 		coPage.indianTax();
 
 	}
-	
+
 	@AfterClass
 	public void tearDown() {
 		Driver.destroy();
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

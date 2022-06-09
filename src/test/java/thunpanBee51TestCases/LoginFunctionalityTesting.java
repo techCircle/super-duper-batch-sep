@@ -2,13 +2,12 @@ package thunpanBee51TestCases;
 
 import org.testng.annotations.AfterClass;
 
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import thunpanBee51TestCasesPageObj.AccountPageObj;
 
-public class LoginFunctionalityTesting {
-	private AccountPageObj loginPage;
+public class LoginFunctionalityTesting extends PageInitialized {
 
 	@BeforeClass
 	public void setUp() {
@@ -19,65 +18,65 @@ public class LoginFunctionalityTesting {
 
 	@BeforeMethod
 	public void beforeTest() {
-		loginPage = new AccountPageObj();
-		loginPage.clickAccBtn();
+		accPage.clickAccBtn();
 
 	}
 
 	@Test
 	public void TC001_LoginWithValidUsernameAndPassword() {
-		loginPage.inputValidEmailAndPassword();
-		loginPage.loginVerify();
-		loginPage.clickOnSignOutBtn();
+		accPage.inputValidEmailAndPassword();
+		accPage.loginVerify();
+		accPage.clickOnSignOutBtn();
 	}
 
 	@Test
 	public void TC002_LoginWithIncorrectUsernameAndIncorrectPassword() {
-		loginPage.inputInvalidLogin();
-		loginPage.varifyInvalidUsernameMessage();
+		accPage.inputInvalidLogin();
+		accPage.varifyInvalidUsernameMessage();
 	}
 
 	@Test
 	public void TC003_LoginWithCorrectUsernameAndEmptyPassword() {
-		loginPage.inputEmptyPasswordLogin();
-		loginPage.varifyEmptyPassword();
+		accPage.inputEmptyPasswordLogin();
+		accPage.varifyEmptyPassword();
 	}
 
 	@Test
 	public void TC004_LoginWithEmptyUsernameAndValidPassword() {
-		loginPage.inputEmptyUsernamelogin();
-		loginPage.verifyEmptyUsername();
+		accPage.inputEmptyUsernamelogin();
+		accPage.verifyEmptyUsername();
 
 	}
 
 	@Test
 	public void TC005_LoginWithEmptyUsernameAndEmptyPassword() {
-		loginPage.inputEmpty();
-		loginPage.verifyEmptyUsername();
+		accPage.inputEmpty();
+		accPage.verifyEmptyUsername();
 
 	}
 
 	@Test
 	public void TC006_LoginPasswordShouldBeMasked() {
-		loginPage.inputCharacterPassword();
-		loginPage.verifyPasswordBeMasked();
+		accPage.inputCharacterPassword();
+		accPage.verifyPasswordBeMasked();
+		Driver.takeScreenshot("Displayed asterisks", accPage.loginForm);
 
 	}
 
 	@Test
 	public void TC007_LoginHandlesCaseSensitive() {
-		loginPage.inputCaseSensitive();
-		loginPage.varifyInvalidUsernameMessage();
+		accPage.inputCaseSensitive();
+		accPage.varifyInvalidUsernameMessage();
 
 	}
 
 	@Test
 	public void TC008_LoginAuthentication() {
-		loginPage.inputValidEmailAndPassword();
-		loginPage.loginVerify();
-		loginPage.clickOnSignOutBtn();
+		accPage.inputValidEmailAndPassword();
+		accPage.loginVerify();
+		accPage.clickOnSignOutBtn();
 		Driver.navBack();
-		loginPage.verifyLabel();
+		accPage.verifyLabel();
 		Driver.getURL();
 	}
 
