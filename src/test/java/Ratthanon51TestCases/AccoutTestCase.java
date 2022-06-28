@@ -43,12 +43,11 @@ public class AccoutTestCase {
 	@BeforeMethod
 	public void beforeClass() {
 		BaseClassR.getDriver();
+		hp.MyAccountMenu.click();
 	}
-
+    
 	@Test(priority = 1)
 	public void LoginValidUserPassword() {
-
-		hp.MyAccountMenu.click();
 		ac.LoginvalidUser();		
 		Assert.assertTrue(ad.signOutlink.isDisplayed() && ad.signOutlink.isEnabled());
 		ad.signOutlink.click();
@@ -57,10 +56,7 @@ public class AccoutTestCase {
 	
 	
 	@Test(dataProvider="LoginAccoutDataprovider",priority = 2)
-	  public void VerifyLogin(String username,String password,String expecterror) {
-		  hp.MyAccountMenu.click();
-			
-			
+	  public void VerifyLogin(String username,String password,String expecterror) {			
 			ac.inputUserName.sendKeys(username);
 			ac.inputPassword.sendKeys(password);
 			ac.loginButton.click();
@@ -72,7 +68,6 @@ public class AccoutTestCase {
 	
 	@Test(priority = 3)
 	  public void MaskedPassword() {
-		  hp.MyAccountMenu.click();
 		  ac.inputUserName.sendKeys(Constants_ratthanon.username);
 		  ac.inputPassword.sendKeys(Constants_ratthanon.password);
 		  Assert.assertTrue(ac.inputPassword.getAttribute("type").equals("password"));
@@ -80,19 +75,16 @@ public class AccoutTestCase {
 	
 	@Test(priority = 4)
 	public void LoginCaseSensitive() {
-		
-		 hp.MyAccountMenu.click();
 		 ac.inputUserName.sendKeys(ac.ChageCase(Constants_ratthanon.username));
 		 ac.inputPassword.sendKeys(ac.ChageCase(Constants_ratthanon.password));
 		
 		ac.loginButton.click();
-		Assert.assertTrue(ac.errorText.getText().indexOf("The password you entered for the username") != -1 && ac.errorText.getText().indexOf("is incorrect") != -1);
+		Assert.assertTrue(ac.errorText.getText().indexOf(Constants_ratthanon.ErrorSensitive) != -1 && ac.errorText.getText().indexOf(Constants_ratthanon.ErrorSensitiveTwo) != -1);
 
 	}
 	
 	@Test(priority = 5)
 	public void LoginAuthentication() {
-		  hp.MyAccountMenu.click();
 		  ac.inputUserName.sendKeys(Constants_ratthanon.username);
 		  ac.inputPassword.sendKeys(Constants_ratthanon.password);
 		  ac.loginButton.click();
@@ -105,57 +97,43 @@ public class AccoutTestCase {
 	}
 	
 	@Test(priority = 6)
-	public void RegisterValidInfo() throws InterruptedException {
-		  hp.MyAccountMenu.click();
+	public void RegisterValidInfo() throws InterruptedException {	
 		  ac.RegisterWithValidInfo();
-		  
-		  Thread.sleep(5);
-		  
-		  Assert.assertTrue(ac.errorText.getText().contains(Constants_ratthanon.RegisterwithAlreadyAccout));
-			
-		  //System.out.println(ac.RegisterButton.isEnabled());
-		 
-		  
+		  ad.signOutlink.click();
+		 		  
 	}
 	
 	@Test(priority = 7)
-	public void RegisterinValidEmail() throws InterruptedException {
-		  hp.MyAccountMenu.click();
-		  ac.RegisterWithinvalidEmail();
-		  
+	public void RegisterinValidEmail() throws InterruptedException {	
+		  ac.RegisterWithinvalidEmail();		  
 		  ac.RegisterButton.click();
-		  Assert.assertTrue(ac.errorText.getText().contains("Error: Please provide a valid email address."));
+		  Assert.assertTrue(ac.errorText.getText().contains(Constants_ratthanon.invalidErrorMessages));
 		 
 		  
 	}
 	
 	@Test(priority = 8)
-	public void RegisterWithemptyEmail() throws InterruptedException {
-		  hp.MyAccountMenu.click();
-		  ac.RegisterWithEmptyEmail();
-		  
+	public void RegisterWithemptyEmail() throws InterruptedException {	
+		  ac.RegisterWithEmptyEmail();		  
 		  ac.RegisterButton.click();
-		  Assert.assertTrue(ac.errorText.getText().contains("Error: Please provide a valid email address."));
+		  Assert.assertTrue(ac.errorText.getText().contains(Constants_ratthanon.invalidErrorMessages));
 		  
 	}
 	
 	@Test(priority = 9)
-	public void RegisterWithEmptypassword() throws InterruptedException {
-		  hp.MyAccountMenu.click();
-		  ac.RegisterWithEmptyPassword();
-		  
+	public void RegisterWithEmptypassword() throws InterruptedException {		
+		  ac.RegisterWithEmptyPassword();		  
 		  ac.RegisterButton.click();
 		  System.out.println(ac.errorText.getText());
-		  Assert.assertTrue(ac.errorText.getText().contains("Error: Please enter an account password."));		 
+		  Assert.assertTrue(ac.errorText.getText().contains(Constants_ratthanon.EmtypasswordErrorMessages ));		 
 		  
 	}	
 	
 	@Test(priority = 10)
 	public void RegisterWithEmptyemailpassword()throws InterruptedException {
-		  hp.MyAccountMenu.click();
 		  ac.RegisterWithEmptyEmailPassword();
 		  ac.RegisterButton.click();
-		  Assert.assertTrue(ac.errorText.getText().contains("Error: Please provide a valid email address."));
+		  Assert.assertTrue(ac.errorText.getText().contains(Constants_ratthanon.invalidErrorMessages));
 	}
 	
 	
@@ -166,4 +144,5 @@ public class AccoutTestCase {
 	public void afterClass() {
 		BaseClassR.tearDown();
 	}
+
 }

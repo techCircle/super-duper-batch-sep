@@ -25,6 +25,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import RatthanonPageObject.BasketPage;
+import RatthanonPageObject.CheckoutPage;
 import RatthanonPageObject.HomePage;
 import RatthanonPageObject.ProductPage;
 import RatthanonPageObject.ShopPage;
@@ -37,11 +38,18 @@ public class HomePageTestcase {
 	ShopPage sp = new ShopPage();
 	BasketPage bk = new BasketPage();
 	ProductPage pd = new ProductPage();
+	CheckoutPage ch = new CheckoutPage();
 	
-	@BeforeMethod
-	public void beforeClass() {
+	@BeforeClass
+	public void beforemethod() {
 	
 		BaseClassR.getDriver();
+		//hp.ShopMenu.click();
+		//sp.HomeMenu.click();
+	}
+	
+	@BeforeMethod
+	public void setUp() {
 		hp.ShopMenu.click();
 		sp.HomeMenu.click();
 	}
@@ -78,7 +86,7 @@ public class HomePageTestcase {
 		  Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 		  hp.ValidateReview();
 	  }
-	
+	 
 	 @Test(priority = 6)
 	  public void VerifyAddItemToBucket() throws InterruptedException{
 		 Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
@@ -91,6 +99,7 @@ public class HomePageTestcase {
 		 Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 		  hp.ValidateReview();
 		  hp.verifyAddBusket();	
+		  Thread.sleep(1000);
 		  hp.viewbusket.click();
 		  Thread.sleep(1000);
 		  bk.NameProduct.click();
@@ -100,30 +109,30 @@ public class HomePageTestcase {
 	 
 	 @Test(priority = 8)
 	  public void HomeArrivalsAddtoBasketItems() throws InterruptedException{
-		  AssertJUnit.assertEquals(hp.BookArrivals(), 3);
-		  //hp.ValidateReview();
+		  Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 		  hp.verifyAddBusket();	
+		  Thread.sleep(1000);
 		  hp.verifyClickItem();
 	  }
 	
 	@Test(priority = 9)
 	  public void HomeArrivalsAddtoBasketItemsCoupon() throws InterruptedException{
-		  AssertJUnit.assertEquals(hp.BookArrivals(), 3);
-		  //hp.ValidateReview();
+		  Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 		  hp.verifyAddBusket();	
+		  Thread.sleep(1000);
 		  hp.verifyClickItem();
 		  
 		  // Due to Coupon usage limit for krishnasakinala code then verify with error code
 		  bk.ProductCode.sendKeys(Constants_ratthanon.productCode);
 		  bk.applycouponButton.click();
-		  Assert.assertTrue(bk.errorMaxCoupon.getText().contains(Constants_ratthanon.errorCoupon));		  
+		  Assert.assertTrue(bk.errorMaxCoupon.getText().contains(Constants_ratthanon.errorCoupon));	
+		  bk.removeButton.click();	  
 		  
 	  }
 	
 	@Test(priority = 10)
 	  public void HomeArrivalsAddtoBasketItemsCouponLess450() throws InterruptedException{
-		  AssertJUnit.assertEquals(hp.BookArrivals(), 3);
-		  //hp.ValidateReview();
+		  Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 		  hp.verifyAddBusket();	
 		  hp.verifyClickItem();
 		  
@@ -139,8 +148,7 @@ public class HomePageTestcase {
 	
 	@Test(priority = 11)
 	  public void HomeArrivalsAddtoBasketRomoveBook() throws InterruptedException{
-		  AssertJUnit.assertEquals(hp.BookArrivals(), 3);
-		  //hp.ValidateReview();
+		 Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 		  hp.verifyAddBusket();	
 		  hp.verifyClickItem();
 		  bk.removeButton.click();
@@ -152,27 +160,92 @@ public class HomePageTestcase {
 	
 	@Test(priority = 12)
 	  public void HomeArrivalsAddtoBasketaddBook() throws InterruptedException{
-		  AssertJUnit.assertEquals(hp.BookArrivals(), 3);
-		  //hp.ValidateReview();
+		  Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 		  hp.verifyAddBusket();	
 		  hp.verifyClickItem();
 		  bk.QuantityInput.sendKeys(Keys.ARROW_UP);
 		  Assert.assertTrue(bk.updateCartButton.isEnabled());
 		  bk.updateCartButton.click();
 		  Assert.assertEquals(bk.updateBasketMessage.getText(), Constants_ratthanon.UpdateBasketMessage);
+		  bk.removeButton.click();
 		  
 	  }
-	/*
+	  
+	
 	@Test(priority = 13)
-	  public void HomeArrivalsAddtoBasketaddBook() throws InterruptedException{
-		  AssertJUnit.assertEquals(hp.BookArrivals(), 3);
-		  //hp.ValidateReview();
+	  public void HomeArrivalsCheckoutTotalPrice() throws InterruptedException{
+		  Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
 		  hp.verifyAddBusket();	
 		  hp.verifyClickItem();
+		  bk.verifyTotalPrice();
+		  bk.removeButton.click();
 		  
 	  }
-	  */
 	
+	@Test(priority = 14)
+	  public void HomeArrivalsCheckoutUpdateBasket() throws InterruptedException{
+		 Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
+		  hp.verifyAddBusket();	
+		  hp.verifyClickItem();
+		  bk.QuantityInput.sendKeys(Keys.ARROW_UP);
+		  Assert.assertTrue(bk.updateCartButton.isEnabled());
+		  bk.updateCartButton.click();
+		  Assert.assertEquals(bk.updateBasketMessage.getText(), Constants_ratthanon.UpdateBasketMessage);
+		  bk.removeButton.click();
+		  		  
+	  }
+	
+	@Test(priority = 15)
+	  public void HomeArrivalsCheckoutTotalAndSubTotal() throws InterruptedException{
+		 Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
+		  hp.verifyAddBusket();	
+		  hp.verifyClickItem();
+		  bk.verifyTotalAndSubTotal();
+		  bk.removeButton.click();
+
+		  		  
+	  }
+	
+	@Test(priority = 16)
+	  public void HomeArrivalsCheckoutFunctionality() throws InterruptedException{
+		 Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
+		  hp.verifyAddBusket();	
+		  hp.verifyClickItem();
+		  bk.verifyTotalAndSubTotal();
+		  bk.ProceedCheckButton.click();
+		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains("checkout") && ch.checkOutText.getText().contains(Constants_ratthanon.checkOutPage));
+		  		  
+	  }
+	
+       
+	@Test(priority = 17)
+	  public void HomeArrivalsCheckoutPaymentGateWay() throws InterruptedException{
+		 Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
+		  hp.verifyAddBusket();	
+		  hp.verifyClickItem();
+		  bk.verifyTotalAndSubTotal();
+		  bk.ProceedCheckButton.click();
+		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains("checkout") && ch.checkOutText.getText().contains(Constants_ratthanon.checkOutPage));
+		  ch.verifyAddCoupon();		  		  		  		  
+	  }
+	
+	@Test(priority = 18)
+	  public void HomeArrivalsAddItemPlaceOrder() throws InterruptedException{
+		 Assert.assertEquals(hp.BookArrivals(), Constants_ratthanon.arrivalsCount);
+		  hp.verifyAddBusket();	
+		  hp.verifyClickItem();
+		  bk.verifyTotalAndSubTotal();
+		  bk.ProceedCheckButton.click();
+		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains("checkout") && ch.checkOutText.getText().contains(Constants_ratthanon.checkOutPage));
+		  ch.VerifyBilling();
+		  ch.verifyMakeOrder();		  		  
+		  		  
+	  }
+	
+	
+	
+	
+
 	
 	  
 	  
