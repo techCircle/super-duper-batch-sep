@@ -8,8 +8,8 @@
 
 
 	<properties>
-		<maven.compiler.source>1.11</maven.compiler.source>
-		<maven.compiler.target>1.11</maven.compiler.target>
+		<maven.compiler.source>1.9</maven.compiler.source>
+		<maven.compiler.target>1.9</maven.compiler.target>
 	</properties>
 
 
@@ -64,9 +64,6 @@
 
 
 			<plugin>
-
-
-		
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
@@ -75,7 +72,7 @@
 					<!-- <suiteXmlFiles> <suiteXmlFile>SmokeTest.xml</suiteXmlFile> </suiteXmlFiles> -->
 
 					 <suiteXmlFiles>
-                        <suiteXmlFile>SmokeTest.xml</suiteXmlFile>
+                        <suiteXmlFile>multiBrowserTesting.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
 				</configuration>
