@@ -1,5 +1,7 @@
 package RatthanonPageObject;
 
+import java.util.Random;
+
 import org.openqa.selenium.Keys;
 
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,7 @@ import RatthanonUtilities.BaseClassR;
 public class MyAccountPage {
 	
 	public WebDriver driver = BaseClassR.getDriver();
+	public String user;
 
 	public MyAccountPage() {
 		PageFactory.initElements(driver, this);
@@ -43,6 +46,11 @@ public class MyAccountPage {
 	@FindBy(xpath = "//input[@name='register']")
 	public WebElement RegisterButton;
 	
+	
+	@FindBy(xpath = "//div[@class='woocommerce-MyAccount-content']/p[1]")
+	public WebElement RegisterSucessMessage;
+	//div[@class='woocommerce-MyAccount-content']/p[1]
+	
 	//input[@name='register']
 	
 	public void LoginvalidUser() {
@@ -53,11 +61,13 @@ public class MyAccountPage {
 	}
 	
 	public void RegisterWithValidInfo() throws InterruptedException {
-		  registEmailForm.sendKeys(Constants_ratthanon.Registerusername);
+		  String Email = generateRanDomText() + "@gmail.com";
+		  //registEmailForm.sendKeys(Constants_ratthanon.Registerusername);
+		  registEmailForm.sendKeys(Email);
 		  registPasswordForm.sendKeys(Constants_ratthanon.Registerpassword);
 		  Thread.sleep(3000);
 		  registPasswordForm.sendKeys(Keys.RETURN);
-		  //registEmailForm.click();
+		  Assert.assertTrue(RegisterSucessMessage.getText().contains(user));
 		
 	}
 	
@@ -99,7 +109,35 @@ public class MyAccountPage {
 	}
 
 	
-		
+	public String generateRanDomText() {
+		// create a string of all characters
+	    String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	    // create random string builder
+	    StringBuilder sb = new StringBuilder();
+
+	    // create an object of Random class
+	    Random random = new Random();
+
+	    // specify length of random string
+	    int length = 8;
+
+	    for(int i = 0; i < length; i++) {
+
+	      // generate random index number
+	      int index = random.nextInt(alphabet.length());
+
+	      // get character specified by index
+	      // from the string
+	      char randomChar = alphabet.charAt(index);
+
+	      // append the character to string builder
+	      sb.append(randomChar);
+	    }
+
+	        user = sb.toString();
+	    return user;
+	}
 	
 	
 	public String ChageCase(String text) {

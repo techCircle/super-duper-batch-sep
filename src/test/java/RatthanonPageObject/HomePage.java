@@ -54,12 +54,17 @@ public class HomePage {
 		@FindBy(xpath="//*[@id='text-22-sub_row_1-0-2-1-0']/div/ul/li/a[2]")
 		public WebElement ReadMoreButton;
 		
+		//*[@id='text-22-sub_row_1-0-2-1-0']/div/ul/li/a[2]
 		
-		@FindBy(xpath="//*[@id='product-163']/div[5]/ul/li[1]/a[2]")
+		
+		//@FindBy(xpath="//*[@id='product-163']/div[5]/ul/li[1]/a[2]")
+		@FindBy(xpath="(//*[text()='Add to basket'])[1]")
 		public WebElement AddToBasketButton;
 		
 		
-		@FindBy(xpath="//*[@id='product-181']/div[2]/form/button")
+		
+		//@FindBy(xpath="//*[@id='product-181']/div[2]/form/button")
+		@FindBy(xpath="(//*[text()='Add to basket'])[2]")
 		public WebElement AddToBasketButton2;
 		
 		@FindBy(xpath="//*[@id='wpmenucartli']/a/span[1]")
@@ -87,7 +92,7 @@ public class HomePage {
 		public void verifyAddBusket() throws InterruptedException {
 			ReadMoreButton.click();
 			AddToBasketButton.click();
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			//Assert.assertEquals(itemPrice.getText(), showPriceproduct.getText());
 			//Double price = Double.parseDouble(itemPrice.getText().substring(1)); 
 			Assert.assertEquals(viewbusket.getText(), "View Basket");			
@@ -95,6 +100,7 @@ public class HomePage {
 		
 		public void verifyClickItem() throws InterruptedException {
 			itemPrice.click();
+			Thread.sleep(2000);
 			Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains("basket"));
 			//viewbusket.click();
 		}
@@ -123,11 +129,11 @@ public class HomePage {
 				String xpathFormat = "(//ul[@class='products']/li)" + "[" + i + "]";
 				WebElement links = driver.findElement(By.xpath(xpathFormat));
 				links.click();
-				Thread.sleep(1000);
+				//Thread.sleep(2000);
 				Assert.assertTrue(driver.getCurrentUrl().contains(titleweb[j]));	
 				
 				driver.navigate().back();
-				// Thread.sleep(3000);
+				Thread.sleep(2000);
 				j++;
 			}
 		}
@@ -139,15 +145,14 @@ public class HomePage {
 				String xpathFormat = "(//ul[@class='products']/li)" + "[" + i + "]";
 				WebElement links = driver.findElement(By.xpath(xpathFormat));
 				links.click();
-
+				//Thread.sleep(2000);
 				Assert.assertTrue(driver.getCurrentUrl().contains(titleweb[j]));
-				Thread.sleep(1000);
 				descriptionBooktab.click();
 				Assert.assertTrue(descriptiontext.isDisplayed());
 				
 				
 				driver.navigate().back();
-				// Thread.sleep(3000);
+				Thread.sleep(2000);
 				j++;
 			}
 		}
@@ -160,15 +165,15 @@ public class HomePage {
 				String xpathFormat = "(//ul[@class='products']/li)" + "[" + i + "]";
 				WebElement links = driver.findElement(By.xpath(xpathFormat));
 				links.click();
+				//Thread.sleep(2000);
 				Assert.assertTrue(driver.getCurrentUrl().contains(titleweb[j]));
 				reviewBooktab.click();
-				Thread.sleep(2000);
 				Assert.assertTrue(reviewtext.isDisplayed());
 				
 				
 
 				driver.navigate().back();
-				// Thread.sleep(1000);
+				Thread.sleep(2000);
 				j++;
 			}
 		}

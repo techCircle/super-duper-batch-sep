@@ -20,7 +20,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import RatthanonPageObject.AccoutDetail;
+import RatthanonPageObject.BasketPage;
+import RatthanonPageObject.CheckoutPage;
 import RatthanonPageObject.HomePage;
+import RatthanonPageObject.MyAccountPage;
 import RatthanonPageObject.ProductCategory;
 import RatthanonPageObject.ProductPage;
 import RatthanonPageObject.ShopPage;
@@ -33,26 +37,29 @@ public class ShopTestCase {
 	ShopPage sp = new ShopPage();
 	ProductCategory pc = new ProductCategory();
 	ProductPage pp = new ProductPage();
+	CheckoutPage ch = new CheckoutPage();
+	BasketPage bk = new BasketPage();
+	AccoutDetail ac = new AccoutDetail();
+	MyAccountPage ma = new MyAccountPage();
+	
 	
 	@BeforeMethod
 	public void beforeClass() {
 		BaseClassR.getDriver();
+		hp.ShopMenu.click();
 	}
-
+    
 	@Test(priority = 1)
 	public void VerifyPriceFunction() {
-		hp.ShopMenu.click();
 		sp.SlideTabPriceRight(Constants_ratthanon.slideNumber);
-		AssertJUnit.assertTrue(sp.textPrice.getText().contains("₹150 — ₹450"));
+		AssertJUnit.assertTrue(sp.textPrice.getText().contains(Constants_ratthanon.booklowMaxPraice));
 		sp.filterButton.click();
-		Assert.assertTrue(sp.verifyBookPrice() <= 450);
+		Assert.assertTrue(sp.verifyBookPrice() <= Constants_ratthanon.bookPrice);
 
 	}
 
 	@Test(priority = 2)
 	public void VerifyCatagoeyFunction(){
-		hp.ShopMenu.click();
-
 		String catagory = sp.linkproduct.getText();
 		sp.linkproduct.click();
 		Assert.assertTrue(pc.verifyProduct(catagory));
@@ -62,7 +69,6 @@ public class ShopTestCase {
 
 	@Test(priority = 3)
 	public void VerifyPopularity(){
-		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.Popularity_item);
 		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.Popularity_item));
 		 				 
@@ -71,7 +77,6 @@ public class ShopTestCase {
 	
 	@Test(priority = 4)
 	public void VerifyRating(){
-		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.Averageratings);
 		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.Averageratings ));		 				 
 		  
@@ -79,7 +84,6 @@ public class ShopTestCase {
 	
 	@Test(priority = 5)
 	public void VerifyNewDate() {
-		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.Newnessratings);
 		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.Newnessratings));		 				 
 		  
@@ -87,7 +91,6 @@ public class ShopTestCase {
 	
 	@Test(priority = 6)
 	public void VerifyLoToHiPrice(){
-		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.LowtoHigh);
 		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.LowtoHigh));		 				 
 		  
@@ -95,28 +98,71 @@ public class ShopTestCase {
 	
 	@Test(priority = 7)
 	public void VerifyHiToLoPrice() {
-		  hp.ShopMenu.click();
 		  sp.SelectSorting(Constants_ratthanon.HightoLow);
 		  Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains(Constants_ratthanon.HightoLow));
 	}
 	
 	@Test(priority = 8)
 	public void VesrifyOutofStock() {
-		  hp.ShopMenu.click();
 		  sp.readmoreButton.click();
 		  Assert.assertTrue(sp.itemprice.getText().contains("Out of stock"));
 			
 		  
 	}
 	
+	
 	@Test(priority = 9)
 	public void SortFunctionalOnsale(){
-		  hp.ShopMenu.click();
 		  sp.itemsale.click();
 		  Assert.assertTrue(pp.salelogo.isDisplayed() && pp.deleteprice.isDisplayed());			
 		  
 	}
 	
+	
+	@Test(priority = 10)
+	public void ShopAddBasketFunctionality() throws InterruptedException{	
+		sp.addBasket();   
+		sp.viewBasket.click();	
+        Assert.assertTrue(bk.NameProduct.isDisplayed() && bk.PriceProduct.isDisplayed());
+        bk.verifyTotalAndSubTotal();
+        bk.ProceedCheckButton.click();
+        Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains("checkout") && ch.checkOutText.getText().contains(Constants_ratthanon.checkOutPage));
+        ch.VerifyBilling();
+        ch.verifyMakeOrder();
+				  
+	}
+	
+	@Test(priority = 11)
+	public void ShopAddBasketwithItemlink() throws InterruptedException{	
+		sp.addBasket();   
+		sp.ItemDisplayPrice.click();
+        Assert.assertTrue(bk.NameProduct.isDisplayed() && bk.PriceProduct.isDisplayed());
+        bk.verifyTotalAndSubTotal();
+        bk.ProceedCheckButton.click();
+        Assert.assertTrue(BaseClassR.getDriver().getCurrentUrl().contains("checkout") && ch.checkOutText.getText().contains(Constants_ratthanon.checkOutPage));
+        ch.VerifyBilling();
+        ch.verifyMakeOrder();
+				  
+	}
+	
+	@Test(priority = 12)
+	public void ShopAddBasketandTax() throws InterruptedException{	
+		sp.addBasket();   
+		sp.ItemDisplayPrice.click();
+        Assert.assertTrue(bk.NameProduct.isDisplayed() && bk.PriceProduct.isDisplayed());
+        bk.verifyTotalAndSubTotal();
+        bk.verifyTax();
+        hp.MyAccountMenu.click();
+        ma.LoginvalidUser();
+        ac.ChangeAddress(Constants_ratthanon.indianame);
+        ac.cartLink.click();
+        bk.verifyTax();
+        hp.MyAccountMenu.click();
+        ac.ChangeAddress(Constants_ratthanon.usaname);
+        
+				  
+	}
+
 	
 
 	@AfterClass

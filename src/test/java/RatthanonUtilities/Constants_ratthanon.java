@@ -2,7 +2,7 @@ package RatthanonUtilities;
 
 public class Constants_ratthanon {
 	
-	public static final String config_filePath = System.getProperty("user.dir")+ "/src/test/resources/propertiesFolder/Ratthanon.properties";
+public static final String config_filePath = System.getProperty("user.dir")+ "/src/test/resources/propertiesFolder/Ratthanon.properties";
 	
 	public static final int implicitWaitTime = 10;
 	
@@ -45,6 +45,48 @@ public class Constants_ratthanon {
 	public static final String removeItemMessage = "removed.";
 	
 	public static final String UpdateBasketMessage = "Basket updated.";
+	
+	public static final String checkOutPage = "Billing Details";
+	
+	public static final String checkOutFname = "david";
+	
+	public static final String checkoutLastName = "lim";
+	public static final String checkoutcompany = "Triangle public limited";
+	public static final String checkoutemail = "devarTeroo@gmail.com";
+	public static final String checkoutphone= "5716572415";
+	
+	public static final String country= "US";
+	public static final String address = "35562 Lakemont SQ";
+	public static final String city = "Sterling";
+	public static final String zipcode  = "20165";
+	public static final String state  = "Virginia";
+	
+	public static final String cityIndia = "Pitam Pura";
+	public static final String zipcodeIndia  = "110034";
+	public static final String stateIndia  = "Delhi";
+	public static final String usaname = "United States";
+	public static final String indianame = "India";
+	
+	public static final String displayOrderSuccess  = "Thank you. Your order has been received.";
+	
+	public static final String validateCouponMessage =  "Coupon usage limit has been reached.";
+	
+	public static final String changeAddressMessage =  "Address changed successfully.";
+	
+	
+	public static final String ChangePasswordErrorOne = "First Name is a required field.";
+	public static final String ChangePasswordErrorTwo = "Last Name is a required field.";
+	
+	public static final String MessageChangeAccount = "Account details changed successfully.";
+	
+	public static final int bookPrice = 450;
+	public static final String booklowMaxPraice = "₹150 — ₹450";
+	public static final String invalidErrorMessages = "Error: Please provide a valid email address.";
+	
+	public static final String EmtypasswordErrorMessages = "Error: Please enter an account password.";
+	
+	public static final String ErrorSensitive = "The password you entered for the username";
+	public static final String ErrorSensitiveTwo = "is incorrect";
 	
 	
 	
