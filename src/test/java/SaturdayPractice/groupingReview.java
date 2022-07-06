@@ -40,7 +40,7 @@ public class groupingReview {
 
 	@AfterMethod(alwaysRun=true)
 	public void afterMethod() {
-		BaseClass.tearDown();
+		//BaseClass.tearDown();
 	}
 
 }

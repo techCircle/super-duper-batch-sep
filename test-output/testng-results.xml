@@ -1,21 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5812" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:41:01 EDT">
+  <suite started-at="2022-06-07T19:32:30 EDT" name="Default suite" finished-at="2022-06-07T19:32:45 EDT" duration-ms="14905">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5812" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:41:01 EDT">
-      <class name="SeleniumDay12_13.checkoutCartTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:SeleniumDay12_13.checkoutCartTest@18b0930f]" name="setUp" is-config="true" duration-ms="856" started-at="2022-05-26T21:40:55 EDT" finished-at="2022-05-26T21:40:56 EDT">
+    <test started-at="2022-06-07T19:32:30 EDT" name="Default test" finished-at="2022-06-07T19:32:45 EDT" duration-ms="14905">
+      <class name="SeleniumDay12_13.loginTestCases">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:30 EDT" name="setUp" finished-at="2022-06-07T19:32:34 EDT" duration-ms="3758" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testOrderConfirmation()[pri:0, instance:SeleniumDay12_13.checkoutCartTest@18b0930f]" name="testOrderConfirmation" duration-ms="4917" started-at="2022-05-26T21:40:56 EDT" finished-at="2022-05-26T21:41:01 EDT">
+        <test-method signature="loginWithValidCredentials_Standard()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:34 EDT" name="loginWithValidCredentials_Standard" finished-at="2022-06-07T19:32:38 EDT" duration-ms="3918" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testOrderConfirmation -->
-      </class> <!-- SeleniumDay12_13.checkoutCartTest -->
+        </test-method> <!-- loginWithValidCredentials_Standard -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:38 EDT" name="tearDown" finished-at="2022-06-07T19:32:38 EDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:38 EDT" name="setUp" finished-at="2022-06-07T19:32:38 EDT" duration-ms="324" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginWithValidCredentials_lockoutUser()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:38 EDT" name="loginWithValidCredentials_lockoutUser" finished-at="2022-06-07T19:32:39 EDT" duration-ms="641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials_lockoutUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:39 EDT" name="tearDown" finished-at="2022-06-07T19:32:39 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:39 EDT" name="setUp" finished-at="2022-06-07T19:32:39 EDT" duration-ms="321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginWithValidCredentials_performanceGlitchUser()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:39 EDT" name="loginWithValidCredentials_performanceGlitchUser" finished-at="2022-06-07T19:32:45 EDT" duration-ms="5522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials_performanceGlitchUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:45 EDT" name="tearDown" finished-at="2022-06-07T19:32:45 EDT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:45 EDT" name="setUp" finished-at="2022-06-07T19:32:45 EDT" duration-ms="171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginWithValidCredentials_problemUser()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:45 EDT" name="loginWithValidCredentials_problemUser" finished-at="2022-06-07T19:32:45 EDT" duration-ms="153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials_problemUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumDay12_13.loginTestCases@71def8f8]" started-at="2022-06-07T19:32:45 EDT" name="tearDown" finished-at="2022-06-07T19:32:45 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumDay12_13.loginTestCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

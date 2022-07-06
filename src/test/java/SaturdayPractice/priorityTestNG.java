@@ -48,7 +48,7 @@ public class priorityTestNG {
 	
 	@AfterMethod
 	public void afterMethod() {
-		BaseClass.tearDown();
+		//BaseClass.tearDown();
 	}
 
 }

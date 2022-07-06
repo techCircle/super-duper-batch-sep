@@ -45,7 +45,7 @@ public class OpenBrowser {
 
 	@AfterMethod
 	public void afterMethod() {
-		BaseClass.tearDown();
+		//BaseClass.tearDown();
 	}
 
 }

@@ -21,7 +21,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.UnexpectedTagNameException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CommonMethods {
+public class CommonMethods extends PageInitializer{
 
 	/*
 	 * Method that clear and sends key

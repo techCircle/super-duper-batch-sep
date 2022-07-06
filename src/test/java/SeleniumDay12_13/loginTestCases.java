@@ -7,11 +7,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
+import Utilities.CommonMethods;
 import pages.loginPage;
 
-public class loginTestCases {
+public class loginTestCases extends CommonMethods {
 
-	loginPage lp = new loginPage();
+//	loginPage lp = new loginPage();
 
 	@BeforeMethod
 	public void setUp() {

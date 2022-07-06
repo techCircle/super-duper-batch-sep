@@ -24,16 +24,19 @@ public class BaseClass {
 			case "firefox":
 				WebDriverManager.firefoxdriver().setup();
 				driver = new FirefoxDriver();
+				PageInitializer.initialize();
 
 				break;
 			case "chrome":
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
+				PageInitializer.initialize();
 
 				break;
 			case "safari":
 				WebDriverManager.safaridriver().setup();
 				driver = new SafariDriver();
+				PageInitializer.initialize();
 
 				break;
 			case "headless":
@@ -43,12 +46,13 @@ public class BaseClass {
 			}
 			
 		}
-
+		
+		
 		return driver;
 	}
 
 	// close/quit browser
-	public static void tearDown() {
+	public void tearDown() {
 		if (driver != null) {
 			driver.close();
 			// driver.quit();
